@@ -2,9 +2,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 
 import NavBar from './sections/NavBar';
-import Hero from './sections/Titulo1';
+import Titulo1 from './sections/Titulo1';
 import FirstVideo from './sections/FirstVideo';
 import Jason from './sections/Jason';
+import Titulo2 from './sections/Titulo2';
 import SecondVideo from './sections/SecondVideo';
 import Lucia from './sections/Lucia';
 import PostCard from './sections/PostCard';
@@ -18,7 +19,7 @@ const App = () => {
     <main>
       <Titulo1 />
       <Jason />
-
+      <Titulo2 />
       {/*<NavBar />
       <Hero />
 

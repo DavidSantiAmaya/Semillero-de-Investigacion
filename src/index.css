@@ -238,12 +238,24 @@ main {
 
 .mask-wrapper1 {
   mask-image: url("/images/big-hero-text.svg");
+  -webkit-mask-image: url("/images/big-hero-text.svg");
   mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  -webkit-mask-position: 50% 50%;
+  mask-size: 5000%;
+  -webkit-mask-size: 5000%;
 }
 
 .mask-wrapper2 {
   mask-image: url("/images/big-hero-text.svg");
+  -webkit-mask-image: url("/images/big-hero-text.svg");
   mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  -webkit-mask-position: 50% 50%;
+  mask-size: 5000%;
+  -webkit-mask-size: 5000%;
 }
 
 .animated-gradient-bg {

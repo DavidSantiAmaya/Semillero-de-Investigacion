@@ -1,17 +1,14 @@
-// Hero.jsx
 import React, { useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import ComingSoon from "./ComingSoon";
 
-const Hero = () => {
+gsap.registerPlugin(ScrollTrigger);
 
+const Titulo1 = () => {
   const heroRef = useRef(null);
-
-  /* =====================================================
-     CONFIGURACIÓN DE LA MÁSCARA
-  ===================================================== */
 
   const initialMaskPosition = "50% 50%";
   const initialMaskSize = "5000%";
@@ -20,107 +17,79 @@ const Hero = () => {
   const finalMaskSize = "80%";
 
   useGSAP(() => {
-
     const ctx = gsap.context(() => {
-
-      // estado inicial
       gsap.set(".mask-wrapper1", {
-        maskPosition: initialMaskPosition,
+        WebkitMaskImage: "url('/images/big-hero-text.svg')",
+        maskImage: "url('/images/big-hero-text.svg')",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
         WebkitMaskPosition: initialMaskPosition,
-
-        maskSize: initialMaskSize,
+        maskPosition: initialMaskPosition,
         WebkitMaskSize: initialMaskSize,
+        maskSize: initialMaskSize,
+        backgroundColor: "#000",
+      });
 
-        backgroundColor: "#000" // fondo inicial negro
+      gsap.set(".scale-out", {
+        scale: 1.25,
+        opacity: 1,
+        transformOrigin: "center center",
       });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
-          scrub: 2.5,
           end: "+=200%",
-          pin: true
-        }
+          scrub: 2.5,
+          pin: true,
+        },
+        defaults: { ease: "power1.inOut" },
       });
 
-      tl
-
-        // fade inicial
-        .to(".fade-out", {
-          opacity: 0,
-          ease: "power1.inOut"
-        })
-
-        // zoom fondo
-        .to(".scale-out", {
-          scale: 1,
-          ease: "power1.inOut"
-        })
-
-        // animación máscara (NO desaparecer)
+      tl.to(".scale-out", {
+        scale: 1,
+        duration: 1,
+      })
+        .to(
+          ".mask-wrapper1",
+          {
+            WebkitMaskSize: finalMaskSize,
+            maskSize: finalMaskSize,
+            WebkitMaskPosition: finalMaskPosition,
+            maskPosition: finalMaskPosition,
+            duration: 1,
+          },
+          "<"
+        )
+        .to(
+          ".scale-out",
+          {
+            opacity: 0,
+            duration: 0.8,
+          },
+          "<"
+        )
         .to(".mask-wrapper1", {
-          maskSize: finalMaskSize,
-          WebkitMaskSize: finalMaskSize,
-
-          maskPosition: finalMaskPosition,
-          WebkitMaskPosition: finalMaskPosition,
-
-          duration: 1,
-          ease: "power1.inOut"
-        }, "<")
-
-        // 👇 SOLO ocultamos las imágenes, NO la máscara
-        .to(".mask-wrapper1 img", {
-          opacity: 0,
-          duration: 1,
-          ease: "power1.inOut"
-        }, "<")
-
-        // 👇 AL FINAL: fondo vuelve a negro
-        .to(".mask-wrapper", {
           backgroundColor: "#000",
-          duration: 1,
-          ease: "power1.inOut"
+          duration: 0.5,
         });
-
     }, heroRef);
 
     return () => ctx.revert();
-
-  });
+  }, []);
 
   return (
     <section ref={heroRef} className="hero-section">
-
-      {/* contenedor con máscara */}
-      <div
-        className="size-full mask-wrapper"
-        style={{ backgroundColor: "#000" }}
-      >
-
-        {/* fondo */}
+      <div className="mask-wrapper1">
         <img
           src="/images/hero-bg.webp"
           alt="background"
           className="scale-out"
         />
-
       </div>
-
-      {/* logo dentro de máscara */}
-      <div>
-        <img
-          src="/images/big-hero-text.svg"
-          alt="logo"
-          className="size-full object-cover mask-logo"
-        />
-      </div>
-
-      <ComingSoon />
-
     </section>
   );
 };
 
-export default Hero;
+export default Titulo1;

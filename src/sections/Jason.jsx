@@ -1,200 +1,114 @@
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-const Jason = () => {
+const Titulo2 = () => {
+  const heroRef = useRef(null);
+
+  const initialMaskPosition = "50% 50%";
+  const initialMaskSize = "5000%";
+  const finalMaskPosition = "50% 50%";
+  const finalMaskSize = "80%";
+
   useGSAP(() => {
-    gsap.set(".jason", { marginTop: "-5vh" })
+    const ctx = gsap.context(() => {
+      gsap.set(".mask-wrapper2", {
+        WebkitMaskImage: "url('/images/big-hero-text.svg')",
+        maskImage: "url('/images/big-hero-text.svg')",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: initialMaskPosition,
+        maskPosition: initialMaskPosition,
+        WebkitMaskSize: initialMaskSize,
+        maskSize: initialMaskSize,
+        backgroundColor: "#000",
+      });
 
-    const sections = gsap.utils.toArray(".img-merge")
+      gsap.set(".line-img", { willChange: "transform" });
+      gsap.set(".color-img", { willChange: "transform" });
 
-    sections.forEach((section) => {
-      const line = section.querySelector(".line-img")
-      const color = section.querySelector(".color-img")
+      const sections = gsap.utils.toArray(".img-merge");
 
-      gsap.to(line, {
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          end: "bottom 20%",
-          scrub: 2,
-        },
-        y: -60,
-        ease: "none",
-      })
+      sections.forEach((section) => {
+        const line = section.querySelector(".line-img");
+        const color = section.querySelector(".color-img");
 
-      gsap.fromTo(
-        color,
-        { y: 40 },
-        {
+        gsap.to(line, {
           scrollTrigger: {
             trigger: section,
             start: "top 80%",
             end: "bottom 20%",
             scrub: 2,
           },
-          y: -110,
+          y: -60,
           ease: "none",
-        }
-      )
-    })
-  })
+        });
+
+        gsap.fromTo(
+          color,
+          { y: 40 },
+          {
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              end: "bottom 20%",
+              scrub: 2,
+            },
+            y: -110,
+            ease: "none",
+          }
+        );
+      });
+
+      // La máscara empieza después de que las imágenes ya hayan tenido movimiento
+      gsap.to(".mask-wrapper2", {
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "+=220%",
+          scrub: 2.5,
+          pin: true,
+        },
+        WebkitMaskSize: finalMaskSize,
+        maskSize: finalMaskSize,
+        WebkitMaskPosition: finalMaskPosition,
+        maskPosition: finalMaskPosition,
+        ease: "power1.inOut",
+      });
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="jason">
-      <style>{`
-        .jason {
-          position: relative;
-          width: 100%;
-          min-height: 100vh;
-          padding: 0 0 120px;
-          background: #ffffff;
-          overflow: hidden;
-        }
+    <section ref={heroRef} className="hero-section">
+      <div className="mask-wrapper2 size-full relative overflow-hidden">
+        <div className="img-box relative z-10 flex flex-col gap-24 py-40 px-5 md:px-10">
 
-        .img-box {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          gap: 90px;
-        }
+          <div className="img-merge relative overflow-hidden">
+            <img
+              className="line-img w-full block relative z-10"
+              src="/images/ilustraciones/Ilustracion1linea.webp"
+              alt="Ilustración línea"
+            />
+            <img
+              className="color-img w-full absolute top-0 left-0 z-20 opacity-70"
+              src="/images/ilustraciones/Ilustracion1Color.webp"
+              alt="Ilustración color"
+            />
+          </div>
 
-        .img-merge {
-          width: 100%;
-          position: relative;
-          overflow: hidden;
-        }
+          <p className="story-text-2 max-w-3xl mx-auto text-center text-white text-lg md:text-2xl">
+            En estas tierras de Boyacá, marcadas por el frío y el silencio de las montañas, vino a agotarse parte de la fatiga de la campaña libertadora.
+          </p>
 
-        .img-merge img {
-          width: 100%;
-          display: block;
-          will-change: transform;
-        }
-
-        .line-img {
-          position: relative;
-          z-index: 1;
-        }
-
-        .color-img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 2;
-          opacity: 0.7;
-        }
-
-        .mask {
-          width: 100%;
-          height: 1080px;
-          overflow: hidden;
-          position: relative;
-        }
-
-        .mask img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-
-        .mask-2 {
-          clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 88%);
-        }
-
-        .mask-3 {
-          clip-path: polygon(0 12%, 100% 0%, 100% 92%, 0% 100%);
-        }
-
-        .story-text {
-          width: min(980px, 86%);
-          margin: 0 auto;
-          font-size: 18px;
-          line-height: 1.9;
-          color: #1f1f1f;
-          text-align: justify;
-          font-family: Georgia, "Times New Roman", serif;
-        }
-
-        @media (max-width: 1200px) {
-          .mask {
-            height: 700px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .mask {
-            height: 420px;
-          }
-
-          .story-text {
-            font-size: 15px;
-            line-height: 1.7;
-            width: 90%;
-          }
-
-          .img-box {
-            gap: 50px;
-          }
-        }
-      `}</style>
-
-      <div className="img-box">
-        <div className="img-merge">
-          <img
-            className="line-img"
-            src="/images/Ilustracion_1_Linea.webp"
-            alt="Ilustracion linea"
-          />
-          <img
-            className="color-img"
-            src="/images/Ilustracion_1_Color.webp"
-            alt="Ilustracion color"
-          />
         </div>
-
-        <p className="story-text">
-          En estas tierras de Boyacá, marcadas por el frío y el silencio de las montañas, vino a agotarse parte de la fatiga de la campaña libertadora. Tras los combates de Gámeza y Tópaga, las columnas patriotas avanzaron exhaustas: hombres helados, con los uniformes hechos jirones, algunos descalzos, pero firmes en su decisión de seguir adelante. No marchaban solo contra el enemigo, sino contra el cansancio y el hambre. Estas montañas no son un simple paisaje; son testigos del desgaste que precedió a la Batalla del Pantano de Vargas.
-        </p>
-
-        <div className="img-merge">
-          <img
-            className="line-img"
-            src="/images/boyaca-2.webp"
-            alt="Ilustracion linea"
-          />
-          <img
-            className="color-img"
-            src="/images/boyaca-2.webp"
-            alt="Ilustracion color"
-          />
-        </div>
-
-        <p className="story-text">
-          Días antes de llegar a Paipa, en medio de estas tierras frías de Boyacá, Simón Bolívar y Francisco de Paula Santander se detuvieron a reorganizar lo poco que quedaba en pie. Allí redistribuyeron hombres y evaluaron cada paso con cautela. Ambos calculaban marchas y breves descansos como quien cuenta las últimas monedas antes de la escasez definitiva, conscientes de que cada decisión podía inclinar el destino de la campaña.
-        </p>
-
-        <div className="img-merge">
-          <img
-            className="line-img"
-            src="/images/boyaca-3.webp"
-            alt="Ilustracion linea"
-          />
-          <img
-            className="color-img"
-            src="/images/boyaca-3.webp"
-            alt="Ilustracion color"
-          />
-        </div>
-
-        <p className="story-text">
-          El ejército español comprobó que no se trataba solo de hombres agotados, sino de tropas capaces de rehacerse bajo el fuego. Esa tenacidad, sumada a la ayuda de campesinos que llevaron ropas y vituallas, permitió recomponer las filas patriotas. Con lo puesto y la moral a duras penas sostenida, la tropa marchó hacia Paipa no a celebrar, sino a reorganizarse y prepararse para el próximo choque con las fuerzas españolas.
-        </p>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Jason
+export default Titulo2;
