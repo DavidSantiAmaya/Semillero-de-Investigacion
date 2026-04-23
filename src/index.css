@@ -237,8 +237,8 @@ main {
 }
 
 .mask-wrapper1 {
-  mask-image: url("/images/big-hero-text.svg");
-  -webkit-mask-image: url("/images/big-hero-text.svg");
+  mask-image: url("/images/Titulos/Titulo1.svg");
+  -webkit-mask-image: url("/images/Titulos/Titulo1.svg");
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-position: 50% 50%;
@@ -248,8 +248,8 @@ main {
 }
 
 .mask-wrapper2 {
-  mask-image: url("/images/big-hero-text.svg");
-  -webkit-mask-image: url("/images/big-hero-text.svg");
+  mask-image: url("/images/Titulos/Titulo2.svg");
+  -webkit-mask-image: url("/images/Titulos/Titulo2.svg");
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-position: 50% 50%;

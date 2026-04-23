@@ -19,8 +19,6 @@ const Titulo1 = () => {
   useGSAP(() => {
     const ctx = gsap.context(() => {
       gsap.set(".mask-wrapper1", {
-        WebkitMaskImage: "url('/images/big-hero-text.svg')",
-        maskImage: "url('/images/big-hero-text.svg')",
         WebkitMaskRepeat: "no-repeat",
         maskRepeat: "no-repeat",
         WebkitMaskPosition: initialMaskPosition,
