@@ -81,7 +81,7 @@ const Titulo1 = () => {
     <section ref={heroRef} className="hero-section">
       <div className="mask-wrapper1">
         <img
-          src="/images/hero-bg.webp"
+          src="/images/ilustraciones/Titulo1.png"
           alt="background"
           className="scale-out"
         />

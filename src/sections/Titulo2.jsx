@@ -127,19 +127,18 @@ const Titulo2 = () => {
           <div className="img-merge">
             <img
               className="line-img"
-              src="/images/ilustraciones/Ilustracion1Linea.webp"
+              src="/images/ilustraciones/Ilustracion3Linea.webp"
               alt="línea"
             />
             <img
               className="color-img"
-              src="/images/ilustraciones/Ilustracion1Color.webp"
+              src="/images/ilustraciones/Ilustracion3Color.webp"
               alt="color"
             />
           </div>
 
           <p className="story-text-2">
-            En estas tierras de Boyacá, marcadas por el frío y el silencio de las
-            montañas, vino a agotarse parte de la fatiga de la campaña libertadora.
+            El ejército español comprobó que no se trataba solo de hombres agotados, sino de tropas capaces de rehacerse bajo el fuego. Esa tenacidad, sumada a la ayuda de campesinos que llevaron ropas y vituallas, permitió recomponer las filas patriotas. Con lo puesto y la moral a duras penas sostenida, la tropa marchó hacia Paipa no a celebrar, sino a reorganizarse y prepararse para el próximo choque con las fuerzas españolas.
           </p>
           
           {/* Puedes agregar más contenido aquí abajo para hacerlo más "largo" */}

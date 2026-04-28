@@ -20,6 +20,8 @@ const App = () => {
       <Titulo1 />
       <Jason />
       <Titulo2 />
+      <Lucia />
+
       {/*<NavBar />
       <Hero />
 

@@ -166,35 +166,18 @@ const Jason = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/boyaca-2.webp"
+            src="/images/ilustraciones/Ilustracion2Linea.webp"
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/boyaca-2.webp"
+            src="/images/ilustraciones/Ilustracion2Color.webp"
             alt="Ilustracion color"
           />
         </div>
 
         <p className="story-text">
           Días antes de llegar a Paipa, en medio de estas tierras frías de Boyacá, Simón Bolívar y Francisco de Paula Santander se detuvieron a reorganizar lo poco que quedaba en pie. Allí redistribuyeron hombres y evaluaron cada paso con cautela. Ambos calculaban marchas y breves descansos como quien cuenta las últimas monedas antes de la escasez definitiva, conscientes de que cada decisión podía inclinar el destino de la campaña.
-        </p>
-
-        <div className="img-merge">
-          <img
-            className="line-img"
-            src="/images/boyaca-3.webp"
-            alt="Ilustracion linea"
-          />
-          <img
-            className="color-img"
-            src="/images/boyaca-3.webp"
-            alt="Ilustracion color"
-          />
-        </div>
-
-        <p className="story-text">
-          El ejército español comprobó que no se trataba solo de hombres agotados, sino de tropas capaces de rehacerse bajo el fuego. Esa tenacidad, sumada a la ayuda de campesinos que llevaron ropas y vituallas, permitió recomponer las filas patriotas. Con lo puesto y la moral a duras penas sostenida, la tropa marchó hacia Paipa no a celebrar, sino a reorganizarse y prepararse para el próximo choque con las fuerzas españolas.
         </p>
       </div>
     </section>
