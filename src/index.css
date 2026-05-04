@@ -230,11 +230,6 @@ main {
   );
 }
 
-.entrance-message {
-  mask-image: radial-gradient(circle at 50% 100vh, black 0%, transparent 0%);
-  mask-repeat: no-repeat;
-  mask-size: 100% 100%;
-}
 
 .mask-wrapper1 {
   mask-image: url("/images/Titulos/Titulo1.svg");
@@ -243,8 +238,8 @@ main {
   -webkit-mask-repeat: no-repeat;
   mask-position: 50% 50%;
   -webkit-mask-position: 50% 50%;
-  mask-size: 5000%;
-  -webkit-mask-size: 5000%;
+  mask-size: 500000%;
+  -webkit-mask-size: 500000%;
 }
 
 .mask-wrapper2 {
@@ -254,8 +249,8 @@ main {
   -webkit-mask-repeat: no-repeat;
   mask-position: 50% 50%;
   -webkit-mask-position: 50% 50%;
-  mask-size: 5000%;
-  -webkit-mask-size: 5000%;
+  mask-size: 500000%;
+  -webkit-mask-size: 500000%;
 }
 
 .animated-gradient-bg {
@@ -268,4 +263,131 @@ main {
 
 .lucia-life-content {
   background: radial-gradient(ellipse, #111117 20%, transparent 70%);
+}
+
+.jason {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 0 120px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.img-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  align-items: center;
+}
+
+.img-merge {
+  width: auto;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-merge img {
+  height: auto;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+.line-img {
+  position: relative;
+  z-index: 1;
+}
+
+.color-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.first-image {
+  position: relative;
+}
+
+.floating-button {
+  position: absolute;
+  right: 300px;
+  bottom: 2000px;
+  z-index: 50;
+  transform: translateY(10px);
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.circle-button {
+  width: auto;
+  height: auto;
+  max-width: 250px;
+  max-height: 250px;
+  display: block;
+}
+
+.circle-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.btn-line {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.story-text {
+  width: min(980px, 86%);
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #1f1f1f;
+  text-align: justify;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (max-width: 1200px) {
+  .story-text {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-text {
+    font-size: 15px;
+    line-height: 1.7;
+    width: 90%;
+  }
+
+  .img-box {
+    gap: 50px;
+  }
+
+  .img-merge {
+    width: 100%;
+    height: auto;
+  }
+
+  .floating-button {
+    right: 6%;
+    bottom: 8%;
+  }
 }

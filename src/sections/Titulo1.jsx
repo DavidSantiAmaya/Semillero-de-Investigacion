@@ -11,9 +11,9 @@ const Titulo1 = () => {
   const heroRef = useRef(null);
 
   const initialMaskPosition = "50% 50%";
-  const initialMaskSize = "5000%";
+  const initialMaskSize = "15000%";
 
-  const finalMaskPosition = "85% 50%";
+  const finalMaskPosition = "50% 50%";
   const finalMaskSize = "80%";
 
   useGSAP(() => {
@@ -25,7 +25,7 @@ const Titulo1 = () => {
         maskPosition: initialMaskPosition,
         WebkitMaskSize: initialMaskSize,
         maskSize: initialMaskSize,
-        backgroundColor: "#000",
+        backgroundColor: "#ffffff",
       });
 
       gsap.set(".scale-out", {
@@ -56,6 +56,7 @@ const Titulo1 = () => {
             maskSize: finalMaskSize,
             WebkitMaskPosition: finalMaskPosition,
             maskPosition: finalMaskPosition,
+            backgroundColor: "#000000",
             duration: 1,
           },
           "<"
@@ -67,11 +68,7 @@ const Titulo1 = () => {
             duration: 0.8,
           },
           "<"
-        )
-        .to(".mask-wrapper1", {
-          backgroundColor: "#000",
-          duration: 0.5,
-        });
+        );
     }, heroRef);
 
     return () => ctx.revert();

@@ -53,6 +53,22 @@ const Lucia = () => {
         </div>
 
         <p className="story-text">
+          El mapa de la llanura de Paipa lo deja claro: las alturas dominan el valle. Quien controla los cerros puede sostener el fuego y castigar a quien intente ascender. Por eso Barreiro ubicó rápidamente sus tropas en las posiciones elevadas del Pantano de Vargas, con el fin de bloquear el paso de los patriotas. Desde el Picacho y el Cangrejo, vigila y espera.
+        </p>
+        <div className="img-merge">
+          <img
+            className="line-img"
+            src="/images/ilustraciones/Ilustracion5Linea.webp"
+            alt="Ilustracion linea"
+          />
+          <img
+            className="color-img"
+            src="/images/ilustraciones/Ilustracion5Color.webp"
+            alt="Ilustracion color"
+          />
+        </div>
+
+        <p className="story-text">
           En estas tierras de Boyacá, marcadas por el frío y el silencio de las montañas, vino a agotarse parte de la fatiga de la campaña libertadora. Tras los combates de Gámeza y Tópaga, las columnas patriotas avanzaron exhaustas: hombres helados, con los uniformes hechos jirones, algunos descalzos, pero firmes en su decisión de seguir adelante. No marchaban solo contra el enemigo, sino contra el cansancio y el hambre. Estas montañas no son un simple paisaje; son testigos del desgaste que precedió a la Batalla del Pantano de Vargas.
         </p>
       </div>
