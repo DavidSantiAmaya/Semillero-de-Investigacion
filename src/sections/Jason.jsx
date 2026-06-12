@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -5,6 +7,9 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const Jason = () => {
+  const sectionRef = useRef(null);
+  const navigate = useNavigate();
+
   useGSAP(() => {
     const sections = gsap.utils.toArray(".img-merge");
 
@@ -42,8 +47,19 @@ const Jason = () => {
     });
   }, []);
 
+  const irAPersonajes = () => {
+    gsap.to(sectionRef.current, {
+      xPercent: -100,
+      duration: 0.8,
+      ease: "power3.inOut",
+      onComplete: () => {
+        navigate("/personajes");
+      },
+    });
+  };
+
   return (
-    <section className="jason">
+    <section className="jason" ref={sectionRef}>
       <div className="img-box">
         <div className="img-merge first-image">
           <img
@@ -56,21 +72,33 @@ const Jason = () => {
             src="/images/ilustraciones/Ilustracion1Color.webp"
             alt="Ilustracion color"
           />
-
-          <button className="floating-button circle-button">
-          <img className="line-img" src="/images/Botones/boton_Personajes_Linea.webp" alt="Ver personajes" />
-          <img className="color-img" src="/images/Botones/botones_Personajes_Color.webp" alt="Ver personajes" />
-          </button>
-
+          
         </div>
 
-          <button className="floating-button circle-button">
-          <img className="line-img" src="/images/Botones/boton_Personajes_Linea.webp" alt="Ver personajes" />
-          <img className="color-img" src="/images/Botones/botones_Personajes_Color.webp" alt="Ver personajes" />
+        <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAPersonajes}
+          >
+            <img
+              className="line-img"
+              src="/images/Botones/boton_Personajes_Linea.webp"
+              alt="Ver personajes"
+            />
+            <img
+              className="color-img"
+              src="/images/Botones/botones_Personajes_Color.webp"
+              alt="Ver personajes"
+            />
           </button>
 
         <p className="story-text">
-          En estas tierras de Boyacá, marcadas por el frío y el silencio de las montañas, vino a agotarse parte de la fatiga de la campaña libertadora. Tras los combates de Gámeza y Tópaga, las columnas patriotas avanzaron exhaustas: hombres helados, con los uniformes hechos jirones, algunos descalzos, pero firmes en su decisión de seguir adelante. No marchaban solo contra el enemigo, sino contra el cansancio y el hambre. Estas montañas no son un simple paisaje; son testigos del desgaste que precedió a la Batalla del Pantano de Vargas.
+          En estas tierras de Boyacá, marcadas por el frío y el silencio de las
+          montañas, vino a agotarse parte de la fatiga de la campaña
+          libertadora. Tras los combates de Gámeza y Tópaga, las columnas
+          patriotas avanzaron exhaustas: hombres helados, con los uniformes
+          hechos jirones, algunos descalzos, pero firmes en su decisión de
+          seguir adelante.
         </p>
 
         <div className="img-merge">
@@ -87,7 +115,9 @@ const Jason = () => {
         </div>
 
         <p className="story-text">
-          Días antes de llegar a Paipa, en medio de estas tierras frías de Boyacá, Simón Bolívar y Francisco de Paula Santander se detuvieron a reorganizar lo poco que quedaba en pie. Allí redistribuyeron hombres y evaluaron cada paso con cautela. Ambos calculaban marchas y breves descansos como quien cuenta las últimas monedas antes de la escasez definitiva, conscientes de que cada decisión podía inclinar el destino de la campaña.
+          Días antes de llegar a Paipa, en medio de estas tierras frías de
+          Boyacá, Simón Bolívar y Francisco de Paula Santander se detuvieron a
+          reorganizar lo poco que quedaba en pie.
         </p>
       </div>
     </section>

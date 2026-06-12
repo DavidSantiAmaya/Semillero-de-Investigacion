@@ -391,3 +391,25 @@ main {
     bottom: 8%;
   }
 }
+
+
+.app-stage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.view-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.view-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 100vh;
+}
