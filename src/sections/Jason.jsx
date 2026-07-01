@@ -48,15 +48,10 @@ const Jason = () => {
   }, []);
 
   const irAPersonajes = () => {
-    gsap.to(sectionRef.current, {
-      xPercent: -100,
-      duration: 0.8,
-      ease: "power3.inOut",
-      onComplete: () => {
-        navigate("/personajes");
-      },
-    });
-  };
+  navigate("/personajes", {
+    state: { direction: 1 },
+  });
+};
 
   return (
     <section className="jason" ref={sectionRef}>

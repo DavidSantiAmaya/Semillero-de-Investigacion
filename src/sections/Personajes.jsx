@@ -1,11 +1,12 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   motion,
   AnimatePresence,
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import "../../src/BolivarExperience.css";
+import "../BolivarExperience.css";
 
 const heroCards = [
   {
@@ -86,6 +87,7 @@ const accordionItems = [
 ];
 
 export default function BolivarExperience() {
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState(0);
@@ -128,6 +130,17 @@ export default function BolivarExperience() {
 
   return (
     <main className="bolivar-page">
+      <button
+        className="back-button"
+        onClick={() =>
+          navigate("/", {
+            state: { direction: -1 },
+          })
+        }
+        aria-label="Regresar"
+      >
+        ←
+      </button>
       <section className="bolivar-hero">
         <div className="hero-copy">
           <p className="kicker">Historia · Swipe · Accordion</p>
@@ -246,9 +259,8 @@ export default function BolivarExperience() {
             <button
               key={item.title}
               type="button"
-              className={`accordion-item ${
-                activeAccordion === index ? "is-active" : ""
-              }`}
+              className={`accordion-item ${activeAccordion === index ? "is-active" : ""
+                }`}
               onClick={() => {
                 setActiveAccordion(index);
                 setFlipped(false);

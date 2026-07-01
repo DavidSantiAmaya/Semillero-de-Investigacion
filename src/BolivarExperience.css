@@ -269,12 +269,10 @@ body {
 .accordion-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.72),
-    rgba(0, 0, 0, 0.18) 55%,
-    rgba(0, 0, 0, 0.04)
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.18) 55%,
+      rgba(0, 0, 0, 0.04));
 }
 
 .accordion-content {
@@ -375,16 +373,44 @@ body {
   .flip-card,
   .flip-inner,
   .face {
-  transform-style: preserve-3d;
+    transform-style: preserve-3d;
   }
 
   .face {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .back {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
   }
-  
+
+  .back-button {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    background: rgba(20, 20, 20, 0.8);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 30px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .25s;
+    z-index: 999;
+  }
+
+  .back-button:hover {
+    background: rgba(255, 255, 255, .12);
+    transform: translateX(-3px);
+  }
 }
