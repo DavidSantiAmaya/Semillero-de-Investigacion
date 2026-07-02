@@ -71,8 +71,6 @@ const Titulo2 = () => {
       <style>{`
         .hero-section {
           position: relative;
-          width: 100%;
-          height: 100vh;
           overflow: hidden;
           background: #ffffff;
         }
@@ -83,50 +81,7 @@ const Titulo2 = () => {
           position: relative;
           background: #ffffff;
         }
-
-        .content-inside {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding-top: 20vh;
-          will-change: transform, opacity;
-        }
-
-        .img-merge {
-          width: 100vw;
-          aspect-ratio: 16 / 9;
-          position: relative;
-          margin-bottom: 50px;
-        }
-
-        .img-merge img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 120%;
-          object-fit: cover;
-          display: block;
-        }
-
-        .line-img { z-index: 10; }
-        .color-img { z-index: 20; opacity: 0.7; }
-
-        .story-text-2 {
-          max-width: 800px;
-          width: 86%;
-          color: #1f1f1f;
-          text-align: center;
-          font-size: 1.5rem;
-          line-height: 1.8;
-          font-family: Georgia, serif;
-          margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-          .story-text-2 { font-size: 1.1rem; }
-        }
+       
       `}</style>
 
       <div className="mask-wrapper2">
@@ -144,7 +99,7 @@ const Titulo2 = () => {
             />
           </div>
 
-          <p className="story-text-2">
+          <p className="story-text">
             El ejército español comprobó que no se trataba solo de hombres agotados, sino de tropas capaces de rehacerse bajo el fuego. Esa tenacidad, sumada a la ayuda de campesinos que llevaron ropas y vituallas, permitió recomponer las filas patriotas. Con lo puesto y la moral a duras penas sostenida, la tropa marchó hacia Paipa no a celebrar, sino a reorganizarse y prepararse para el próximo choque con las fuerzas españolas.
           </p>
         </div>

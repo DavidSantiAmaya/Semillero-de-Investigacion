@@ -56,7 +56,7 @@ const Jason = () => {
   return (
     <section className="jason" ref={sectionRef}>
       <div className="img-box">
-        <div className="img-merge first-image">
+        <div className="img-merge">
           <img
             className="line-img"
             src="/images/ilustraciones/Ilustracion1Linea.webp"

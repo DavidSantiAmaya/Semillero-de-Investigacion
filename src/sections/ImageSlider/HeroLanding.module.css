@@ -1,0 +1,434 @@
+.heroContainer {
+  position: relative;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+}
+
+/* Fondo cinematográfico */
+.backgroundLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.backgroundOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.15) 40%,
+      rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* Barra decorativa superior */
+.topBar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background: rgba(248, 241, 229, 0.95);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.backButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  color: #5c3b1b;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+
+.backButton:hover {
+  transform: translateX(-4px);
+}
+
+.decorativeLine {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8b6f47, transparent);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c9a961;
+  position: absolute;
+}
+
+/* Contenido principal */
+.mainContent {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 25rem;
+  align-items: center;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1rem;
+    align-items: center;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0px ;
+  }
+
+}
+
+/* Sección izquierda */
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.mainTitle {
+  margin: 0;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-family: "Long", Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 32ch;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.description {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 38ch;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Long", Georgia, serif;
+}
+
+.exploreButton {
+  width: fit-content;
+  padding: 0.9rem 2rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 32px;
+  background: #f8f1e5;
+  color: #5c3b1b;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.exploreButton:hover {
+  background: #c9a961;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* Galería de tarjetas derecha */
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: fixed;
+  left: 70%;
+}
+
+@media (max-width: 768px) {
+  .rightSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+    left: 0%;
+  }
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.carouselCard {
+  position: absolute;
+  width: 280px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 85%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+  background: #e2c89d;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+}
+
+.cardBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f8f1e5;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.cardTitle {
+  padding: 0.6rem 0;
+  font-size: 1.1rem;
+  font-family: "Long", Georgia, serif;
+  color: #f8f1e5;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Botones de navegación */
+.navButton {
+  position: absolute;
+  top: 105%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(248, 241, 229, 0.85);
+  color: #5c3b1b;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.navButton:hover {
+  background: #c9a961;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: -70px;
+}
+
+.nextButton {
+  right: -70px;
+}
+
+/* Indicadores */
+.indicators {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(248, 241, 229, 0.4);
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.dot:hover {
+  background: rgba(248, 241, 229, 0.7);
+}
+
+.activeDot {
+  background: #c9a961;
+  width: 28px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .carouselContainer {
+    height: 400px;
+  }
+
+  .carouselCard {
+    width: 240px;
+    height: 360px;
+  }
+
+  .prevButton,
+  .nextButton {
+    width: 42px;
+    height: 42px;
+    right: auto;
+  }
+
+  .nextButton {
+    right: -75px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .heroContainer {
+    padding: 1rem;
+  }
+
+  .mainTitle {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .topBar {
+    padding: 0.8rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .decorativeLine {
+    width: 60px;
+  }
+
+  .carouselContainer {
+    height: 320px;
+  }
+
+  .carouselCard {
+    width: 200px;
+    height: 300px;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .prevButton {
+    left: 240px;
+  }
+
+  .nextButton {
+    right: 240px;
+  }
+}
+
+@media (max-width: 425px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .carouselContainer {
+    height: 280px;
+  }
+
+  .carouselCard {
+    width: 160px;
+    height: 240px;
+  }
+
+  .prevButton {
+    left: 95px;
+  }
+
+  .nextButton {
+    right: 95px;
+  }
+}

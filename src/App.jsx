@@ -3,6 +3,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import NavBar from "./sections/NavBar";
 
+import HeroLanding from "./sections/ImageSlider/HeroLanding";
+import heroLandingData from "./data/heroLandingData";
+
 import Titulo1 from "./sections/Titulo1";
 import Capitulo1 from "./sections/capitulo1";
 
@@ -25,6 +28,8 @@ import Titulo7 from "./sections/Titulo7";
 import Capitulo7 from "./sections/capitulo7";
 
 import Personajes from "./sections/Personajes";
+
+
 
 import Footer from "./sections/footer";
 
@@ -49,6 +54,10 @@ const transition = {
 function Home({ showFooter }) {
   return (
     <div style={{ width: "100%", minHeight: "100dvh" }}>
+      <section id="hero-landing">
+        <HeroLanding slides={heroLandingData} />
+      </section>
+
       <section id="titulo1">
         <Titulo1 />
       </section>
