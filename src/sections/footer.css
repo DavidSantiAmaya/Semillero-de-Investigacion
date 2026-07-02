@@ -1,0 +1,168 @@
+/* Bloquear scroll del body cuando overlay esté activo */
+body.noscroll {
+    overflow: hidden;
+}
+
+/* Overlay blanco completo para la transición */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 9998;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .8s ease, visibility 0s ease .8s;
+}
+.overlay.show {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+.overlay.hide {
+    visibility: visible;
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+/* Footer fijo con efecto difuminado */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity .4s ease, transform .4s ease;
+}
+.footer.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.footer.hide {
+    opacity: 0;
+    transform: translateY(100px);
+    pointer-events: none;
+}
+
+/* Barra de progreso (capa del footer) */
+.progressBar {
+    position: relative;
+    width: 620px;
+    max-width: 92%;
+    height: 62px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(0,0,0,0.82);
+    backdrop-filter: blur(18px);
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
+    overflow: hidden;
+}
+
+/* Cápsula deslizable */
+.slider {
+    position: absolute;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 18px rgba(255,255,255,0.08), inset 0 0 10px rgba(255,255,255,0.08);
+    transition: left .65s cubic-bezier(.22,1,.36,1), width .35s ease, background .35s ease, transform .35s ease;
+    z-index: 0;
+}
+
+/* Botones (números romanos) */
+.progressBar button {
+    position: relative;
+    z-index: 2;
+    width: 52px;
+    height: 52px;
+    border: none;
+    outline: none;
+    background: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: opacity .55s ease, color .55s ease, transform .55s ease, filter .55s ease;
+    user-select: none;
+}
+.progressBar button:hover {
+    transform: translateY(-2px) scale(1.06);
+    color: white;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.45));
+}
+.progressBar button:active {
+    transform: scale(0.95);
+}
+.progressBar button:disabled {
+    cursor: default;
+    transform: none;
+}
+
+/* Efectos al interactuar */
+.progressBar:hover .slider {
+    background: rgba(255,255,255,0.16);
+}
+.progressBar:hover {
+    border-color: rgba(255,255,255,0.16);
+}
+
+/* Animación de aparición del footer */
+.footer.show .progressBar {
+    animation: footerAppear .75s cubic-bezier(.22,1,.36,1);
+}
+@keyframes footerAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive: ajustar tamaños en pantallas pequeñas */
+@media (max-width: 900px) {
+    .progressBar {
+        width: 95%;
+        height: 58px;
+    }
+    .slider {
+        width: 40px;
+        height: 40px;
+    }
+    .progressBar button {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+    .footer {
+        bottom: 18px;
+    }
+    .progressBar {
+        height: 54px;
+    }
+    .slider {
+        width: 36px;
+        height: 36px;
+    }
+    .progressBar button {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+}

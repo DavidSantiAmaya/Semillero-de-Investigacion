@@ -2,11 +2,31 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import NavBar from "./sections/NavBar";
+
 import Titulo1 from "./sections/Titulo1";
-import Jason from "./sections/Jason";
+import Capitulo1 from "./sections/capitulo1";
+
 import Titulo2 from "./sections/Titulo2";
-import Lucia from "./sections/Lucia";
+import Capitulo2 from "./sections/capitulo2";
+
+import Titulo3 from "./sections/Titulo3";
+import Capitulo3 from "./sections/capitulo3";
+
+import Titulo4 from "./sections/Titulo4";
+import Capitulo4 from "./sections/capitulo4";
+
+import Titulo5 from "./sections/Titulo5";
+import Capitulo5 from "./sections/capitulo5";
+
+import Titulo6 from "./sections/Titulo6";
+import Capitulo6 from "./sections/capitulo6";
+
+import Titulo7 from "./sections/Titulo7";
+import Capitulo7 from "./sections/capitulo7";
+
 import Personajes from "./sections/Personajes";
+
+import Footer from "./sections/footer";
 
 const variants = {
   initial: (direction) => ({
@@ -26,14 +46,66 @@ const transition = {
   ease: [0.25, 0.8, 0.25, 1],
 };
 
-function Home() {
+function Home({ showFooter }) {
   return (
     <div style={{ width: "100%", minHeight: "100dvh" }}>
-      <NavBar />
-      <Titulo1 />
-      <Jason />
-      <Titulo2 />
-      <Lucia />
+      <section id="titulo1">
+        <Titulo1 />
+      </section>
+
+      <section id="capitulo1">
+        <Capitulo1 />
+      </section>
+
+      <section id="titulo2">
+        <Titulo2 />
+      </section>
+
+      <section id="capitulo2">
+        <Capitulo2 />
+      </section>
+
+      <section id="titulo3">
+        <Titulo3 />
+      </section>
+
+      <section id="capitulo3">
+        <Capitulo3 />
+      </section>
+
+      <section id="titulo4">
+        <Titulo4 />
+      </section>
+
+      <section id="capitulo4">
+        <Capitulo4 />
+      </section>
+
+      <section id="titulo5">
+        <Titulo5 />
+      </section>
+
+      <section id="capitulo5">
+        <Capitulo5 />
+      </section>
+
+      <section id="titulo6">
+        <Titulo6 />
+      </section>
+
+      <section id="capitulo6">
+        <Capitulo6 />
+      </section>
+
+      <section id="titulo7">
+        <Titulo7 />
+      </section>
+
+      <section id="capitulo7">
+        <Capitulo7 />
+      </section>
+
+      {showFooter && <Footer />}
     </div>
   );
 }
@@ -41,10 +113,11 @@ function Home() {
 function AnimatedRoutes() {
   const location = useLocation();
   const direction = location.state?.direction ?? 1;
+  const isPersonajes = location.pathname === "/personajes";
 
   return (
     <div style={{ position: "relative", width: "100%", minHeight: "100dvh", overflowX: "hidden" }}>
-      <Home />
+      <Home showFooter={!isPersonajes} />
 
       <AnimatePresence mode="sync" initial={false} custom={direction}>
         {location.pathname === "/personajes" && (
@@ -61,8 +134,9 @@ function AnimatedRoutes() {
               inset: 0,
               width: "100%",
               height: "100dvh",
-              overflowY: "auto",
+              overflowY: "scroll",
               overflowX: "hidden",
+              overscrollBehavior: "contain",
               background: "#fff",
               zIndex: 9999,
               WebkitOverflowScrolling: "touch",

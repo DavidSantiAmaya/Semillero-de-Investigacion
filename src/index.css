@@ -253,6 +253,61 @@ main {
   -webkit-mask-size: 500000%;
 }
 
+.mask-wrapper3 {
+  mask-image: url("/images/Titulos/Titulo3.svg");
+  -webkit-mask-image: url("/images/Titulos/Titulo3.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  -webkit-mask-position: 50% 50%;
+  mask-size: 500000%;
+  -webkit-mask-size: 500000%;
+}
+
+.mask-wrapper4 {
+  mask-image: url("/images/Titulos/Titulo4.svg");
+  -webkit-mask-image: url("/images/Titulos/Titulo4.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  -webkit-mask-position: 50% 50%;
+  mask-size: 500000%;
+  -webkit-mask-size: 500000%;
+}
+
+.mask-wrapper5 {
+  mask-image: url("/images/Titulos/Titulo5.svg");
+  -webkit-mask-image: url("/images/Titulos/Titulo5.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  -webkit-mask-position: 50% 50%;
+  mask-size: 500000%;
+  -webkit-mask-size: 500000%;
+}
+
+.mask-wrapper6 {
+  mask-image: url("/images/Titulos/Titulo6.svg");
+  -webkit-mask-image: url("/images/Titulos/Titulo6.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  -webkit-mask-position: 50% 50%;
+  mask-size: 500000%;
+  -webkit-mask-size: 500000%;
+}
+
+.mask-wrapper7 {
+  mask-image: url("/images/Titulos/Titulo7.svg");
+  -webkit-mask-image: url("/images/Titulos/Titulo7.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  -webkit-mask-position: 50% 50%;
+  mask-size: 500000%;
+  -webkit-mask-size: 500000%;
+}
+
 .animated-gradient-bg {
   background: linear-gradient(135deg, #1e2a52 0%, #6e4b91 100%);
 }
