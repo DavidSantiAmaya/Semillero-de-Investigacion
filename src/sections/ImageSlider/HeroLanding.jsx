@@ -1,73 +1,50 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./HeroLanding.module.css";
 
+const CARD_TRANSITION = {
+  type: "spring",
+  stiffness: 130,
+  damping: 24,
+  mass: 0.85,
+};
+
+const getCircularOffset = (index, current, total) => {
+  const half = total / 2;
+  return ((index - current + half + total) % total) - half;
+};
+
+const getCardState = (offset) => {
+  const side = Math.sign(offset);
+  const depth = Math.min(Math.abs(offset), 2);
+
+  return {
+    x: `${side * (depth === 1 ? 62 : 108)}%`,
+    z: depth === 0 ? 90 : depth === 1 ? -120 : -280,
+    rotateY: side * (depth === 1 ? -34 : -52),
+    rotateZ: side * (depth === 1 ? 1.5 : 3),
+    scale: depth === 0 ? 1 : depth === 1 ? 0.82 : 0.68,
+    opacity: depth === 0 ? 1 : depth === 1 ? 0.72 : 0,
+    filter: `blur(${depth === 2 ? 3 : 0}px)`,
+    zIndex: 10 - depth,
+  };
+};
+
 export default function HeroLanding({ slides = [] }) {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0);
-  const containerRef = useRef(null);
-
   const activeSlide = slides[current] ?? slides[0];
-  const prevIndex = (current - 1 + slides.length) % slides.length;
-  const nextIndex = (current + 1) % slides.length;
-  const prevSlide = slides[prevIndex] ?? slides[0];
-  const nextSlide = slides[nextIndex] ?? slides[0];
 
-  const paginate = useCallback((newDirection) => {
-    setDirection(newDirection);
-    setCurrent((prev) => {
-      if (newDirection > 0) {
-        return prev + 1 >= slides.length ? 0 : prev + 1;
-      }
-      return prev - 1 < 0 ? slides.length - 1 : prev - 1;
-    });
-  }, [slides.length]);
+  const paginate = useCallback(
+    (direction) => {
+      setCurrent((prev) => (prev + direction + slides.length) % slides.length);
+    },
+    [slides.length]
+  );
 
-  const slideVariants = {
-    enter: (dir) => ({
-      x: dir > 0 ? 1000 : -1000,
-      opacity: 0,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-    },
-    exit: (dir) => ({
-      zIndex: 0,
-      x: dir > 0 ? -1000 : 1000,
-      opacity: 0,
-    }),
-  };
-
-  const cardVariants = {
-    left: {
-      x: "-120%",
-      scale: 0.85,
-      opacity: 0.6,
-      zIndex: 1,
-    },
-    center: {
-      x: 0,
-      scale: 1,
-      opacity: 1,
-      zIndex: 3,
-    },
-    right: {
-      x: "120%",
-      scale: 0.85,
-      opacity: 0.6,
-      zIndex: 1,
-    },
-  };
-
-  if (!slides.length || !activeSlide) {
-    return null;
-  }
+  if (!slides.length || !activeSlide) return null;
 
   return (
-    <section className={styles.heroContainer} ref={containerRef}>
-      {/* Fondo cinematográfico dinámico */}
+    <section className={styles.heroContainer}>
       <div className={styles.backgroundLayer}>
         <AnimatePresence mode="wait">
           <motion.img
@@ -75,16 +52,15 @@ export default function HeroLanding({ slides = [] }) {
             src={activeSlide.background}
             alt={activeSlide.title}
             className={styles.backgroundImage}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           />
         </AnimatePresence>
         <div className={styles.backgroundOverlay} />
       </div>
 
-      {/* Barra decorativa superior */}
       <div className={styles.topBar}>
         <button className={styles.backButton} aria-label="Atrás">
           ←
@@ -94,9 +70,7 @@ export default function HeroLanding({ slides = [] }) {
         </div>
       </div>
 
-      {/* Contenido principal */}
       <div className={styles.mainContent}>
-        {/* Sección izquierda dinámica */}
         <div className={styles.leftSection}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -104,7 +78,7 @@ export default function HeroLanding({ slides = [] }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             >
               <h1 className={styles.mainTitle}>{activeSlide.title}</h1>
               <p className={styles.subtitle}>{activeSlide.subtitle}</p>
@@ -114,78 +88,54 @@ export default function HeroLanding({ slides = [] }) {
           </AnimatePresence>
         </div>
 
-        {/* Galería de tarjetas con carrusel de 3 visibles */}
         <div className={styles.rightSection}>
           <div className={styles.carouselContainer}>
-            <AnimatePresence mode="wait">
-              {/* Tarjeta anterior */}
-              <motion.div
-                key={`prev-${prevSlide.id}`}
-                variants={cardVariants}
-                initial="left"
-                animate="left"
-                exit="left"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={styles.carouselCard}
-              >
-                <div className={styles.cardImageWrapper}>
-                  <img
-                    src={prevSlide.image}
-                    alt={prevSlide.title}
-                    className={styles.cardImage}
-                  />
-                  <div className={styles.cardOverlay} />
-                  <div className={styles.cardBadge}>Boyacá</div>
-                </div>
-                <div className={styles.cardTitle}>{prevSlide.title}</div>
-              </motion.div>
+            {slides.map((slide, index) => {
+              const offset = getCircularOffset(index, current, slides.length);
+              const isActive = index === current;
 
-              {/* Tarjeta central (activa) */}
-              <motion.div
-                key={`center-${activeSlide.id}`}
-                variants={cardVariants}
-                initial="center"
-                animate="center"
-                exit="center"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={styles.carouselCard}
-              >
-                <div className={styles.cardImageWrapper}>
-                  <img
-                    src={activeSlide.image}
-                    alt={activeSlide.title}
-                    className={styles.cardImage}
-                  />
-                  <div className={styles.cardOverlay} />
-                  <div className={styles.cardBadge}>Boyacá</div>
-                </div>
-                <div className={styles.cardTitle}>{activeSlide.title}</div>
-              </motion.div>
+              if (Math.abs(offset) > 2) return null;
 
-              {/* Tarjeta siguiente */}
-              <motion.div
-                key={`next-${nextSlide.id}`}
-                variants={cardVariants}
-                initial="right"
-                animate="right"
-                exit="right"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={styles.carouselCard}
-              >
-                <div className={styles.cardImageWrapper}>
-                  <img
-                    src={nextSlide.image}
-                    alt={nextSlide.title}
-                    className={styles.cardImage}
-                  />
-                  <div className={styles.cardOverlay} />
-                  <div className={styles.cardBadge}>Boyacá</div>
-                </div>
-                <div className={styles.cardTitle}>{nextSlide.title}</div>
-              </motion.div>
-            </AnimatePresence>
+              return (
+                <motion.div
+                  key={slide.id}
+                  className={styles.carouselCard}
+                  animate={getCardState(offset)}
+                  initial={false}
+                  transition={CARD_TRANSITION}
+                  aria-hidden={!isActive}
+                >
+                  <motion.div
+                    className={styles.cardImageWrapper}
+                    animate={{ rotateY: isActive ? 0 : Math.sign(offset) * -6 }}
+                    transition={CARD_TRANSITION}
+                  >
+                    <motion.img
+                      src={slide.image}
+                      alt={slide.title}
+                      className={styles.cardImage}
+                      animate={{
+                        x: `${offset * -7}%`,
+                        scale: isActive ? 1.08 : 1.16,
+                      }}
+                      transition={CARD_TRANSITION}
+                    />
+                    <div className={styles.cardOverlay} />
+                    <div className={styles.cardGlow} />
+                    <div className={styles.cardBadge}>Boyacá</div>
+                  </motion.div>
 
-            {/* Controles de navegación */}
+                  <motion.div
+                    className={styles.cardTitle}
+                    animate={{ opacity: isActive ? 1 : 0.72, y: isActive ? 0 : -4 }}
+                    transition={CARD_TRANSITION}
+                  >
+                    {slide.title}
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+
             <button
               className={`${styles.navButton} ${styles.prevButton}`}
               onClick={() => paginate(-1)}
@@ -202,7 +152,6 @@ export default function HeroLanding({ slides = [] }) {
             </button>
           </div>
 
-          {/* Indicadores */}
           <div className={styles.indicators}>
             {slides.map((_, index) => (
               <button
@@ -210,10 +159,7 @@ export default function HeroLanding({ slides = [] }) {
                 className={`${styles.dot} ${
                   index === current ? styles.activeDot : ""
                 }`}
-                onClick={() => {
-                  setDirection(index > current ? 1 : -1);
-                  setCurrent(index);
-                }}
+                onClick={() => setCurrent(index)}
                 aria-label={`Ir a slide ${index + 1}`}
               />
             ))}
