@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import NavBar from "./sections/NavBar";
 
 import HeroLanding from "./sections/ImageSlider/HeroLanding";
-import heroLandingData from "./data/heroLandingData";
 
 import Titulo1 from "./sections/Titulo1";
 import Capitulo1 from "./sections/capitulo1";
@@ -28,8 +27,7 @@ import Titulo7 from "./sections/Titulo7";
 import Capitulo7 from "./sections/capitulo7";
 
 import Personajes from "./sections/Personajes";
-
-
+import Historia from "./sections/SectionHistory/History";
 
 import Footer from "./sections/footer";
 
@@ -51,12 +49,11 @@ const transition = {
   ease: [0.25, 0.8, 0.25, 1],
 };
 
+const MotionDiv = motion.div;
+
 function Home({ showFooter }) {
   return (
     <div style={{ width: "100%", minHeight: "100dvh" }}>
-      <section id="hero-landing">
-        <HeroLanding slides={heroLandingData} />
-      </section>
 
       <section id="titulo1">
         <Titulo1 />
@@ -122,38 +119,51 @@ function Home({ showFooter }) {
 function AnimatedRoutes() {
   const location = useLocation();
   const direction = location.state?.direction ?? 1;
-  const isPersonajes = location.pathname === "/personajes";
+  const hideFooter = [
+    "/hero",
+    "/historia",
+    "/personajes",
+  ].includes(location.pathname);
+  const pages = {
+    "/hero": <HeroLanding />,
+    "/historia": <Historia />,
+    "/personajes": <Personajes />,
+  };
+
+  const CurrentPage = pages[location.pathname];
+  const pageStyle = {
+    position: "fixed",
+    inset: 0,
+    zIndex: 50,
+    minHeight: "100dvh",
+    overflowY: "auto",
+  };
 
   return (
-    <div style={{ position: "relative", width: "100%", minHeight: "100dvh", overflowX: "hidden" }}>
-      <Home showFooter={!isPersonajes} />
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        minHeight: "100dvh",
+        overflowX: "hidden",
+      }}
+    >
+      <Home showFooter={!hideFooter} />
 
       <AnimatePresence mode="sync" initial={false} custom={direction}>
-        {location.pathname === "/personajes" && (
-          <motion.div
-            key="personajes"
+        {CurrentPage && (
+          <MotionDiv
+            key={location.pathname}
             custom={direction}
             variants={variants}
             initial="initial"
             animate="animate"
             exit="exit"
             transition={transition}
-            style={{
-              position: "fixed",
-              inset: 0,
-              width: "100%",
-              height: "100dvh",
-              overflowY: "scroll",
-              overflowX: "hidden",
-              overscrollBehavior: "contain",
-              background: "#fff",
-              zIndex: 9999,
-              WebkitOverflowScrolling: "touch",
-              willChange: "transform",
-            }}
+            style={pageStyle}
           >
-            <Personajes />
-          </motion.div>
+            {CurrentPage}
+          </MotionDiv>
         )}
       </AnimatePresence>
     </div>

@@ -51,6 +51,7 @@ export default function Personajes() {
         personajeActivo={personajeActivo}
         onSelect={setPersonajeActivo}
       />
+
     </main>
   );
 }

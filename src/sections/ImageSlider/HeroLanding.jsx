@@ -1,6 +1,8 @@
 import { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./HeroLanding.module.css";
+import heroLandingData from "../../data/heroLandingData";
 
 const CARD_TRANSITION = {
   type: "spring",
@@ -8,6 +10,9 @@ const CARD_TRANSITION = {
   damping: 24,
   mass: 0.85,
 };
+
+const MotionDiv = motion.div;
+const MotionImg = motion.img;
 
 const getCircularOffset = (index, current, total) => {
   const half = total / 2;
@@ -30,12 +35,14 @@ const getCardState = (offset) => {
   };
 };
 
-export default function HeroLanding({ slides = [] }) {
+export default function HeroLanding({ slides = heroLandingData }) {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const activeSlide = slides[current] ?? slides[0];
 
   const paginate = useCallback(
     (direction) => {
+      if (!slides.length) return;
       setCurrent((prev) => (prev + direction + slides.length) % slides.length);
     },
     [slides.length]
@@ -47,7 +54,7 @@ export default function HeroLanding({ slides = [] }) {
     <section className={styles.heroContainer}>
       <div className={styles.backgroundLayer}>
         <AnimatePresence mode="wait">
-          <motion.img
+          <MotionImg
             key={activeSlide.id}
             src={activeSlide.background}
             alt={activeSlide.title}
@@ -62,7 +69,11 @@ export default function HeroLanding({ slides = [] }) {
       </div>
 
       <div className={styles.topBar}>
-        <button className={styles.backButton} aria-label="Atrás">
+        <button className={styles.backButton} aria-label="Atrás" onClick={() =>
+          navigate("/", {
+            state: { direction: -1 },
+          })
+        }>
           ←
         </button>
         <div className={styles.decorativeLine}>
@@ -73,7 +84,7 @@ export default function HeroLanding({ slides = [] }) {
       <div className={styles.mainContent}>
         <div className={styles.leftSection}>
           <AnimatePresence mode="wait">
-            <motion.div
+            <MotionDiv
               key={activeSlide.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -84,7 +95,7 @@ export default function HeroLanding({ slides = [] }) {
               <p className={styles.subtitle}>{activeSlide.subtitle}</p>
               <p className={styles.description}>{activeSlide.description}</p>
               <button className={styles.exploreButton}>Explorar</button>
-            </motion.div>
+            </MotionDiv>
           </AnimatePresence>
         </div>
 
@@ -97,7 +108,7 @@ export default function HeroLanding({ slides = [] }) {
               if (Math.abs(offset) > 2) return null;
 
               return (
-                <motion.div
+                <MotionDiv
                   key={slide.id}
                   className={styles.carouselCard}
                   animate={getCardState(offset)}
@@ -105,12 +116,12 @@ export default function HeroLanding({ slides = [] }) {
                   transition={CARD_TRANSITION}
                   aria-hidden={!isActive}
                 >
-                  <motion.div
+                  <MotionDiv
                     className={styles.cardImageWrapper}
                     animate={{ rotateY: isActive ? 0 : Math.sign(offset) * -6 }}
                     transition={CARD_TRANSITION}
                   >
-                    <motion.img
+                    <MotionImg
                       src={slide.image}
                       alt={slide.title}
                       className={styles.cardImage}
@@ -123,16 +134,16 @@ export default function HeroLanding({ slides = [] }) {
                     <div className={styles.cardOverlay} />
                     <div className={styles.cardGlow} />
                     <div className={styles.cardBadge}>Boyacá</div>
-                  </motion.div>
+                  </MotionDiv>
 
-                  <motion.div
+                  <MotionDiv
                     className={styles.cardTitle}
                     animate={{ opacity: isActive ? 1 : 0.72, y: isActive ? 0 : -4 }}
                     transition={CARD_TRANSITION}
                   >
                     {slide.title}
-                  </motion.div>
-                </motion.div>
+                  </MotionDiv>
+                </MotionDiv>
               );
             })}
 
@@ -156,9 +167,8 @@ export default function HeroLanding({ slides = [] }) {
             {slides.map((_, index) => (
               <button
                 key={index}
-                className={`${styles.dot} ${
-                  index === current ? styles.activeDot : ""
-                }`}
+                className={`${styles.dot} ${index === current ? styles.activeDot : ""
+                  }`}
                 onClick={() => setCurrent(index)}
                 aria-label={`Ir a slide ${index + 1}`}
               />
