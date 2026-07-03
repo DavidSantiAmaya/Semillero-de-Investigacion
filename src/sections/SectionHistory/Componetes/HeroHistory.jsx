@@ -85,6 +85,7 @@ export default function HeroHistory({ events = [] }) {
             <span>{activeEvent.date}</span>
             <strong>{activeEvent.place}</strong>
           </div>
+          
         </div>
 
         <div className="history-scene__detail">
