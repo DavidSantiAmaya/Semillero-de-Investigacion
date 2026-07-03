@@ -1,8 +1,9 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./HeroLanding.module.css";
 import heroLandingData from "../../data/heroLandingData";
+import { useContentIndexFromNavigation } from "../../utils/contentNavigation";
 
 const CARD_TRANSITION = {
   type: "spring",
@@ -37,8 +38,13 @@ const getCardState = (offset) => {
 
 export default function HeroLanding({ slides = heroLandingData }) {
   const navigate = useNavigate();
-  const [current, setCurrent] = useState(0);
+  const initialSlideIndex = useContentIndexFromNavigation(slides);
+  const [current, setCurrent] = useState(initialSlideIndex);
   const activeSlide = slides[current] ?? slides[0];
+
+  useEffect(() => {
+    setCurrent(initialSlideIndex);
+  }, [initialSlideIndex]);
 
   const paginate = useCallback(
     (direction) => {

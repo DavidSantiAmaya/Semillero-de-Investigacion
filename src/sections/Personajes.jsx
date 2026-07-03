@@ -8,12 +8,18 @@ import Accordion from "./SectionsPersonajes/Accordion";
 import NavBar from "../sections/NavBar";
 
 import { personajesData } from "../data/personajesData";
+import { useContentIndexFromNavigation } from "../utils/contentNavigation";
 
 export default function Personajes() {
   const navigate = useNavigate();
-  const [personajeActivo, setPersonajeActivo] = useState(0);
+  const initialPersonajeIndex = useContentIndexFromNavigation(personajesData);
+  const [personajeActivo, setPersonajeActivo] = useState(initialPersonajeIndex);
 
   const personaje = personajesData[personajeActivo];
+
+  useEffect(() => {
+    setPersonajeActivo(initialPersonajeIndex);
+  }, [initialPersonajeIndex]);
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;

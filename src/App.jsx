@@ -121,11 +121,13 @@ function AnimatedRoutes() {
   const direction = location.state?.direction ?? 1;
   const hideFooter = [
     "/hero",
+    "/lugares",
     "/historia",
     "/personajes",
   ].includes(location.pathname);
   const pages = {
     "/hero": <HeroLanding />,
+    "/lugares": <HeroLanding />,
     "/historia": <Historia />,
     "/personajes": <Personajes />,
   };

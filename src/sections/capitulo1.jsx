@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { navigateToContent } from "../utils/contentNavigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,22 +49,37 @@ const Jason = () => {
   }, []);
 
   const irAHero = () => {
-    navigate("/hero", {
-      state: { direction: 1 },
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 1,
+      direction: 1,
     });
   };
 
   const irAHistoria = () => {
-    navigate("/historia", {
-      state: { direction: 1 },
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "batalla-gameza",
+      direction: 1,
     });
   };
 
-  const irAPersonajes = () => {
-    navigate("/personajes", {
-      state: { direction: 1 },
+  const irAPersonajesbolivar = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "bolivar",
+      direction: 1,
     });
   };
+
+  const irAPersonajessantander = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "santander",
+      direction: 1,
+    });
+  };
+
 
 return (
   <section className="jason" ref={sectionRef}>
@@ -81,11 +97,11 @@ return (
         />
 
       </div>
-
-      <button
+      <div>
+        <button
         type="button"
         className="floating-button circle-button"
-        onClick={irAPersonajes}
+        onClick={irAPersonajesbolivar}
       >
         <img
           className="line-img"
@@ -98,6 +114,25 @@ return (
           alt="Ver personajes"
         />
       </button>
+
+      <button
+        type="button"
+        className="floating-button circle-button"
+        onClick={irAPersonajessantander}
+      >
+        <img
+          className="line-img"
+          src="/images/Botones/boton_Personajes_Linea.webp"
+          alt="Ver personajes"
+        />
+        <img
+          className="color-img"
+          src="/images/Botones/botones_Personajes_Color.webp"
+          alt="Ver personajes"
+        />
+      </button>
+      </div>
+      
       <button
         type="button"
         className="floating-button circle-button"

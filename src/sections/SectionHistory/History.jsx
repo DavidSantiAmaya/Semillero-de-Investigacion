@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import HeroHistory from "./Componetes/HeroHistory";
 import historyEvents from "./HistoryData/Historydata";
+import { useContentIndexFromNavigation } from "../../utils/contentNavigation";
 import "./History.css";
 
 export default function History() {
   const navigate = useNavigate();
+  const initialEventIndex = useContentIndexFromNavigation(historyEvents);
+
   return (
     <main className="history-page" aria-label="Historia de la Campaña Libertadora">
       <div className="back-button-container">
@@ -19,7 +22,7 @@ export default function History() {
           ←
         </button>
       </div>
-      <HeroHistory events={historyEvents} />
+      <HeroHistory events={historyEvents} initialIndex={initialEventIndex} />
     </main>
   );
 }

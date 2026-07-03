@@ -1,11 +1,18 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import "./HeroHistory.css";
 
-export default function HeroHistory({ events = [] }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+export default function HeroHistory({ events = [], initialIndex = 0 }) {
+  const [activeIndex, setActiveIndex] = useState(initialIndex);
   const [direction, setDirection] = useState(1);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const activeEvent = events[activeIndex];
+
+  useEffect(() => {
+    setActiveIndex((currentIndex) => {
+      setDirection(initialIndex >= currentIndex ? 1 : -1);
+      return initialIndex;
+    });
+  }, [initialIndex]);
 
   const nextIndex = useMemo(
     () => (activeIndex + 1) % Math.max(events.length, 1),
