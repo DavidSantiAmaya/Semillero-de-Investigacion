@@ -34,7 +34,7 @@ const Titulo2 = () => {
           trigger: heroRef.current,
           start: "top top",
           end: "+=400%",
-          scrub: 1.5,
+          scrub: 2,
           pin: true,
         },
       });
@@ -71,8 +71,6 @@ const Titulo2 = () => {
       <style>{`
         .hero-section {
           position: relative;
-          width: 100%;
-          height: 100vh;
           overflow: hidden;
           background: #ffffff;
         }
@@ -83,34 +81,7 @@ const Titulo2 = () => {
           position: relative;
           background: #ffffff;
         }
-
-        .content-inside {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding-top: 20vh;
-          will-change: transform, opacity;
-        }
-
-        .img-merge {
-          width: 100vw;
-          aspect-ratio: 16 / 9;
-          position: relative;
-          margin-bottom: 50px;
-        }
-
-        .img-merge img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 120%;
-          object-fit: cover;
-          display: block;
-        }
-
-
+       
       `}</style>
 
       <div className="mask-wrapper3">
@@ -118,12 +89,12 @@ const Titulo2 = () => {
           <div className="img-merge">
             <img
               className="line-img"
-              src="/images/ilustraciones/Ilustracion6.png"
+              src="/images/ilustraciones/Ilustracion6Linea.webp"
               alt="línea"
             />
             <img
               className="color-img"
-              src="/images/ilustraciones/Ilustracion6.png"
+              src="/images/ilustraciones/Ilustracion6Color.webp"
               alt="color"
             />
           </div>

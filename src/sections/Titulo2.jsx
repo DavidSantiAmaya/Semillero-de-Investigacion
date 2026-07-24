@@ -34,7 +34,7 @@ const Titulo2 = () => {
           trigger: heroRef.current,
           start: "top top",
           end: "+=400%",
-          scrub: 1.5,
+          scrub: 2,
           pin: true,
         },
       });

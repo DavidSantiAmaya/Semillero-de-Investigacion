@@ -42,12 +42,12 @@ const Lucia = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion17.png"
+            src="/images/ilustraciones/Ilustracion17Linea.webp"
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion17.png"
+            src="/images/ilustraciones/Ilustracion17Color.webp"
             alt="Ilustracion color"
           />
         </div>
@@ -58,12 +58,12 @@ const Lucia = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion18.png"
+            src="/images/ilustraciones/Ilustracion18Linea.webp"
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion18.png"
+            src="/images/ilustraciones/Ilustracion18Color.webp"
             alt="Ilustracion color"
           />
         </div>
@@ -74,12 +74,12 @@ const Lucia = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion19.png"
+            src="/images/ilustraciones/Ilustracion19Linea.webp"
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion19.png"
+            src="/images/ilustraciones/Ilustracion19Color.webp"
             alt="Ilustracion color"
           />
         </div>
