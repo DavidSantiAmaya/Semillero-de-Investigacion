@@ -1,8 +1,8 @@
 const heroLandingData = [
   {
     id: 1,
-    image: "/images/slider/slide1.jpg",
-    background: "/images/slider/paipa-background.jpg",
+    image: "/AssetsLugares/paipa-background.png",
+    background: "/AssetsLugares/paipa-background.png",
     title: "Paipa",
     subtitle: "Aguas termales y patrimonio",
     description:
@@ -10,8 +10,8 @@ const heroLandingData = [
   },
   {
     id: 2,
-    image: "/images/slider/slide2.jpg",
-    background: "/images/slider/gameza-background.jpg",
+    image: "/AssetsLugares/gameza-background.png",
+    background: "/AssetsLugares/gameza-background.png",
     title: "Gámeza",
     subtitle: "Primer combate estratégico",
     description:
@@ -19,8 +19,8 @@ const heroLandingData = [
   },
   {
     id: 3,
-    image: "/images/slider/slide3.jpg",
-    background: "/images/slider/topaga-background.jpg",
+    image: "/AssetsLugares/topaga-background.png",
+    background: "/AssetsLugares/topaga-background.png",
     title: "Tópaga",
     subtitle: "Victoria en la altura",
     description:
@@ -28,8 +28,8 @@ const heroLandingData = [
   },
   {
     id: 4,
-    image: "/images/slider/slide4.jpg",
-    background: "/images/slider/picacho-background.jpg",
+    image: "/AssetsLugares/pantano-de-vargas-background.png",
+    background: "/AssetsLugares/pantano-de-vargas-background.png",
     title: "Picacho",
     subtitle: "La ventaja estratégica",
     description:

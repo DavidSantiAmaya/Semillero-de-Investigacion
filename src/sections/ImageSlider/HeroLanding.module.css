@@ -28,7 +28,7 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.34) 0%,
+    rgba(12, 12, 12, 0.34) 0%,
     rgba(0, 0, 0, 0.16) 42%,
     rgba(0, 0, 0, 0.66) 100%
   );
@@ -43,9 +43,10 @@
   justify-content: center;
   gap: 2rem;
   width: fit-content;
-  margin: 0 auto;
+  margin-top: 25px;
+  margin-left: 65px;
   padding: 1rem 2rem;
-  background: rgba(248, 241, 229, 0.95);
+  background: rgba(245, 244, 242, 0.95);
   border-radius: 32px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
@@ -64,31 +65,13 @@
   width: 40px;
   height: 40px;
   background: transparent;
-  color: #5c3b1b;
+  color: #000000;
   font-size: 1.2rem;
   transition: transform 200ms ease;
 }
 
 .backButton:hover {
   transform: translateX(-4px);
-}
-
-.decorativeLine {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #8b6f47, transparent);
-}
-
-.decorator {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #c9a961;
 }
 
 .mainContent {
@@ -108,6 +91,10 @@
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
+  background: rgba(0, 0, 0, 0.945);
+  padding: 2rem;
+  border-radius: 32px;
+  
 }
 
 .mainTitle {
@@ -145,8 +132,8 @@
   padding: 0.9rem 2rem;
   border: 0;
   border-radius: 32px;
-  background: #f8f1e5;
-  color: #5c3b1b;
+  background: #fafaf9;
+  color: #000000;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -156,7 +143,7 @@
 }
 
 .exploreButton:hover {
-  background: #c9a961;
+  background: #f5f4f4;
   color: #ffffff;
   transform: scale(1.05);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
@@ -205,7 +192,7 @@
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.8);
   border-radius: 22px;
-  background: #e2c89d;
+  background: #fafaf9;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.42),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform-style: preserve-3d;
@@ -239,16 +226,6 @@
     linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.36) 100%);
 }
 
-.cardGlow {
-  background: linear-gradient(
-    115deg,
-    transparent 18%,
-    rgba(255, 255, 255, 0.34) 48%,
-    transparent 72%
-  );
-  mix-blend-mode: screen;
-  animation: softSweep 4.8s ease-in-out infinite;
-}
 
 .cardBadge {
   position: absolute;
@@ -256,7 +233,7 @@
   left: 12px;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.5);
+  background: #00000080;
   color: #f8f1e5;
   font-size: 0.75rem;
   font-weight: 700;
@@ -281,8 +258,8 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(248, 241, 229, 0.85);
-  color: #5c3b1b;
+  background: rgba(248, 248, 247, 0.85);
+  color: #070502;
   font-size: 1.3rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(8px);
@@ -291,7 +268,7 @@
 }
 
 .navButton:hover {
-  background: #c9a961;
+  background: #f8f8f7;
   color: #ffffff;
   transform: translateY(-50%) scale(1.1);
 }
@@ -315,20 +292,20 @@
   height: 10px;
   border: 0;
   border-radius: 50%;
-  background: rgba(248, 241, 229, 0.4);
+  background: rgba(250, 250, 249, 0.801);
   cursor: pointer;
   transition: width 300ms ease, background 300ms ease, box-shadow 300ms ease;
 }
 
 .dot:hover {
-  background: rgba(248, 241, 229, 0.7);
+  background: rgba(253, 253, 252, 0.7);
 }
 
 .activeDot {
   width: 28px;
   border-radius: 10px;
-  background: #c9a961;
-  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+  background: #000000;
+  box-shadow: 0 4px 12px rgba(248, 248, 248, 0.4);
 }
 
 @keyframes softSweep {

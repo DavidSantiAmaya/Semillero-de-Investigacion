@@ -30,7 +30,7 @@ const getCardState = (offset) => {
     rotateY: side * (depth === 1 ? -34 : -52),
     rotateZ: side * (depth === 1 ? 1.5 : 3),
     scale: depth === 0 ? 1 : depth === 1 ? 0.82 : 0.68,
-    opacity: depth === 0 ? 1 : depth === 1 ? 0.72 : 0,
+    opacity: depth === 0 ? 1 : depth === 1 ? 1 : 0,
     filter: `blur(${depth === 2 ? 3 : 0}px)`,
     zIndex: 10 - depth,
   };
@@ -65,10 +65,10 @@ export default function HeroLanding({ slides = heroLandingData }) {
             src={activeSlide.background}
             alt={activeSlide.title}
             className={styles.backgroundImage}
-            initial={{ opacity: 0, scale: 1.04 }}
+            initial={{ opacity: 1, scale: 1.04 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.02 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 1, scale: 1.04 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           />
         </AnimatePresence>
         <div className={styles.backgroundOverlay} />
@@ -82,9 +82,6 @@ export default function HeroLanding({ slides = heroLandingData }) {
         }>
           ←
         </button>
-        <div className={styles.decorativeLine}>
-          <span className={styles.decorator} />
-        </div>
       </div>
 
       <div className={styles.mainContent}>

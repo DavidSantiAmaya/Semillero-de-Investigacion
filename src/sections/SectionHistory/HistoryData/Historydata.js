@@ -5,8 +5,8 @@ const historyEvents = [
     title: "Campaña Libertadora",
     place: "Llanos, Andes y altiplano neogranadino",
     date: "1819",
-    image: "/images/ilustraciones/Ilustracion20.png",
-    thumbnail: "/images/ilustraciones/Ilustracion20.png",
+    image: "/AssetsHistoria/campana-libertadora.png",
+    thumbnail: "/AssetsHistoria/campana-libertadora.png",
     palette: "bronze",
     layout: "panorama",
     lead:
@@ -27,8 +27,8 @@ const historyEvents = [
     title: "Batalla de Gámeza",
     place: "Gámeza, Boyacá",
     date: "1819",
-    image: "/images/ilustraciones/Ilustracion21.png",
-    thumbnail: "/images/ilustraciones/Ilustracion21.png",
+    image: "/AssetsHistoria/batalla-gameza.png",
+    thumbnail: "/AssetsHistoria/batalla-gameza.png",
     palette: "emerald",
     layout: "split",
     lead:
@@ -49,8 +49,8 @@ const historyEvents = [
     title: "Batalla de Tópaga",
     place: "Tópaga, Boyacá",
     date: "1819",
-    image: "/images/ilustraciones/",
-    thumbnail: "/images/ilustraciones/",
+    image: "/AssetsHistoria/batalla-topaga.png",
+    thumbnail: "/AssetsHistoria/batalla-topaga.png",
     palette: "indigo",
     layout: "diagonal",
     lead:
@@ -68,11 +68,11 @@ const historyEvents = [
   {
     id: "puente-vargas",
     eyebrow: "25 de julio de 1819",
-    title: "Batalla del Puente de Vargas",
+    title: "Batalla del Puente de Boyacá",
     place: "Paipa, Boyacá",
     date: "1819",
-    image: "/images/ilustraciones/Ilustracion23.png",
-    thumbnail: "/images/ilustraciones/Ilustracion23.png",
+    image: "/AssetsHistoria/puente-vargas.png",
+    thumbnail: "/AssetsHistoria/puente-vargas.png",
     palette: "crimson",
     layout: "monument",
     lead:
