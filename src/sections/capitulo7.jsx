@@ -9,7 +9,7 @@ import { useGLTF } from "@react-three/drei";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const posicionFinal = { x: 0.35, y: -0.15, z: 0, rotacionY: Math.PI * 1.45, escala: 0.55 };
+const posicionFinal = { x: 0.35, y: -0.15, z: -1, rotacionY: Math.PI * 1.45, escala: 0.55 };
 
 function Modelo3D({ modeloRef }) {
   const { scene } = useGLTF("/Monumento.glb");
@@ -48,7 +48,7 @@ export default function Capitulo7() {
   useGSAP(
     () => {
       const contexto = gsap.context(() => {
-        const estado = { x: -0.45, y: 0.15, z: 0, rotacionY: -0.7, escala: 0.25 };
+        const estado = { x: -0.45, y: 0.15, z: -10, rotacionY: -0.7, escala: 0.25 };
         const actualizarModelo = () => {
           if (!modeloRef.current) return;
           modeloRef.current.position.set(estado.x, estado.y, estado.z);
