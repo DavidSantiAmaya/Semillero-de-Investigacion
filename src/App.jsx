@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 
 import NavBar from "./sections/NavBar";
 
@@ -24,7 +25,6 @@ import Titulo6 from "./sections/Titulo6";
 import Capitulo6 from "./sections/capitulo6";
 
 import Titulo7 from "./sections/Titulo7";
-import Capitulo7 from "./sections/capitulo7";
 
 import Personajes from "./sections/Personajes";
 import Historia from "./sections/SectionHistory/History";
@@ -50,6 +50,44 @@ const transition = {
 };
 
 const MotionDiv = motion.div;
+const Capitulo7 = lazy(() => import("./sections/capitulo7"));
+
+function Capitulo7Diferido() {
+  const seccionRef = useRef(null);
+  const [debeCargar, setDebeCargar] = useState(false);
+
+  useEffect(() => {
+    const seccion = seccionRef.current;
+    if (!seccion || !("IntersectionObserver" in window)) {
+      setDebeCargar(true);
+      return undefined;
+    }
+
+    const observador = new IntersectionObserver(
+      ([entrada]) => {
+        if (!entrada.isIntersecting) return;
+        setDebeCargar(true);
+        observador.disconnect();
+      },
+      { rootMargin: "1500px 0px" },
+    );
+
+    observador.observe(seccion);
+    return () => observador.disconnect();
+  }, []);
+
+  return (
+    <section ref={seccionRef} id="capitulo7" style={{ minHeight: "400svh" }}>
+      {debeCargar ? (
+        <Suspense fallback={<div className="capitulo7-carga" aria-label="Cargando modelo 3D" />}>
+          <Capitulo7 />
+        </Suspense>
+      ) : (
+        <div className="capitulo7-carga" aria-hidden="true" />
+      )}
+    </section>
+  );
+}
 
 function Home({ showFooter }) {
   return (
@@ -107,9 +145,7 @@ function Home({ showFooter }) {
         <Titulo7 />
       </section>
 
-      <section id="capitulo7">
-        <Capitulo7 />
-      </section>
+      <Capitulo7Diferido />
 
       {showFooter && <Footer />}
     </div>

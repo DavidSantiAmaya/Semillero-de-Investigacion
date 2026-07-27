@@ -1,13 +1,15 @@
 .capitulo7-escena {
   position: relative;
-  height: 320dvh;
+  height: 400svh;
   background: #fff;
 }
 
 .capitulo7-lienzo {
   position: relative;
+  z-index: 1;
   width: 100%;
-  height: 100dvh;
+  height: 100svh;
+  min-height: 100svh;
   overflow: hidden;
   background: #fff;
 }
@@ -16,41 +18,41 @@
   touch-action: none;
 }
 
+.capitulo7-textos {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .capitulo7-copy {
   position: absolute;
   top: clamp(2rem, 9vh, 7rem);
   left: clamp(1.25rem, 7vw, 8rem);
-  width: min(25rem, 62vw);
-  color: #2e2119;
-  pointer-events: none;
-}
-
-.capitulo7-copy span {
-  color: #9b6231;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.capitulo7-copy h2 {
-  margin: 0.65rem 0;
-  font-family: "Long", Georgia, serif;
-  font-size: clamp(2.25rem, 5vw, 5.5rem);
-  font-weight: 400;
-  line-height: 0.94;
-}
-
-.capitulo7-copy p {
+  width: min(31rem, 40vw);
   margin: 0;
-  font-size: 1rem;
+  color: #2e2119;
+  font-family: "Long", Georgia, serif;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  line-height: 1.45;
+}
+
+.capitulo7-copy--derecha {
+  right: clamp(1.25rem, 7vw, 8rem);
+  left: auto;
+  text-align: right;
+}
+
+.capitulo7-carga {
+  min-height: 400svh;
+  background: #fff;
 }
 
 .capitulo7-inspeccionar {
   position: absolute;
   right: clamp(1.25rem, 7vw, 8rem);
   bottom: clamp(1.5rem, 7vh, 5rem);
-  z-index: 2;
+  z-index: 3;
   padding: 0.85rem 1.35rem;
   border: 1px solid #2e2119;
   border-radius: 999px;
@@ -76,9 +78,19 @@
   background: #fff;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
   .capitulo7-copy {
     top: 2rem;
     width: calc(100% - 2.5rem);
+  }
+
+  .capitulo7-copy--derecha {
+    right: 1.25rem;
+    left: auto;
+  }
+
+  .capitulo7-inspeccionar {
+    right: 1.25rem;
+    bottom: 1.5rem;
   }
 }
