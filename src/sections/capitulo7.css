@@ -1,0 +1,84 @@
+.capitulo7-escena {
+  position: relative;
+  height: 320dvh;
+  background: #fff;
+}
+
+.capitulo7-lienzo {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: #fff;
+}
+
+.capitulo7-lienzo canvas {
+  touch-action: none;
+}
+
+.capitulo7-copy {
+  position: absolute;
+  top: clamp(2rem, 9vh, 7rem);
+  left: clamp(1.25rem, 7vw, 8rem);
+  width: min(25rem, 62vw);
+  color: #2e2119;
+  pointer-events: none;
+}
+
+.capitulo7-copy span {
+  color: #9b6231;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.capitulo7-copy h2 {
+  margin: 0.65rem 0;
+  font-family: "Long", Georgia, serif;
+  font-size: clamp(2.25rem, 5vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.94;
+}
+
+.capitulo7-copy p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.capitulo7-inspeccionar {
+  position: absolute;
+  right: clamp(1.25rem, 7vw, 8rem);
+  bottom: clamp(1.5rem, 7vh, 5rem);
+  z-index: 2;
+  padding: 0.85rem 1.35rem;
+  border: 1px solid #2e2119;
+  border-radius: 999px;
+  color: #fff;
+  background: #2e2119;
+  cursor: pointer;
+  font: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.capitulo7-inspeccionar[data-visible="true"] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.capitulo7-inspeccionar:hover,
+.capitulo7-inspeccionar:focus-visible {
+  color: #2e2119;
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .capitulo7-copy {
+    top: 2rem;
+    width: calc(100% - 2.5rem);
+  }
+}

@@ -38,30 +38,6 @@ export const personajesData = [
           backText:
             "El liderazgo de Bolívar permitió mantener la resistencia del Ejército Libertador cuando la batalla parecía inclinarse a favor de los realistas.",
         },
-        {
-          id: 3,
-          year: "1819",
-          title: "¡Coronel, salve usted la patria!",
-          image: img("bolivar", "card3.png"),
-          frontLabel: "Momento decisivo",
-          frontText:
-            "Bolívar ordenó la carga de los lanceros dirigidos por Juan José Rondón, una acción que cambió el rumbo de la batalla.",
-          backTitle: "La carga de Rondón",
-          backText:
-            "La valiente carga de catorce lanceros rompió las líneas realistas y permitió que el Ejército Libertador recuperara la iniciativa en el combate.",
-        },
-        {
-          id: 4,
-          year: "7 AGO 1819",
-          title: "Hacia la victoria",
-          image: img("bolivar", "card4.png"),
-          frontLabel: "Después de Vargas",
-          frontText:
-            "La victoria estratégica en el Pantano de Vargas permitió continuar la campaña que culminó con el triunfo patriota en la Batalla de Boyacá.",
-          backTitle: "El camino a la independencia",
-          backText:
-            "El resultado obtenido en el Pantano de Vargas fortaleció al Ejército Libertador y abrió el camino hacia la independencia de la Nueva Granada.",
-        },
       ],
     },
 
@@ -109,30 +85,6 @@ export const personajesData = [
           backTitle: "Resistencia patriota",
           backText:
             "Su liderazgo permitió reorganizar las tropas en los momentos más difíciles del combate, ayudando a evitar la derrota del Ejército Libertador.",
-        },
-        {
-          id: 3,
-          year: "1819",
-          title: "Camino hacia Boyacá",
-          image: img("santander", "card3.png"),
-          frontLabel: "Después de Vargas",
-          frontText:
-            "Tras el Pantano de Vargas, Santander continuó la ofensiva patriota que culminó con la victoria en la Batalla de Boyacá el 7 de agosto de 1819.",
-          backTitle: "La victoria",
-          backText:
-            "El triunfo de Boyacá aseguró la independencia de la Nueva Granada y consolidó a Santander como uno de los principales líderes militares de la campaña.",
-        },
-        {
-          id: 4,
-          year: "1832",
-          title: "El Hombre de las Leyes",
-          image: img("santander", "card4.png"),
-          frontLabel: "Legado",
-          frontText:
-            "Como primer presidente constitucional de la República de la Nueva Granada, promovió la educación, la organización del Estado y el respeto por las leyes.",
-          backTitle: "Organizador de la República",
-          backText:
-            "Su legado trascendió el ámbito militar al fortalecer las instituciones republicanas y defender el Estado de derecho, convirtiéndose en una de las figuras más importantes de la historia de Colombia.",
         },
       ],
     },
@@ -182,30 +134,6 @@ export const personajesData = [
           backText:
             "El Batallón Rifles sostuvo intensos enfrentamientos contra las fuerzas realistas, contribuyendo a mantener la resistencia patriota durante la batalla.",
         },
-        {
-          id: 3,
-          year: "1819",
-          title: "Camino hacia Boyacá",
-          image: img("sandes", "card3.png"),
-          frontLabel: "La ofensiva",
-          frontText:
-            "Después del Pantano de Vargas, Sandes continuó participando en la Campaña Libertadora que culminó con la victoria en la Batalla de Boyacá.",
-          backTitle: "La independencia",
-          backText:
-            "La experiencia militar del Batallón Rifles fue fundamental para consolidar el avance del Ejército Libertador durante las etapas finales de la campaña.",
-        },
-        {
-          id: 4,
-          year: "Legado",
-          title: "General de la independencia",
-          image: img("sandes", "card4.png"),
-          frontLabel: "Reconocimiento histórico",
-          frontText:
-            "Arthur Sandes es recordado como uno de los militares extranjeros más destacados que lucharon por la independencia de la Nueva Granada y de otros territorios sudamericanos.",
-          backTitle: "Un legado internacional",
-          backText:
-            "Su liderazgo al frente del Batallón Rifles simboliza la participación de voluntarios europeos en las guerras de independencia y el carácter internacional de la causa libertadora.",
-        },
       ],
     },
 
@@ -253,30 +181,6 @@ export const personajesData = [
           backTitle: "La orden de Bolívar",
           backText:
             "La célebre frase «¡Coronel, salve usted la patria!» marcó el inicio de una de las acciones militares más recordadas de la independencia colombiana.",
-        },
-        {
-          id: 3,
-          year: "1819",
-          title: "La carga de los Catorce Lanceros",
-          image: img("rondon", "card3.png"),
-          frontLabel: "La victoria",
-          frontText:
-            "Rondón encabezó a catorce lanceros que atacaron con gran valentía a las tropas realistas, rompiendo sus líneas y cambiando el curso de la batalla.",
-          backTitle: "Una acción histórica",
-          backText:
-            "La carga permitió recuperar la iniciativa del Ejército Libertador y convirtió a Rondón en uno de los grandes héroes del Pantano de Vargas.",
-        },
-        {
-          id: 4,
-          year: "Legado",
-          title: "Héroe de la independencia",
-          image: img("rondon", "card4.png"),
-          frontLabel: "Reconocimiento",
-          frontText:
-            "La valentía de Juan José Rondón continúa siendo símbolo del coraje y del sacrificio de los soldados llaneros durante la independencia de Colombia.",
-          backTitle: "Un legado imborrable",
-          backText:
-            "Su liderazgo en la carga de los Catorce Lanceros permanece como uno de los hechos más representativos de la Batalla del Pantano de Vargas y de la Campaña Libertadora de 1819.",
         },
       ],
     },
@@ -331,32 +235,6 @@ export const personajesData = [
         backTitle: "Defensa de la Corona",
         backText:
           "Su misión era mantener el control español sobre los territorios de la Nueva Granada.",
-      },
-
-      {
-        id: 3,
-        year: "1819",
-        title: "Batalla de Boyacá",
-        image: img("barreiro", "card3.png"),
-        frontLabel: "Derrota realista",
-        frontText:
-          "Las fuerzas realistas fueron derrotadas por el Ejército Libertador.",
-        backTitle: "Captura",
-        backText:
-          "Tras la batalla fue capturado junto a varios oficiales españoles.",
-      },
-
-      {
-        id: 4,
-        year: "1819",
-        title: "Final de su historia",
-        image: img("barreiro", "card4.png"),
-        frontLabel: "Consecuencias",
-        frontText:
-          "La derrota de Boyacá abrió el camino para la independencia de la Nueva Granada.",
-        backTitle: "Legado histórico",
-        backText:
-          "Su figura representa el último esfuerzo militar de la Corona española por conservar el territorio.",
       },
     ],
   },
