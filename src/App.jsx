@@ -3,6 +3,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 
 import NavBar from "./sections/NavBar";
+import FloatingControls from "./sections/FloatingControls";
+import Loader from "./sections/Loader";
+import { AudioProvider } from "./audio/AudioProvider";
 
 import HeroLanding from "./sections/ImageSlider/HeroLanding";
 
@@ -26,10 +29,15 @@ import Capitulo6 from "./sections/capitulo6";
 
 import Titulo7 from "./sections/Titulo7";
 
+
+import Footer from "./sections/footer";
+
 import Personajes from "./sections/Personajes";
 import Historia from "./sections/SectionHistory/History";
 
-import Footer from "./sections/footer";
+import Encuesta from "./sections/Encuestas/Encuesta";
+
+
 
 const variants = {
   initial: (direction) => ({
@@ -147,6 +155,10 @@ function Home({ showFooter }) {
 
       <Capitulo7Diferido />
 
+       <section id="encuesta">
+        <Encuesta/>
+      </section>
+
       {showFooter && <Footer />}
     </div>
   );
@@ -204,6 +216,8 @@ function AnimatedRoutes() {
           </MotionDiv>
         )}
       </AnimatePresence>
+
+      <FloatingControls />
     </div>
   );
 }
@@ -211,9 +225,12 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<AnimatedRoutes />} />
-      </Routes>
+      <Loader />
+      <AudioProvider>
+        <Routes>
+          <Route path="*" element={<AnimatedRoutes />} />
+        </Routes>
+      </AudioProvider>
     </BrowserRouter>
   );
 }

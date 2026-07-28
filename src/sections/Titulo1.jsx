@@ -36,8 +36,8 @@ const Titulo1 = () => {
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
-          end: "+=200%",
-          scrub: 2.5,
+          end: "+=120%",
+          scrub: 0.6,
           pin: true,
         },
         defaults: { ease: "power1.inOut" },

@@ -25,7 +25,7 @@ const Jason = () => {
           trigger: section,
           start: "top 80%",
           end: "bottom 20%",
-          scrub: 2,
+          scrub: 0.6,
         },
         y: -60,
         ease: "none",
@@ -97,74 +97,95 @@ return (
         />
 
       </div>
-      <div>
+      <div className="button-row">
         <button
-        type="button"
-        className="floating-button circle-button"
-        onClick={irAPersonajesbolivar}
-      >
-        <img
-          className="line-img"
-          src="/images/Botones/boton_Personajes_Linea.webp"
-          alt="Ver personajes"
-        />
-        <img
-          className="color-img"
-          src="/images/Botones/botones_Personajes_Color.webp"
-          alt="Ver personajes"
-        />
-      </button>
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAPersonajesbolivar}
+          aria-label="Ver el perfil de Simón Bolívar"
+          title="Simón Bolívar"
+        >
+          <span className="floating-button-icon">
+            <img
+              className="line-img"
+              src="/images/Botones/boton_Personajes_Linea.webp"
+              alt=""
+            />
+            <img
+              className="color-img"
+              src="/images/Botones/botones_Personajes_Color.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Simón Bolívar</span>
+        </button>
 
-      <button
-        type="button"
-        className="floating-button circle-button"
-        onClick={irAPersonajessantander}
-      >
-        <img
-          className="line-img"
-          src="/images/Botones/boton_Personajes_Linea.webp"
-          alt="Ver personajes"
-        />
-        <img
-          className="color-img"
-          src="/images/Botones/botones_Personajes_Color.webp"
-          alt="Ver personajes"
-        />
-      </button>
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAPersonajessantander}
+          aria-label="Ver el perfil de Francisco de Paula Santander"
+          title="Francisco de Paula Santander"
+        >
+          <span className="floating-button-icon">
+            <img
+              className="line-img"
+              src="/images/Botones/boton_Personajes_Linea.webp"
+              alt=""
+            />
+            <img
+              className="color-img"
+              src="/images/Botones/botones_Personajes_Color.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Santander</span>
+        </button>
+
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAHero}
+          aria-label="Explorar el lugar de los hechos"
+          title="Explorar el lugar"
+        >
+          <span className="floating-button-icon">
+            <img
+              className="line-img"
+              src="/images/Botones/boton_Personajes_Linea.webp"
+              alt=""
+            />
+            <img
+              className="color-img"
+              src="/images/Botones/botones_Personajes_Color.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Explorar el lugar</span>
+        </button>
+
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAHistoria}
+          aria-label="Leer la historia de la batalla de Gámeza"
+          title="Batalla de Gámeza"
+        >
+          <span className="floating-button-icon">
+            <img
+              className="line-img"
+              src="/images/Botones/boton_Personajes_Linea.webp"
+              alt=""
+            />
+            <img
+              className="color-img"
+              src="/images/Botones/botones_Personajes_Color.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Batalla de Gámeza</span>
+        </button>
       </div>
-      
-      <button
-        type="button"
-        className="floating-button circle-button"
-        onClick={irAHero}
-      >
-        <img
-          className="line-img"
-          src="/images/Botones/boton_Personajes_Linea.webp"
-          alt="Ver personajes"
-        />
-        <img
-          className="color-img"
-          src="/images/Botones/botones_Personajes_Color.webp"
-          alt="Ver personajes"
-        />
-      </button>
-      <button
-        type="button"
-        className="floating-button circle-button"
-        onClick={irAHistoria}
-      >
-        <img
-          className="line-img"
-          src="/images/Botones/boton_Personajes_Linea.webp"
-          alt="Ver personajes"
-        />
-        <img
-          className="color-img"
-          src="/images/Botones/botones_Personajes_Color.webp"
-          alt="Ver personajes"
-        />
-      </button>
 
       <p className="story-text">
         En estas tierras de Boyacá, marcadas por el frío y el silencio de las

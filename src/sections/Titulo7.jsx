@@ -33,8 +33,8 @@ const Titulo2 = () => {
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
-          end: "+=400%",
-          scrub: 1.5,
+          end: "+=180%",
+          scrub: 0.6,
           pin: true,
         },
       });

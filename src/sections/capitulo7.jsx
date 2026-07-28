@@ -159,7 +159,7 @@ export default function Capitulo7() {
           trigger: seccionRef.current,
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 0.6,
           pin: lienzoRef.current,
           anticipatePin: 1,
           onEnterBack: () => {

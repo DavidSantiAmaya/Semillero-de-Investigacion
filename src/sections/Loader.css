@@ -1,0 +1,45 @@
+.app-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.app-loader-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.app-loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.app-loader-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2f6bff;
+}
+
+.app-loader-gif {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.app-loader-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #47474f;
+}

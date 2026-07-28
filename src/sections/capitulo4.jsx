@@ -14,7 +14,7 @@ const Lucia = () => {
           trigger: section,
           start: "top 80%",
           end: "bottom 20%",
-          scrub: 2,
+          scrub: 0.6,
         },
         y: -60,
         ease: "none",
