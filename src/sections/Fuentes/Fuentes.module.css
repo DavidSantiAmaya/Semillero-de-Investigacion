@@ -1,0 +1,330 @@
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  padding: var(--space-6) var(--space-4) var(--space-7);
+}
+
+.backButton {
+  position: fixed;
+  top: 28px;
+  left: 28px;
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.backButton:hover,
+.backButton:focus-visible {
+  transform: translateX(-3px);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  outline: none;
+}
+
+.header {
+  max-width: 760px;
+  margin: 0 auto var(--space-6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: var(--space-1) 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.layout {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(200px, 30%) 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* ---------- Índice lateral ---------- */
+.index {
+  position: sticky;
+  top: var(--space-5);
+}
+
+.indexList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border-strong);
+}
+
+.indexButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 0.25rem;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: none;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.indexButton:hover,
+.indexButton:focus-visible {
+  color: var(--color-ink);
+  padding-left: 0.6rem;
+  outline: none;
+}
+
+.indexIcon {
+  display: flex;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.indexLabel {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.indexNumber {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-ink-faint);
+}
+
+/* ---------- Columna de documentos ---------- */
+.documents {
+  min-width: 0;
+}
+
+.category {
+  scroll-margin-top: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.categoryHeading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.categoryIcon {
+  display: flex;
+  align-self: center;
+  color: var(--color-ink-soft);
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.categoryTag {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-ink-faint);
+}
+
+.rule {
+  margin: 0.6rem 0 var(--space-4);
+  height: 1px;
+  background: var(--color-border-strong);
+}
+
+/* ---------- Hoja de documento ---------- */
+.sheet {
+  padding-bottom: var(--space-5);
+}
+
+.sheetType {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.sheetTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-3);
+  line-height: 1.3;
+}
+
+.sheetMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-mono);
+}
+
+.sheetMetaItem dt {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.sheetMetaItem dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+}
+
+.sheetDescriptionLabel {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.sheetDescription {
+  margin: 0 0 var(--space-3);
+  max-width: 62ch;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+}
+
+.sheetLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0;
+  border-bottom: 1px solid var(--color-ink);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.sheetLink:hover,
+.sheetLink:focus-visible {
+  opacity: 0.6;
+  outline: none;
+}
+
+.sheetDivider {
+  margin-top: var(--space-5);
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ---------- Nota al pie ---------- */
+.footnote {
+  margin-top: var(--space-6);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-strong);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-faint);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .index {
+    position: static;
+  }
+
+  .indexList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: none;
+    gap: 0.4rem;
+  }
+
+  .indexButton {
+    width: auto;
+    border: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.4rem 0.7rem;
+  }
+
+  .indexButton:hover,
+  .indexButton:focus-visible {
+    padding-left: 0.7rem;
+  }
+
+  .indexNumber {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding: var(--space-5) var(--space-3) var(--space-6);
+  }
+
+  .backButton {
+    top: 16px;
+    left: 16px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .sheetMeta {
+    gap: var(--space-3);
+  }
+}

@@ -1,10 +1,5 @@
 /*=====================================================
-  1. IMPORTS
-=====================================================*/
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap");
-
-/*=====================================================
-  2. RESET
+  1. RESET
 =====================================================*/
 * {
   box-sizing: border-box;
@@ -12,25 +7,23 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top, #ffffff, #ffffff 36%),
-    #ffffff;
-  color: #111111;
-  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, var(--color-paper), var(--color-paper) 36%), var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
 }
 
 /*=====================================================
-  3. CONTENEDOR GENERAL
+  2. CONTENEDOR GENERAL
 =====================================================*/
 .bolivar-page {
   width: 100%;
   min-height: 100dvh;
-  padding: 32px;
+  padding: var(--space-5);
   overflow-x: hidden;
   overscroll-behavior: contain;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.9)),
-    #F3F3F3;
+    var(--color-paper-dim);
 }
 
 .bolivar-hero,
@@ -40,14 +33,14 @@ body {
 }
 
 /*=====================================================
-  4. HERO
+  3. HERO
 =====================================================*/
 .bolivar-hero {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 32px;
+  gap: var(--space-5);
   align-items: center;
-  padding: 16px 0 56px;
+  padding: var(--space-3) 0 var(--space-6);
 }
 
 .hero-copy {
@@ -55,26 +48,26 @@ body {
 }
 
 .kicker {
-  margin: 0 0 12px;
+  margin: 0 0 var(--space-2);
   text-transform: uppercase;
   letter-spacing: 0.28em;
   font-size: 0.76rem;
   font-weight: 700;
-  color: rgba(17, 17, 17, 0.68);
+  color: var(--color-ink-soft);
 }
 
 .hero-copy h1 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: clamp(3.4rem, 8vw, 6.4rem);
   line-height: 0.88;
-  letter-spacing: -0.05em;
-  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 .hero-copy h2 {
-  margin: 12px 0 18px;
-  font-family: "Playfair Display", serif;
+  margin: var(--space-2) 0 var(--space-3);
+  font-family: var(--font-display);
   font-size: clamp(1.6rem, 3vw, 2.3rem);
   line-height: 1.05;
   font-weight: 700;
@@ -89,32 +82,32 @@ body {
 }
 
 .hero-note {
-  margin: 14px 0 0;
+  margin: var(--space-2) 0 0;
   max-width: 620px;
   font-size: 0.96rem;
   line-height: 1.65;
-  color: rgba(17, 17, 17, 0.76);
+  color: var(--color-ink-soft);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
 }
 
 .hero-actions button {
   appearance: none;
   border: 0;
-  border-radius: 999px;
-  background: #111111;
-  color: #F3F3F3;
-  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  padding: 0.75rem 1.15rem;
   font: inherit;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .hero-actions button:hover {
@@ -140,11 +133,11 @@ body {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: var(--radius-xl);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
-  background: #1b1b1b;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-ink);
 }
 
 .front img {
@@ -152,23 +145,23 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: saturate(0.98) contrast(1.02);
+  filter: saturate(0) contrast(1.02);
 }
 
 .front-overlay {
   position: absolute;
   inset: auto 0 0 0;
-  padding: 24px 24px 22px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(197, 197, 197, 0));
-  color: #F3F3F3;
+  padding: var(--space-4) var(--space-4) 22px;
+  background: linear-gradient(to top, var(--color-overlay), rgba(150, 150, 150, 0));
+  color: var(--color-on-dark);
 }
 
 .year-badge {
   display: inline-flex;
   align-items: center;
   padding: 6px 10px;
-  margin-bottom: 12px;
-  border-radius: 999px;
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(8px);
   font-size: 0.78rem;
@@ -181,7 +174,7 @@ body {
 .back-panel h3,
 .detail-copy h3 {
   margin: 0 0 10px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: clamp(1.7rem, 3vw, 2.4rem);
   line-height: 1.02;
 }
@@ -204,19 +197,17 @@ body {
 
 .back {
   transform: rotateY(180deg);
-  padding: 26px;
+  padding: var(--space-4);
   display: flex;
   align-items: flex-end;
-  background:
-    radial-gradient(circle at top, rgba(255, 204, 128, 0.12), transparent 36%),
-    linear-gradient(135deg, #171717, #2c2c2c 62%, #151515);
-  color: #F3F3F3;
+  background: linear-gradient(135deg, #171717, #2c2c2c 62%, #151515);
+  color: var(--color-on-dark);
 }
 
 .back-panel {
   width: 100%;
-  border-radius: 24px;
-  padding: 22px;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -238,27 +229,27 @@ body {
 }
 
 .back-tip {
-  margin-top: 14px !important;
+  margin-top: var(--space-3) !important;
   opacity: 0.78;
 }
 
 /*=====================================================
-  5. ACCORDION
+  4. ACORDEÓN
 =====================================================*/
 .section-head {
-  margin-bottom: 16px;
+  margin-bottom: var(--space-3);
 }
 
 .section-head h2 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.05;
 }
 
 .accordion {
   display: flex;
-  gap: 12px;
+  gap: var(--space-2);
   height: 340px;
 }
 
@@ -267,14 +258,14 @@ body {
   flex: 1;
   min-width: 0;
   border: 0;
-  border-radius: 26px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background-size: cover;
   background-position: center;
   cursor: pointer;
   padding: 0;
-  transition: flex 0.45s ease, transform 0.45s ease;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  transition: flex 0.45s var(--ease-standard), transform var(--transition-base);
+  box-shadow: var(--shadow-md);
 }
 
 .accordion-item:hover {
@@ -300,12 +291,12 @@ body {
   right: 18px;
   bottom: 18px;
   z-index: 2;
-  color: #F3F3F3;
+  color: var(--color-on-dark);
 }
 
 .accordion-content h3 {
   margin: 0 0 6px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.45rem;
   line-height: 1.05;
 }
@@ -318,20 +309,20 @@ body {
 }
 
 /*=====================================================
-  6. DETAIL CARD
+  5. TARJETA DE DETALLE
 =====================================================*/
 .detail-card {
-  margin-top: 18px;
+  margin-top: var(--space-4);
   display: grid;
   grid-template-columns: 280px 1fr;
-  gap: 22px;
+  gap: var(--space-4);
   align-items: stretch;
-  padding: 18px;
-  border-radius: 28px;
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
   background: rgba(255, 255, 255, 0.42);
   border: 1px solid rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(10px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
 }
 
 .detail-card img {
@@ -339,7 +330,7 @@ body {
   height: 100%;
   min-height: 240px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius-md);
 }
 
 .detail-copy {
@@ -356,7 +347,7 @@ body {
 }
 
 /*=====================================================
-  7. BOTÓN REGRESAR
+  6. BOTÓN REGRESAR
 =====================================================*/
 .back-button {
   position: fixed;
@@ -366,22 +357,23 @@ body {
   height: 80px;
   border: none;
   border-radius: 50%;
-  background: #ffffff00;
-  color: rgb(0, 0, 0);
-  font-size: 65px;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 1.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 99999;
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-fast), background var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .back-button:hover {
-  transform: scale(1.08);
-  background: #000000;
-  color: #F3F3F3;
+  transform: translateX(-4px);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
 }
 
 .back-button-container {
@@ -391,16 +383,16 @@ body {
 }
 
 /*=====================================================
-  8. RESPONSIVE
+  7. RESPONSIVE
 =====================================================*/
 @media (max-width: 980px) {
   .bolivar-page {
-    padding: 18px;
+    padding: var(--space-3);
   }
 
   .bolivar-hero {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: var(--space-3);
   }
 
   .flip-stage {

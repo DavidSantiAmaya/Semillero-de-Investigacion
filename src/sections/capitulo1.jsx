@@ -151,13 +151,8 @@ return (
         >
           <span className="floating-button-icon">
             <img
-              className="line-img"
-              src="/images/Botones/boton_Personajes_Linea.webp"
-              alt=""
-            />
-            <img
               className="color-img"
-              src="/images/Botones/botones_Personajes_Color.webp"
+              src="/images/Botones/boton_de_irLugar.webp"
               alt=""
             />
           </span>
@@ -173,13 +168,8 @@ return (
         >
           <span className="floating-button-icon">
             <img
-              className="line-img"
-              src="/images/Botones/boton_Personajes_Linea.webp"
-              alt=""
-            />
-            <img
               className="color-img"
-              src="/images/Botones/botones_Personajes_Color.webp"
+              src="/images/Botones/botones_history.webp"
               alt=""
             />
           </span>

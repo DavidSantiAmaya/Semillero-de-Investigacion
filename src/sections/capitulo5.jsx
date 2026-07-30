@@ -47,7 +47,7 @@ const Lucia = () => {
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion14Color:webp"
+            src="/images/ilustraciones/Ilustracion14Color.webp"
             alt="Ilustracion color"
           />
         </div>

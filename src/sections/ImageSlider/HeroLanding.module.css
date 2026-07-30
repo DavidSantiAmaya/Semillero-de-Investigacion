@@ -21,6 +21,7 @@
   object-fit: cover;
   display: block;
   will-change: opacity, transform;
+  filter: grayscale(1);
 }
 
 .backgroundOverlay {
@@ -46,9 +47,9 @@
   margin-top: 25px;
   margin-left: 65px;
   padding: 1rem 2rem;
-  background: rgba(245, 244, 242, 0.95);
-  border-radius: 32px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  background: rgba(245, 245, 245, 0.95);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
   backdrop-filter: blur(10px);
 }
 
@@ -65,9 +66,9 @@
   width: 40px;
   height: 40px;
   background: transparent;
-  color: #000000;
+  color: var(--color-ink);
   font-size: 1.2rem;
-  transition: transform 200ms ease;
+  transition: transform var(--transition-fast);
 }
 
 .backButton:hover {
@@ -93,17 +94,16 @@
   gap: 1.5rem;
   background: rgba(0, 0, 0, 0.945);
   padding: 2rem;
-  border-radius: 32px;
-  
+  border-radius: var(--radius-xl);
 }
 
 .mainTitle {
   margin: 0;
   font-size: clamp(3.5rem, 8vw, 6rem);
-  font-family: "Long", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 700;
   line-height: 1;
-  color: #ffffff;
+  color: var(--color-paper);
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -120,7 +120,7 @@
   margin: 0;
   max-width: 38ch;
   color: rgba(255, 255, 255, 0.8);
-  font-family: "Long", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 0.95rem;
   line-height: 1.8;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -131,22 +131,22 @@
   margin-top: 0.5rem;
   padding: 0.9rem 2rem;
   border: 0;
-  border-radius: 32px;
-  background: #fafaf9;
-  color: #000000;
+  border-radius: var(--radius-pill);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 300ms ease, background 300ms ease, color 300ms ease,
-    box-shadow 300ms ease;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), background var(--transition-base),
+    color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .exploreButton:hover {
-  background: #f5f4f4;
-  color: #ffffff;
+  background: var(--color-ink);
+  color: var(--color-paper);
   transform: scale(1.05);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-lg);
 }
 
 .rightSection {
@@ -191,10 +191,9 @@
   height: 85%;
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.8);
-  border-radius: 22px;
-  background: #fafaf9;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.42),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-lg);
+  background: var(--color-paper);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform-style: preserve-3d;
   will-change: transform;
 }
@@ -206,6 +205,7 @@
   height: 100%;
   object-fit: cover;
   will-change: transform;
+  filter: grayscale(1);
 }
 
 .cardOverlay,
@@ -226,15 +226,14 @@
     linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.36) 100%);
 }
 
-
 .cardBadge {
   position: absolute;
   top: 12px;
   left: 12px;
   padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  background: #00000080;
-  color: #f8f1e5;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-paper-soft);
   font-size: 0.75rem;
   font-weight: 700;
   backdrop-filter: blur(8px);
@@ -242,8 +241,8 @@
 
 .cardTitle {
   padding: 0.6rem 0;
-  color: #f8f1e5;
-  font-family: "Long", Georgia, serif;
+  color: var(--color-paper-soft);
+  font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
   text-align: center;
@@ -258,18 +257,19 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(248, 248, 247, 0.85);
-  color: #070502;
+  background: rgba(244, 244, 242, 0.85);
+  color: var(--color-ink);
   font-size: 1.3rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
   transform: translateY(-50%);
-  transition: transform 300ms ease, background 300ms ease, color 300ms ease;
+  transition: transform var(--transition-base), background var(--transition-base),
+    color var(--transition-base);
 }
 
 .navButton:hover {
-  background: #f8f8f7;
-  color: #ffffff;
+  background: var(--color-ink);
+  color: var(--color-paper);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -292,20 +292,21 @@
   height: 10px;
   border: 0;
   border-radius: 50%;
-  background: rgba(250, 250, 249, 0.801);
+  background: rgba(200, 200, 200, 0.8);
   cursor: pointer;
-  transition: width 300ms ease, background 300ms ease, box-shadow 300ms ease;
+  transition: width var(--transition-base), background var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .dot:hover {
-  background: rgba(253, 253, 252, 0.7);
+  background: rgba(230, 230, 230, 0.85);
 }
 
 .activeDot {
   width: 28px;
   border-radius: 10px;
-  background: #000000;
-  box-shadow: 0 4px 12px rgba(248, 248, 248, 0.4);
+  background: var(--color-ink);
+  box-shadow: var(--shadow-sm);
 }
 
 @keyframes softSweep {

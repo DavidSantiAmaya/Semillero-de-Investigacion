@@ -36,6 +36,7 @@ import Personajes from "./sections/Personajes";
 import Historia from "./sections/SectionHistory/History";
 
 import Encuesta from "./sections/Encuestas/Encuesta";
+import Fuentes from "./sections/Fuentes/Fuentes";
 
 
 
@@ -172,12 +173,14 @@ function AnimatedRoutes() {
     "/lugares",
     "/historia",
     "/personajes",
+    "/fuentes",
   ].includes(location.pathname);
   const pages = {
     "/hero": <HeroLanding />,
     "/lugares": <HeroLanding />,
     "/historia": <Historia />,
     "/personajes": <Personajes />,
+    "/fuentes": <Fuentes />,
   };
 
   const CurrentPage = pages[location.pathname];

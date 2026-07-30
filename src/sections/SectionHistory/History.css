@@ -2,8 +2,8 @@
   width: 100%;
   min-height: 100dvh;
   overflow: hidden;
-  background: #100d0a;
-  color: #f5f3f1;
+  background: var(--color-ink);
+  color: var(--color-on-dark);
 }
 
 .history-page * {
