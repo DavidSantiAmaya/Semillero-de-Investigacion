@@ -2,10 +2,13 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { navigateToContent } from "../utils/contentNavigation";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Titulo2 = () => {
+  const navigate = useNavigate();
   const heroRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -66,6 +69,38 @@ const Titulo2 = () => {
     return () => ctx.revert();
   }, []);
 
+  const irAHero = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 1,
+      direction: 1,
+    });
+  };
+
+  const irAHistoria = () => {
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "batalla-gameza",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajesbolivar = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "bolivar",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajessantander = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "santander",
+      direction: 1,
+    });
+  };
+
   return (
     <section ref={heroRef} className="hero-section">
       <style>{`
@@ -100,8 +135,59 @@ const Titulo2 = () => {
           </div>
 
           <p className="story-text">
-            El ejército español comprobó que no se trataba solo de hombres agotados, sino de tropas capaces de rehacerse bajo el fuego. Esa tenacidad, sumada a la ayuda de campesinos que llevaron ropas y vituallas, permitió recomponer las filas patriotas. Con lo puesto y la moral a duras penas sostenida, la tropa marchó hacia Paipa no a celebrar, sino a reorganizarse y prepararse para el próximo choque con las fuerzas españolas.
+          A esa determinación se sumó el apoyo de campesinos y habitantes de la región, quienes aportaron alimentos, ropa, caballos y otros suministros que ayudaron a aliviar las necesidades más urgentes del ejército. Con recursos escasos, pero con la moral fortalecida, los patriotas continuaron su avance hacia Paipa para reorganizarse y prepararse sin saber el enfrentamiento que se aproximaba.
           </p>
+
+          <div className="button-row">
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAPersonajesbolivar}
+            aria-label="Ver el perfil de Simón Bolívar"
+            title="Simón Bolívar"
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-personajes.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Simón Bolívar</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHero}
+            aria-label="Explorar el lugar de los hechos"
+            title="Explorar el lugar"
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-lugares.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Explorar el lugar</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHistoria}
+            aria-label="Leer la historia de la batalla de Gámeza"
+            title="Batalla de Gámeza"
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-historia.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Batalla de Gámeza</span>
+          </button>
+        </div>
+
         </div>
       </div>
     </section>

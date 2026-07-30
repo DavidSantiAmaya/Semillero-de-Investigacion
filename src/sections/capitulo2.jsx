@@ -1,7 +1,13 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { navigateToContent } from "../utils/contentNavigation";
 
 const Lucia = () => {
+  const navigate = useNavigate();
+
   useGSAP(() => {
     const sections = gsap.utils.toArray(".img-merge")
 
@@ -37,23 +43,104 @@ const Lucia = () => {
     })
   })
 
+  const irAHero = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 1,
+      direction: 1,
+    });
+  };
+
+  const irAHistoria = () => {
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "batalla-gameza",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajesbolivar = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "bolivar",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajessantander = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "santander",
+      direction: 1,
+    });
+  };
+
   return (
-      <div className="img-box">
-        <div className="img-merge">
-          <img
-            className="line-img"
-            src="/images/ilustraciones/Ilustracion4Linea.webp"
-            alt="Ilustracion linea"
-          />
-          <img
-            className="color-img"
-            src="/images/ilustraciones/Ilustracion4Color.webp"
-            alt="Ilustracion color"
-          />
-        </div>
+    <div className="img-box">
+      <div className="img-merge">
+        <img
+          className="line-img"
+          src="/images/ilustraciones/Ilustracion4Linea.webp"
+          alt="Ilustracion linea"
+        />
+        <img
+          className="color-img"
+          src="/images/ilustraciones/Ilustracion4Color.webp"
+          alt="Ilustracion color"
+        />
+      </div>
+
+      <div className="button-row">
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAPersonajesbolivar}
+          aria-label="Ver el perfil de Simón Bolívar"
+          title="Simón Bolívar"
+        >
+          <span className="floating-button-icon">
+            <img
+              src="/images/Botones/boton-personajes.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Simón Bolívar</span>
+        </button>
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAHero}
+          aria-label="Explorar el lugar de los hechos"
+          title="Explorar el lugar"
+        >
+          <span className="floating-button-icon">
+            <img
+              src="/images/Botones/boton-lugares.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Explorar el lugar</span>
+        </button>
+
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAHistoria}
+          aria-label="Leer la historia de la batalla de Gámeza"
+          title="Batalla de Gámeza"
+        >
+          <span className="floating-button-icon">
+            <img
+              src="/images/Botones/boton-historia.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Batalla de Gámeza</span>
+        </button>
+      </div>
 
         <p className="story-text">
-          El mapa de la llanura de Paipa lo deja claro: las alturas dominan el valle. Quien controla los cerros puede sostener el fuego y castigar a quien intente ascender. Por eso Barreiro ubicó rápidamente sus tropas en las posiciones elevadas del Pantano de Vargas, con el fin de bloquear el paso de los patriotas. Desde el Picacho y el Cangrejo, vigila y espera.
+          La noche del 24 de julio de 1819 cayó sobre los campamentos con un silencio engañoso. Mientras los soldados descansaban, Simón Bolívar preparaba una maniobra decisiva: cruzar el río Chicamocha antes del amanecer utilizando las pocas balsas reunidas por los habitantes de la región. Su objetivo era sorprender al coronel José María Barreiro y obligarlo a combatir en condiciones desfavorables.
         </p>
         <div className="img-merge">
           <img
@@ -69,7 +156,7 @@ const Lucia = () => {
         </div>
 
         <p className="story-text">
-          En estas tierras de Boyacá, marcadas por el frío y el silencio de las montañas, vino a agotarse parte de la fatiga de la campaña libertadora. Tras los combates de Gámeza y Tópaga, las columnas patriotas avanzaron exhaustas: hombres helados, con los uniformes hechos jirones, algunos descalzos, pero firmes en su decisión de seguir adelante. No marchaban solo contra el enemigo, sino contra el cansancio y el hambre. Estas montañas no son un simple paisaje; son testigos del desgaste que precedió a la Batalla del Pantano de Vargas.
+          Al mismo tiempo, Barreiro seguía de cerca los movimientos patriotas. La tradición oral de Paipa sostiene que durante esos días utilizó la Casa de las Seis Ventanas como alojamiento o cuartel temporal. Aunque esta versión forma parte de la memoria histórica de la región y no está confirmada por los partes militares, continúa siendo uno de los relatos más representativos del patrimonio local.
         </p>
       </div>
   )

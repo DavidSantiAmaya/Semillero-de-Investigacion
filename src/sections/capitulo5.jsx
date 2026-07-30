@@ -1,7 +1,13 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { navigateToContent } from "../utils/contentNavigation";
 
 const Lucia = () => {
+  const navigate = useNavigate();
+
   useGSAP(() => {
     const sections = gsap.utils.toArray(".img-merge")
 
@@ -37,23 +43,135 @@ const Lucia = () => {
     })
   })
 
+  const irAHero = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 1,
+      direction: 1,
+    });
+  };
+
+  const irAHistoria = () => {
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "batalla-gameza",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajesbolivar = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "bolivar",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajessantander = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "santander",
+      direction: 1,
+    });
+  };
+
   return (
-      <div className="img-box">
-        <div className="img-merge">
-          <img
-            className="line-img"
-            src="/images/ilustraciones/Ilustracion14Linea.webp"
-            alt="Ilustracion linea"
-          />
-          <img
-            className="color-img"
-            src="/images/ilustraciones/Ilustracion14Color.webp"
-            alt="Ilustracion color"
-          />
-        </div>
+    <div className="img-box">
+      <div className="img-merge">
+        <img
+          className="line-img"
+          src="/images/ilustraciones/Ilustracion14Linea.webp"
+          alt="Ilustracion linea"
+        />
+        <img
+          className="color-img"
+          src="/images/ilustraciones/Ilustracion14Color.webp"
+          alt="Ilustracion color"
+        />
+      </div>
+
+      <div className="button-row">
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAPersonajesbolivar}
+          aria-label="Ver el perfil de Simón Bolívar"
+          title="Simón Bolívar"
+        >
+          <span className="floating-button-icon">
+            <img
+              className="line-img"
+              src="/images/Botones/boton_Personajes_Linea.webp"
+              alt=""
+            />
+            <img
+              className="color-img"
+              src="/images/Botones/botones_Personajes_Color.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Simón Bolívar</span>
+        </button>
+
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAPersonajessantander}
+          aria-label="Ver el perfil de Francisco de Paula Santander"
+          title="Francisco de Paula Santander"
+        >
+          <span className="floating-button-icon">
+            <img
+              className="line-img"
+              src="/images/Botones/boton_Personajes_Linea.webp"
+              alt=""
+            />
+            <img
+              className="color-img"
+              src="/images/Botones/botones_Personajes_Color.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Santander</span>
+        </button>
+
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAHero}
+          aria-label="Explorar el lugar de los hechos"
+          title="Explorar el lugar"
+        >
+          <span className="floating-button-icon">
+            <img
+              className="color-img"
+              src="/images/Botones/Boton_de_irLugar.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Explorar el lugar</span>
+        </button>
+
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAHistoria}
+          aria-label="Leer la historia de la batalla de Gámeza"
+          title="Batalla de Gámeza"
+        >
+          <span className="floating-button-icon">
+            <img
+              className="color-img"
+              src="/images/Botones/botones_history.webp"
+              alt=""
+            />
+          </span>
+          <span className="floating-button-label">Batalla de Gámeza</span>
+        </button>
+      </div>
 
         <p className="story-text">
-          El mapa de la llanura de Paipa lo deja claro: las alturas dominan el valle. Quien controla los cerros puede sostener el fuego y castigar a quien intente ascender. Por eso Barreiro ubicó rápidamente sus tropas en las posiciones elevadas del Pantano de Vargas, con el fin de bloquear el paso de los patriotas. Desde el Picacho y el Cangrejo, vigila y espera.
+          Al observar que los ataques de infantería no conseguían romper las posiciones enemigas, Bolívar tomó una decisión arriesgada. La tradición histórica atribuye a ese momento la célebre orden: «¡Coronel Rondón, salve usted la patria!». José Antonio Rondón respondió encabezando la carga de los lanceros llaneros desde el sector de Barital. Aunque la memoria popular recuerda a los catorce primeros lanceros que iniciaron la acometida, detrás de ellos avanzó el resto de la caballería patriota.
         </p>
         <div className="img-merge">
           <img
@@ -68,9 +186,7 @@ const Lucia = () => {
           />
         </div>
 
-        <p className="story-text">
-          En estas tierras de Boyacá, marcadas por el frío y el silencio de las montañas, vino a agotarse parte de la fatiga de la campaña libertadora. Tras los combates de Gámeza y Tópaga, las columnas patriotas avanzaron exhaustas: hombres helados, con los uniformes hechos jirones, algunos descalzos, pero firmes en su decisión de seguir adelante. No marchaban solo contra el enemigo, sino contra el cansancio y el hambre. Estas montañas no son un simple paisaje; son testigos del desgaste que precedió a la Batalla del Pantano de Vargas.
-        </p>
+        <p className="story-text">La carga sorprendió a las fuerzas realistas y abrió el espacio que la infantería necesitaba para continuar el ataque. Al mismo tiempo, otras unidades, entre ellas la Legión Británica y las tropas dirigidas por Lucas Carvajal, presionaron desde diferentes sectores del campo de batalla, obligando a Barreiro a combatir en varios frentes de manera simultánea.</p>
       </div>
   )
 }

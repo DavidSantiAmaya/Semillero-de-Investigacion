@@ -2,10 +2,13 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { navigateToContent } from "../utils/contentNavigation";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Titulo2 = () => {
+  const navigate = useNavigate();
   const heroRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -66,6 +69,38 @@ const Titulo2 = () => {
     return () => ctx.revert();
   }, []);
 
+const irAHero = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 1,
+      direction: 1,
+    });
+  };
+
+  const irAHistoria = () => {
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "batalla-gameza",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajesbolivar = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "bolivar",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajessantander = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "santander",
+      direction: 1,
+    });
+  };
+
   return (
     <section ref={heroRef} className="hero-section">
       <style>{`
@@ -99,8 +134,89 @@ const Titulo2 = () => {
           </div>
 
           <p className="story-text">
-            El ejército español comprobó que no se trataba solo de hombres agotados, sino de tropas capaces de rehacerse bajo el fuego. Esa tenacidad, sumada a la ayuda de campesinos que llevaron ropas y vituallas, permitió recomponer las filas patriotas. Con lo puesto y la moral a duras penas sostenida, la tropa marchó hacia Paipa no a celebrar, sino a reorganizarse y prepararse para el próximo choque con las fuerzas españolas.
+            El resultado fue un cambio progresivo en el desarrollo del combate. La victoria patriota no fue consecuencia de una sola carga heroica, sino de la combinación entre la decisión de Bolívar, la ofensiva de los lanceros, el avance coordinado de la infantería y el desgaste que ambos ejércitos habían sufrido durante toda la jornada.
           </p>
+
+<div className="button-row">
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAPersonajesbolivar}
+            aria-label="Ver el perfil de Simón Bolívar"
+            title="Simón Bolívar"
+          >
+            <span className="floating-button-icon">
+              <img
+                className="line-img"
+                src="/images/Botones/boton_Personajes_Linea.webp"
+                alt=""
+              />
+              <img
+                className="color-img"
+                src="/images/Botones/botones_Personajes_Color.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Simón Bolívar</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAPersonajessantander}
+            aria-label="Ver el perfil de Francisco de Paula Santander"
+            title="Francisco de Paula Santander"
+          >
+            <span className="floating-button-icon">
+              <img
+                className="line-img"
+                src="/images/Botones/boton_Personajes_Linea.webp"
+                alt=""
+              />
+              <img
+                className="color-img"
+                src="/images/Botones/botones_Personajes_Color.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Santander</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHero}
+            aria-label="Explorar el lugar de los hechos"
+            title="Explorar el lugar"
+          >
+            <span className="floating-button-icon">
+              <img
+                className="color-img"
+                src="/images/Botones/Boton_de_irLugar.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Explorar el lugar</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHistoria}
+            aria-label="Leer la historia de la batalla de Gámeza"
+            title="Batalla de Gámeza"
+          >
+            <span className="floating-button-icon">
+              <img
+                className="color-img"
+                src="/images/Botones/botones_history.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Batalla de Gámeza</span>
+          </button>
+        </div>
+
         </div>
       </div>
     </section>

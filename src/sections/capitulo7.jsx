@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { navigateToContent } from "../utils/contentNavigation";
 import "./capitulo7.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -95,6 +97,7 @@ function Modelo3D({ modeloRef, alCargar }) {
 }
 
 export default function Capitulo7() {
+  const navigate = useNavigate();
   const seccionRef = useRef(null);
   const lienzoRef = useRef(null);
   const modeloRef = useRef(null);
@@ -200,6 +203,38 @@ export default function Capitulo7() {
     { scope: seccionRef, dependencies: [actualizarModelo] },
   );
 
+  const irAHero = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 1,
+      direction: 1,
+    });
+  };
+
+  const irAHistoria = () => {
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "batalla-gameza",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajesbolivar = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "bolivar",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajessantander = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "santander",
+      direction: 1,
+    });
+  };
+
   const alternarInspeccion = () => {
     const siguienteEstado = !inspeccionando;
     setInspeccionando(siguienteEstado);
@@ -271,6 +306,85 @@ export default function Capitulo7() {
               {texto}
             </p>
           ))}
+        </div>
+        <div className="button-row">
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAPersonajesbolivar}
+            aria-label="Ver el perfil de Simón Bolívar"
+            title="Simón Bolívar"
+          >
+            <span className="floating-button-icon">
+              <img
+                className="line-img"
+                src="/images/Botones/boton_Personajes_Linea.webp"
+                alt=""
+              />
+              <img
+                className="color-img"
+                src="/images/Botones/botones_Personajes_Color.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Simón Bolívar</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAPersonajessantander}
+            aria-label="Ver el perfil de Francisco de Paula Santander"
+            title="Francisco de Paula Santander"
+          >
+            <span className="floating-button-icon">
+              <img
+                className="line-img"
+                src="/images/Botones/boton_Personajes_Linea.webp"
+                alt=""
+              />
+              <img
+                className="color-img"
+                src="/images/Botones/botones_Personajes_Color.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Santander</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHero}
+            aria-label="Explorar el lugar de los hechos"
+            title="Explorar el lugar"
+          >
+            <span className="floating-button-icon">
+              <img
+                className="color-img"
+                src="/images/Botones/Boton_de_irLugar.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Explorar el lugar</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHistoria}
+            aria-label="Leer la historia de la batalla de Gámeza"
+            title="Batalla de Gámeza"
+          >
+            <span className="floating-button-icon">
+              <img
+                className="color-img"
+                src="/images/Botones/botones_history.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Batalla de Gámeza</span>
+          </button>
         </div>
         <button className="capitulo7-inspeccionar" type="button" onClick={alternarInspeccion} aria-pressed={inspeccionando} data-visible={termino}>
           {inspeccionando ? "Volver a la escena" : "Inspeccionar"}
