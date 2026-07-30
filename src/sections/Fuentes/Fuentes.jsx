@@ -5,44 +5,30 @@ import { CATEGORIES } from "../../data/fuentesData";
 import styles from "./Fuentes.module.css";
 
 const ICONS = {
-  book: (
+  home: (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.4">
-      <path d="M4 5.2c2.2-.9 4.6-.9 7 0v13.6c-2.4-.9-4.8-.9-7 0V5.2Z" strokeLinejoin="round" />
-      <path d="M20 5.2c-2.2-.9-4.6-.9-7 0v13.6c2.4-.9 4.8-.9 7 0V5.2Z" strokeLinejoin="round" />
+      <path d="M4 11 12 4l8 7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5.5 9.5V20h13V9.5" strokeLinejoin="round" />
+      <path d="M9.5 20v-6h5v6" strokeLinejoin="round" />
     </svg>
   ),
-  archive: (
+  person: (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.4">
-      <rect x="3.5" y="4" width="17" height="4.2" strokeLinejoin="round" />
-      <path d="M4.5 8.2v10.5a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V8.2" />
-      <path d="M10 12h4" strokeLinecap="round" />
+      <circle cx="12" cy="8" r="3.6" />
+      <path d="M4.8 20c0.9-4 3.6-6.2 7.2-6.2S18.3 16 19.2 20" strokeLinecap="round" />
     </svg>
   ),
-  seal: (
+  map: (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.4">
-      <rect x="4" y="3.5" width="16" height="13" strokeLinejoin="round" />
-      <path d="M7 7h10M7 10h10M7 13h6" strokeLinecap="round" />
-      <circle cx="16.5" cy="17.5" r="3" />
-      <path d="M15 20.2 15.3 22.5 16.5 21.4 17.7 22.5 18 20.2" strokeLinejoin="round" />
+      <path d="M12 21s-6.5-5.7-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.3-6.5 11-6.5 11Z" strokeLinejoin="round" />
+      <circle cx="12" cy="10" r="2.2" />
     </svg>
   ),
-  article: (
+  scroll: (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.4">
-      <rect x="3.5" y="4.5" width="17" height="15" strokeLinejoin="round" />
-      <path d="M7 8.5h10M7 11.5h10M7 14.5h6" strokeLinecap="round" />
-    </svg>
-  ),
-  museum: (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.4">
-      <path d="M3 9 12 3.5 21 9" strokeLinejoin="round" />
-      <path d="M4.5 9v10M8.5 9v10M12 9v10M15.5 9v10M19.5 9v10" strokeLinecap="round" />
-      <path d="M3 19h18" strokeLinecap="round" />
-    </svg>
-  ),
-  digital: (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.4">
-      <rect x="3.5" y="5" width="17" height="11" rx="1" strokeLinejoin="round" />
-      <path d="M9 20h6M12 16v4" strokeLinecap="round" />
+      <path d="M6 4h11a2 2 0 0 1 2 2v11a2.5 2.5 0 0 1-2.5 2.5H8" strokeLinejoin="round" />
+      <path d="M6 4a2 2 0 0 0-2 2v12a2.5 2.5 0 0 0 2.5 2.5H17" strokeLinejoin="round" />
+      <path d="M9 9h7M9 12.5h7" strokeLinecap="round" />
     </svg>
   ),
   credits: (

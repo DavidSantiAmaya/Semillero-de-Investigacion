@@ -5,7 +5,6 @@ import "../Personajes.css";
 
 import Hero from "./SectionsPersonajes/Hero";
 import Accordion from "./SectionsPersonajes/Accordion";
-import NavBar from "../sections/NavBar";
 
 import { personajesData } from "../data/personajesData";
 import { useContentIndexFromNavigation } from "../utils/contentNavigation";
@@ -36,7 +35,6 @@ export default function Personajes() {
 
   return (
     <main className="bolivar-page">
-      <NavBar />
       <div className="back-button-container">
         <button
           className="back-button"

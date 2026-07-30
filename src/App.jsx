@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 
-import NavBar from "./sections/NavBar";
 import FloatingControls from "./sections/FloatingControls";
 import Loader from "./sections/Loader";
 import { AudioProvider } from "./audio/AudioProvider";

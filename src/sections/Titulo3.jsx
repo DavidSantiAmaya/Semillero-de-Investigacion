@@ -164,7 +164,6 @@ const Titulo2 = () => {
             >
               <span className="floating-button-icon">
                 <img
-                  className="color-img"
                   src="/images/Botones/boton-lugares.webp"
                   alt=""
                 />
@@ -181,7 +180,6 @@ const Titulo2 = () => {
             >
               <span className="floating-button-icon">
                 <img
-                  className="color-img"
                   src="/images/Botones/boton-historia.webp"
                   alt=""
                 />

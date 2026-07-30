@@ -116,7 +116,6 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              className="color-img"
               src="/images/Botones/boton-lugares.webp"
               alt=""
             />
@@ -133,7 +132,6 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              className="color-img"
               src="/images/Botones/boton-historia.webp"
               alt=""
             />
