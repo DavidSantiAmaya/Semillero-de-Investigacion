@@ -69,7 +69,7 @@ const Titulo2 = () => {
     return () => ctx.revert();
   }, []);
 
-const irAHero = () => {
+  const irAHero = () => {
     navigateToContent(navigate, {
       to: "/lugares",
       id: 1,
@@ -137,85 +137,55 @@ const irAHero = () => {
             El resultado fue un cambio progresivo en el desarrollo del combate. La victoria patriota no fue consecuencia de una sola carga heroica, sino de la combinación entre la decisión de Bolívar, la ofensiva de los lanceros, el avance coordinado de la infantería y el desgaste que ambos ejércitos habían sufrido durante toda la jornada.
           </p>
 
-<div className="button-row">
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAPersonajesbolivar}
-            aria-label="Ver el perfil de Simón Bolívar"
-            title="Simón Bolívar"
-          >
-            <span className="floating-button-icon">
-              <img
-                className="line-img"
-                src="/images/Botones/boton_Personajes_Linea.webp"
-                alt=""
-              />
-              <img
-                className="color-img"
-                src="/images/Botones/botones_Personajes_Color.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Simón Bolívar</span>
-          </button>
+          <div className="button-row">
+            <button
+              type="button"
+              className="floating-button circle-button"
+              onClick={irAPersonajesbolivar}
+              aria-label="Ver el perfil de Simón Bolívar"
+              title="Simón Bolívar"
+            >
+              <span className="floating-button-icon">
+                <img
+                  src="/images/Botones/boton-personajes.webp"
+                  alt=""
+                />
+              </span>
+              <span className="floating-button-label">Simón Bolívar</span>
+            </button>
 
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAPersonajessantander}
-            aria-label="Ver el perfil de Francisco de Paula Santander"
-            title="Francisco de Paula Santander"
-          >
-            <span className="floating-button-icon">
-              <img
-                className="line-img"
-                src="/images/Botones/boton_Personajes_Linea.webp"
-                alt=""
-              />
-              <img
-                className="color-img"
-                src="/images/Botones/botones_Personajes_Color.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Santander</span>
-          </button>
+            <button
+              type="button"
+              className="floating-button circle-button"
+              onClick={irAHero}
+              aria-label="Explorar el lugar de los hechos"
+              title="Explorar el lugar"
+            >
+              <span className="floating-button-icon">
+                <img
+                  src="/images/Botones/boton-lugares.webp"
+                  alt=""
+                />
+              </span>
+              <span className="floating-button-label">Explorar el lugar</span>
+            </button>
 
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHero}
-            aria-label="Explorar el lugar de los hechos"
-            title="Explorar el lugar"
-          >
-            <span className="floating-button-icon">
-              <img
-                className="color-img"
-                src="/images/Botones/Boton_de_irLugar.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Explorar el lugar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHistoria}
-            aria-label="Leer la historia de la batalla de Gámeza"
-            title="Batalla de Gámeza"
-          >
-            <span className="floating-button-icon">
-              <img
-                className="color-img"
-                src="/images/Botones/botones_history.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Batalla de Gámeza</span>
-          </button>
-        </div>
+            <button
+              type="button"
+              className="floating-button circle-button"
+              onClick={irAHistoria}
+              aria-label="Leer la historia de la batalla de Gámeza"
+              title="Batalla de Gámeza"
+            >
+              <span className="floating-button-icon">
+                <img
+                  src="/images/Botones/boton-historia.webp"
+                  alt=""
+                />
+              </span>
+              <span className="floating-button-label">Batalla de Gámeza</span>
+            </button>
+          </div>
 
         </div>
       </div>

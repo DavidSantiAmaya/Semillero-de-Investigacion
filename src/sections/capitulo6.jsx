@@ -100,39 +100,11 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              className="line-img"
-              src="/images/Botones/boton_Personajes_Linea.webp"
-              alt=""
-            />
-            <img
-              className="color-img"
-              src="/images/Botones/botones_Personajes_Color.webp"
+              src="/images/Botones/boton-personajes.webp"
               alt=""
             />
           </span>
           <span className="floating-button-label">Simón Bolívar</span>
-        </button>
-
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAPersonajessantander}
-          aria-label="Ver el perfil de Francisco de Paula Santander"
-          title="Francisco de Paula Santander"
-        >
-          <span className="floating-button-icon">
-            <img
-              className="line-img"
-              src="/images/Botones/boton_Personajes_Linea.webp"
-              alt=""
-            />
-            <img
-              className="color-img"
-              src="/images/Botones/botones_Personajes_Color.webp"
-              alt=""
-            />
-          </span>
-          <span className="floating-button-label">Santander</span>
         </button>
 
         <button
@@ -145,7 +117,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               className="color-img"
-              src="/images/Botones/Boton_de_irLugar.webp"
+              src="/images/Botones/boton-lugares.webp"
               alt=""
             />
           </span>
@@ -162,7 +134,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               className="color-img"
-              src="/images/Botones/botones_history.webp"
+              src="/images/Botones/boton-historia.webp"
               alt=""
             />
           </span>

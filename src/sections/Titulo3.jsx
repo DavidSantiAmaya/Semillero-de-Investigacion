@@ -70,36 +70,36 @@ const Titulo2 = () => {
   }, []);
 
   const irAHero = () => {
-      navigateToContent(navigate, {
-        to: "/lugares",
-        id: 1,
-        direction: 1,
-      });
-    };
-  
-    const irAHistoria = () => {
-      navigateToContent(navigate, {
-        to: "/historia",
-        id: "batalla-gameza",
-        direction: 1,
-      });
-    };
-  
-    const irAPersonajesbolivar = () => {
-      navigateToContent(navigate, {
-        to: "/personajes",
-        id: "bolivar",
-        direction: 1,
-      });
-    };
-  
-    const irAPersonajessantander = () => {
-      navigateToContent(navigate, {
-        to: "/personajes",
-        id: "santander",
-        direction: 1,
-      });
-    };
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 1,
+      direction: 1,
+    });
+  };
+
+  const irAHistoria = () => {
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "batalla-gameza",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajesbolivar = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "bolivar",
+      direction: 1,
+    });
+  };
+
+  const irAPersonajessantander = () => {
+    navigateToContent(navigate, {
+      to: "/personajes",
+      id: "santander",
+      direction: 1,
+    });
+  };
 
   return (
     <section ref={heroRef} className="hero-section">
@@ -138,85 +138,57 @@ const Titulo2 = () => {
             La maniobra de Bolívar fue descubierta por las avanzadas realistas, que informaron de inmediato a Barreiro. Comprendiendo el peligro, el comandante español reaccionó con rapidez y ocupó las alturas del Pantano de Vargas, donde el terreno le ofrecía una clara ventaja defensiva. Ante la pérdida del factor sorpresa, Bolívar abandonó el intento de cruzar el río y decidió presentar batalla
           </p>
 
-<div className="button-row">
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAPersonajesbolivar}
-            aria-label="Ver el perfil de Simón Bolívar"
-            title="Simón Bolívar"
-          >
-            <span className="floating-button-icon">
-              <img
-                className="line-img"
-                src="/images/Botones/boton_Personajes_Linea.webp"
-                alt=""
-              />
-              <img
-                className="color-img"
-                src="/images/Botones/botones_Personajes_Color.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Simón Bolívar</span>
-          </button>
+          <div className="button-row">
+            <button
+              type="button"
+              className="floating-button circle-button"
+              onClick={irAPersonajesbolivar}
+              aria-label="Ver el perfil de Simón Bolívar"
+              title="Simón Bolívar"
+            >
+              <span className="floating-button-icon">
+                <img
+                  src="/images/Botones/boton-personajes.webp"
+                  alt=""
+                />
+              </span>
+              <span className="floating-button-label">Simón Bolívar</span>
+            </button>
 
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAPersonajessantander}
-            aria-label="Ver el perfil de Francisco de Paula Santander"
-            title="Francisco de Paula Santander"
-          >
-            <span className="floating-button-icon">
-              <img
-                className="line-img"
-                src="/images/Botones/boton_Personajes_Linea.webp"
-                alt=""
-              />
-              <img
-                className="color-img"
-                src="/images/Botones/botones_Personajes_Color.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Santander</span>
-          </button>
+            <button
+              type="button"
+              className="floating-button circle-button"
+              onClick={irAHero}
+              aria-label="Explorar el lugar de los hechos"
+              title="Explorar el lugar"
+            >
+              <span className="floating-button-icon">
+                <img
+                  className="color-img"
+                  src="/images/Botones/boton-lugares.webp"
+                  alt=""
+                />
+              </span>
+              <span className="floating-button-label">Explorar el lugar</span>
+            </button>
 
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHero}
-            aria-label="Explorar el lugar de los hechos"
-            title="Explorar el lugar"
-          >
-            <span className="floating-button-icon">
-              <img
-                className="color-img"
-                src="/images/Botones/Boton_de_irLugar.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Explorar el lugar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHistoria}
-            aria-label="Leer la historia de la batalla de Gámeza"
-            title="Batalla de Gámeza"
-          >
-            <span className="floating-button-icon">
-              <img
-                className="color-img"
-                src="/images/Botones/botones_history.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Batalla de Gámeza</span>
-          </button>
-        </div>
+            <button
+              type="button"
+              className="floating-button circle-button"
+              onClick={irAHistoria}
+              aria-label="Leer la historia de la batalla de Gámeza"
+              title="Batalla de Gámeza"
+            >
+              <span className="floating-button-icon">
+                <img
+                  className="color-img"
+                  src="/images/Botones/boton-historia.webp"
+                  alt=""
+                />
+              </span>
+              <span className="floating-button-label">Batalla de Gámeza</span>
+            </button>
+          </div>
 
         </div>
       </div>
