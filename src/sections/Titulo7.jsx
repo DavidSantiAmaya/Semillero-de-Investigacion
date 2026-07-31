@@ -72,7 +72,7 @@ const Titulo2 = () => {
   const irAHero = () => {
     navigateToContent(navigate, {
       to: "/lugares",
-      id: 1,
+      id: 9,
       direction: 1,
     });
   };
@@ -80,26 +80,11 @@ const Titulo2 = () => {
   const irAHistoria = () => {
     navigateToContent(navigate, {
       to: "/historia",
-      id: "batalla-gameza",
+      id: "batalla-de-puente-de-boyaca",
       direction: 1,
     });
   };
 
-  const irAPersonajesbolivar = () => {
-    navigateToContent(navigate, {
-      to: "/personajes",
-      id: "bolivar",
-      direction: 1,
-    });
-  };
-
-  const irAPersonajessantander = () => {
-    navigateToContent(navigate, {
-      to: "/personajes",
-      id: "santander",
-      direction: 1,
-    });
-  };
 
   return (
     <section ref={heroRef} className="hero-section">
@@ -133,27 +118,8 @@ const Titulo2 = () => {
             />
           </div>
 
-          <p className="story-text">
-            Sin tiempo para una celebración prolongada, Bolívar reorganizó sus tropas y emprendió la marcha hacia Tunja. La victoria obtenida en el Pantano de Vargas permitió recuperar la iniciativa estratégica y abrió el camino hacia el enfrentamiento definitivo que, pocos días después, tendría lugar en el Puente de Boyacá.
-          </p>
-
-          <div className="button-row">
-            <button
-              type="button"
-              className="floating-button circle-button"
-              onClick={irAPersonajesbolivar}
-              aria-label="Ver el perfil de Simón Bolívar"
-              title="Simón Bolívar"
-            >
-              <span className="floating-button-icon">
-                <img
-                  src="/images/Botones/boton-personajes.webp"
-                  alt=""
-                />
-              </span>
-              <span className="floating-button-label">Simón Bolívar</span>
-            </button>
-
+<div className="button-row">
+            
             <button
               type="button"
               className="floating-button circle-button"
@@ -167,7 +133,7 @@ const Titulo2 = () => {
                   alt=""
                 />
               </span>
-              <span className="floating-button-label">Explorar el lugar</span>
+              <span className="floating-button-label">Puente de Boyacá</span>
             </button>
 
             <button
@@ -183,9 +149,13 @@ const Titulo2 = () => {
                   alt=""
                 />
               </span>
-              <span className="floating-button-label">Batalla de Gámeza</span>
+              <span className="floating-button-label">Batalla del pueste Boyacá</span>
             </button>
           </div>
+
+          <p className="story-text">
+            Sin tiempo para una celebración prolongada, Bolívar reorganizó sus tropas y emprendió la marcha hacia Tunja. La victoria obtenida en el Pantano de Vargas permitió recuperar la iniciativa estratégica y abrió el camino hacia el enfrentamiento definitivo que, pocos días después, tendría lugar en el Puente de Boyacá.
+          </p>
 
         </div>
       </div>

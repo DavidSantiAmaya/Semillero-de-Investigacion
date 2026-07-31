@@ -1,12 +1,81 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { navigateToContent } from "../utils/contentNavigation";
+import { useBackgroundAudio } from "../audio/AudioProvider";
+
+// Tema que suena cuando el párrafo de la carga de Rondón queda centrado en
+// pantalla, con fundido de entrada/salida en vez de un corte seco.
+const RONDON_TRACK = encodeURI("/audio/Coronel Rondón.mp3");
+const RONDON_FADE_MS = 1200;
+const RONDON_VOLUME = 0.55;
+
+function useRondonTheme(paragraphRef) {
+  const { enabled } = useBackgroundAudio();
+  const audioRef = useRef(null);
+  const fadeFrameRef = useRef(null);
+
+  useEffect(() => {
+    const audio = new Audio(RONDON_TRACK);
+    audio.loop = true;
+    audio.volume = 0;
+    audioRef.current = audio;
+    return () => {
+      cancelAnimationFrame(fadeFrameRef.current);
+      audio.pause();
+      audioRef.current = null;
+    };
+  }, []);
+
+  const fadeTo = useCallback((target, onDone) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    cancelAnimationFrame(fadeFrameRef.current);
+    const start = audio.volume;
+    const startTime = performance.now();
+
+    const step = (now) => {
+      const t = Math.min(1, (now - startTime) / RONDON_FADE_MS);
+      audio.volume = start + (target - start) * t;
+      if (t < 1) {
+        fadeFrameRef.current = requestAnimationFrame(step);
+      } else if (onDone) {
+        onDone();
+      }
+    };
+
+    fadeFrameRef.current = requestAnimationFrame(step);
+  }, []);
+
+  useEffect(() => {
+    const el = paragraphRef.current;
+    const audio = audioRef.current;
+    if (!el || !audio) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && enabled) {
+          audio.play().catch(() => {});
+          fadeTo(RONDON_VOLUME);
+        } else {
+          fadeTo(0, () => audio.pause());
+        }
+      },
+      // Solo se activa cuando el párrafo cruza la franja central de la pantalla.
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [paragraphRef, enabled, fadeTo]);
+}
 
 const Lucia = () => {
   const navigate = useNavigate();
+  const rondonRef = useRef(null);
+  useRondonTheme(rondonRef);
 
   useGSAP(() => {
     const sections = gsap.utils.toArray(".img-merge")
@@ -43,34 +112,10 @@ const Lucia = () => {
     })
   })
 
-  const irAHero = () => {
-    navigateToContent(navigate, {
-      to: "/lugares",
-      id: 1,
-      direction: 1,
-    });
-  };
-
-  const irAHistoria = () => {
-    navigateToContent(navigate, {
-      to: "/historia",
-      id: "batalla-gameza",
-      direction: 1,
-    });
-  };
-
-  const irAPersonajesbolivar = () => {
+  const irAPersonajes = () => {
     navigateToContent(navigate, {
       to: "/personajes",
-      id: "bolivar",
-      direction: 1,
-    });
-  };
-
-  const irAPersonajessantander = () => {
-    navigateToContent(navigate, {
-      to: "/personajes",
-      id: "santander",
+      id: "rondon",
       direction: 1,
     });
   };
@@ -94,7 +139,7 @@ const Lucia = () => {
         <button
           type="button"
           className="floating-button circle-button"
-          onClick={irAPersonajesbolivar}
+          onClick={irAPersonajes}
           aria-label="Ver el perfil de Simón Bolívar"
           title="Simón Bolívar"
         >
@@ -104,43 +149,11 @@ const Lucia = () => {
               alt=""
             />
           </span>
-          <span className="floating-button-label">Simón Bolívar</span>
-        </button>
-
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAHero}
-          aria-label="Explorar el lugar de los hechos"
-          title="Explorar el lugar"
-        >
-          <span className="floating-button-icon">
-            <img
-              src="/images/Botones/boton-lugares.webp"
-              alt=""
-            />
-          </span>
-          <span className="floating-button-label">Explorar el lugar</span>
-        </button>
-
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAHistoria}
-          aria-label="Leer la historia de la batalla de Gámeza"
-          title="Batalla de Gámeza"
-        >
-          <span className="floating-button-icon">
-            <img
-              src="/images/Botones/boton-historia.webp"
-              alt=""
-            />
-          </span>
-          <span className="floating-button-label">Batalla de Gámeza</span>
+          <span className="floating-button-label">Juan José Rondón</span>
         </button>
       </div>
 
-        <p className="story-text">
+        <p className="story-text" ref={rondonRef}>
           Al observar que los ataques de infantería no conseguían romper las posiciones enemigas, Bolívar tomó una decisión arriesgada. La tradición histórica atribuye a ese momento la célebre orden: «¡Coronel Rondón, salve usted la patria!». José Antonio Rondón respondió encabezando la carga de los lanceros llaneros desde el sector de Barital. Aunque la memoria popular recuerda a los catorce primeros lanceros que iniciaron la acometida, detrás de ellos avanzó el resto de la caballería patriota.
         </p>
         <div className="img-merge">

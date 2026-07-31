@@ -98,6 +98,7 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
+            src="/images/Botones/boton-personajes.webp"
             />
           </span>
           <span className="floating-button-label">José María Barreiro</span>

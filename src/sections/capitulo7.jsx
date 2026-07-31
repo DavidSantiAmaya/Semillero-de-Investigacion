@@ -42,7 +42,7 @@ const relatos = [
     visible: { x: "0vw", y: "0vh" },
     salida: { x: "0vw", y: "-160vh" },
     texto:
-      "En estas tierras de Boyacá, marcadas por el frío y el silencio de las montañas, vino a agotarse parte de la fatiga de la campaña libertadora. Tras los combates de Gámeza y Tópaga, las columnas patriotas avanzaron exhaustas: hombres helados, con los uniformes hechos jirones, algunos descalzos, pero firmes en su decisión de seguir adelante.",
+      "Pasamos ahora a otro tiempo: muchos años después, frente al Monumento de los Lanceros en este mismo lugar donde el estruendo de la guerra fue decisivo, y tras la retirada realista, el ejército patriota marchó por Tunja y se encontró por última vez con el enemigo en el puente de Boyacá, episodio que pertenece a otra historia que se contará después.",
   },
   {
     lado: "derecha",
@@ -50,7 +50,7 @@ const relatos = [
     visible: { x: "0vw", y: "0vh" },
     salida: { x: "0vw", y: "-160vh" },
     texto:
-      "No marchaban solo contra el enemigo, sino también contra el cansancio y el hambre. Cada paso por estas montañas exigía sostener la esperanza cuando el cuerpo ya no podía más. La campaña se abrió camino gracias a quienes decidieron no detenerse.",
+      "En este lugar quedó fija una memoria. Aquí se conmemora la carga y se nombra a Rondón y a los catorce lanceros que la tradición convirtió en símbolo. El monumento magnífica un instante y lo vuelve imagen: un gesto que, según la inscripción, salvó la patria. Pero la historia, es más amplia y compleja que una sola escena.",
   },
   {
     lado: "izquierda",
@@ -58,7 +58,7 @@ const relatos = [
     visible: { x: "0vw", y: "45vh" },
     salida: { x: "0vw", y: "-160vh" },
     texto:
-      "El paisaje conserva las huellas de ese tránsito. Los caminos, el frío y las pendientes recuerdan que la libertad no fue un instante aislado: fue una suma de esfuerzos, pérdidas y decisiones tomadas en medio de la incertidumbre.",
+      "«En este lugar se salvó la patria…». Recordar no es solo repetir un nombre, alzar una estatua o fijar una fecha, sino comprender la suma de decisiones, sacrificios y voluntades que hicieron posible la victoria.",
   },
   {
     lado: "derecha",
@@ -66,7 +66,7 @@ const relatos = [
     visible: { x: "0vw", y: "0vh" },
     salida: { x: "0vw", y: "-160vh" },
     texto:
-      "Estas montañas no son un simple escenario. Son testigos del desgaste que precedió a la Batalla del Pantano de Vargas y de la determinación con la que los patriotas continuaron hasta transformar el rumbo de la historia.",
+      "El relato termina donde empezó: frente a la piedra que recuerda. Aquí queda la valentía de Rondón y sus lanceros, pero también la memoria de todos los que lucharon. Eso es lo que el monumento intenta conservar, y lo que cada generación debe volver a preguntarse al mirarlo.",
   },
 ];
 
@@ -306,55 +306,6 @@ export default function Capitulo7() {
               {texto}
             </p>
           ))}
-        </div>
-        <div className="button-row">
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAPersonajesbolivar}
-            aria-label="Ver el perfil de Simón Bolívar"
-            title="Simón Bolívar"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-personajes.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Simón Bolívar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHero}
-            aria-label="Explorar el lugar de los hechos"
-            title="Explorar el lugar"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-lugares.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Explorar el lugar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHistoria}
-            aria-label="Leer la historia de la batalla de Gámeza"
-            title="Batalla de Gámeza"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-historia.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Batalla de Gámeza</span>
-          </button>
         </div>
         <button className="capitulo7-inspeccionar" type="button" onClick={alternarInspeccion} aria-pressed={inspeccionando} data-visible={termino}>
           {inspeccionando ? "Volver a la escena" : "Inspeccionar"}

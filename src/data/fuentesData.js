@@ -11,12 +11,85 @@ export const CATEGORIES = [
     icon: "home",
     items: [
       {
-        type: "Pendiente",
-        title: "[Fuente específica de la página principal]",
-        author: "[Autor o institución]",
+        type: "Libro académico",
+        title: "1819: Campaña de la Nueva Granada",
+        author: "Gutiérrez Ardila, D. (2019)",
+        year: "2019",
+        description:
+          "Estudio sobre el desarrollo militar y político de la Campaña Libertadora de 1819, que culminó en las batallas del Pantano de Vargas y Boyacá. Universidad Externado de Colombia.",
+        url: "https://club-lectura.uexternado.edu.co/wp-content/uploads/sites/46/2019/08/Lectura-Boyaca-1819-copymas.pdf",
+      },
+      {
+        type: "Libro de divulgación",
+        title: "Bicentenario de la Campaña Libertadora 1819-2019",
+        author: "Zuluaga Gil, R. / Academia Antioqueña de Historia",
+        year: "2019",
+        description:
+          "Folleto de divulgación educativa sobre los antecedentes de la independencia y la Campaña Libertadora, con énfasis en el aporte antioqueño y el general José María Córdova.",
+        url: "#",
+      },
+      {
+        type: "Revista académica",
+        title:
+          "Boletín de Historia y Antigüedades — Núms. 657, 658 y 659 (Sesquicentenario de la Campaña Libertadora)",
+        author: "Academia Colombiana de Historia",
+        year: "1969",
+        description:
+          "Edición conmemorativa del sesquicentenario de la Campaña Libertadora de 1819, con documentos primarios, proclamas de Bolívar y partes oficiales de las batallas del Pantano de Vargas y Boyacá.",
+        url: "https://academiahistoria.org.co/",
+      },
+      {
+        type: "Fuente primaria",
+        title: "Cartas del Libertador — Memorias del General O'Leary (Tomo I)",
+        author: "Bolívar, S. (cartas); recopilación de O'Leary, D. F.",
+        year: "1888",
+        description:
+          "Colección de cartas originales de Simón Bolívar depositadas en el Salón Bolívar del Museo Nacional de Venezuela, publicada como complemento de las Memorias del General O'Leary.",
+        url: "#",
+      },
+      {
+        type: "Fuente primaria",
+        title: "El General Simón Bolívar en la Campaña de la Nueva Granada de 1819",
+        author: '"Un Granadino" (testigo anónimo del Estado Mayor del Ejército Libertador)',
+        year: "1820",
+        description:
+          "Relato de un testigo presencial de la Campaña de 1819, publicado apenas un año después de los hechos. Fondo Pineda, Biblioteca Nacional de Colombia.",
+        url: "#",
+      },
+      {
+        type: "Libro académico",
+        title: "Gentes, Pueblos y Batallas: Microhistorias de la Ruta de la Libertad (Volumen 1)",
+        author: "Guerrero Barón, J. y Calderón Fonseca, J. S. (comps.); UPTC",
+        year: "2014",
+        description:
+          "Compilación de microhistorias sobre la participación de pueblos boyacenses en la Campaña Libertadora de 1819, incluida la Legión Británica y la vida de Pedro Pascasio Martínez Rojas.",
+        url: "#",
+      },
+      {
+        type: "Proyecto digital",
+        title: "Historia de Colombia — Capítulo 6: La Guerra Grande",
+        author: "Biblioteca Nacional de Colombia",
         year: "s.f.",
         description:
-          "Aún no se han asignado fuentes exclusivas de la página de inicio (Titulo1-7 / Capítulos 1-6): la investigación de esta ronda se centró en los personajes históricos. Las referencias generales de la campaña quedaron en «Historia y Antecedentes de la Batalla».",
+          "Capítulo narrativo del proyecto digital de la Biblioteca Nacional sobre la etapa final de la independencia, incluida la Campaña Libertadora y las batallas del Pantano de Vargas y Boyacá.",
+        url: "#",
+      },
+      {
+        type: "Artículo académico",
+        title: "La Batalla del Pantano de Vargas. 25 de julio de 1819 (Paipa, Boyacá, Nueva Granada)",
+        author: "Rodríguez Cuenca, J. V. y Borrero, L. D. (2014)",
+        year: "2014",
+        description:
+          "Artículo de la Revista Maguaré (Universidad Nacional de Colombia) sobre la batalla, desde una mirada complementaria a la historiografía tradicional.",
+        url: "https://revistas.unal.edu.co/index.php/maguare/article/view/54727",
+      },
+      {
+        type: "Artículo / selección de revista",
+        title: "La Campaña Libertadora (según el relato de O'Leary)",
+        author: "O'Leary, D. F. (relato original)",
+        year: "s.f.",
+        description:
+          "Selección editorial del relato de O'Leary sobre la Campaña Libertadora de 1819, publicada como homenaje en el sesquicentenario de la gesta.",
         url: "#",
       },
     ],
@@ -366,11 +439,21 @@ export const CATEGORIES = [
     items: [
       {
         type: "Créditos",
-        title: "Semillero de Investigación",
-        author: "Equipo del proyecto",
-        year: "2026",
+        title: "Dirección Académica del Proyecto",
+        author: "Manuel Francisco Corredor Rodríguez",
+        year: "2025",
         description:
-          "Investigación, diseño y desarrollo a cargo de los estudiantes del semillero. Reemplazar con los nombres reales del equipo.",
+          "Director del anteproyecto de semillero de investigación «Narrativa Web Interactiva para Divulgar la Historia de la Batalla del Pantano de Vargas, Paipa», Universidad de Boyacá.",
+        url: "#",
+      },
+      {
+        type: "Créditos",
+        title:
+          "Narrativa Web Interactiva para Divulgar la Historia de la Batalla del Pantano de Vargas, Paipa",
+        author: "David Santiago Amaya Reyes",
+        year: "2025",
+        description:
+          "Trabajo de anteproyecto de semillero de investigación a cargo de David Santiago Amaya Reyes, estudiante del Programa de Ingeniería en Multimedia, Facultad de Ciencia e Ingeniería, Universidad de Boyacá (Tunja). Investigación, diseño narrativo, ilustración y desarrollo del sitio.",
         url: "#",
       },
     ],

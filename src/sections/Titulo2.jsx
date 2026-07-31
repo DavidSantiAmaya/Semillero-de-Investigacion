@@ -138,56 +138,6 @@ const Titulo2 = () => {
           A esa determinación se sumó el apoyo de campesinos y habitantes de la región, quienes aportaron alimentos, ropa, caballos y otros suministros que ayudaron a aliviar las necesidades más urgentes del ejército. Con recursos escasos, pero con la moral fortalecida, los patriotas continuaron su avance hacia Paipa para reorganizarse y prepararse sin saber el enfrentamiento que se aproximaba.
           </p>
 
-          <div className="button-row">
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAPersonajesbolivar}
-            aria-label="Ver el perfil de Simón Bolívar"
-            title="Simón Bolívar"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-personajes.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Simón Bolívar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHero}
-            aria-label="Explorar el lugar de los hechos"
-            title="Explorar el lugar"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-lugares.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Explorar el lugar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHistoria}
-            aria-label="Leer la historia de la batalla de Gámeza"
-            title="Batalla de Gámeza"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-historia.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Batalla de Gámeza</span>
-          </button>
-        </div>
-
         </div>
       </div>
     </section>

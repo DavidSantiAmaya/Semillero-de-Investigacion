@@ -133,60 +133,7 @@ const Titulo2 = () => {
             />
           </div>
 
-          <p className="story-text">
-            Durante horas el combate se convirtió en una prueba de resistencia. El humo de la pólvora, el cansancio acumulado y las continuas bajas comenzaron a afectar a ambos bandos. Ninguno conseguía imponerse con claridad, y la batalla parecía avanzar hacia un desgaste prolongado en el que cada metro conquistado tenía un alto costo humano.
-          </p>
-
-          <div className="button-row">
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAPersonajesbolivar}
-            aria-label="Ver el perfil de Simón Bolívar"
-            title="Simón Bolívar"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-personajes.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Simón Bolívar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHero}
-            aria-label="Explorar el lugar de los hechos"
-            title="Explorar el lugar"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-lugares.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Explorar el lugar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHistoria}
-            aria-label="Leer la historia de la batalla de Gámeza"
-            title="Batalla de Gámeza"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-historia.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Batalla de Gámeza</span>
-          </button>
-        </div>
-
+          <p className="story-text">Ninguna de las dos fuerzas había conseguido imponerse. Los patriotas continuaban presionando las posiciones realistas, mientras Bolívar evaluaba el momento oportuno para emplear sus tropas de reserva. El desenlace de la batalla aún era incierto, pero la perseverancia de los soldados y la participación de hombres como Santander, Anzoátegui y Jaime Rooke preparaban el escenario para el episodio que cambiaría el curso de la Campaña Libertadora.</p>
         </div>
       </div>
     </section>

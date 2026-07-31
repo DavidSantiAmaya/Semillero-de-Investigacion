@@ -45,10 +45,10 @@ export default function Encuesta() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <span className={styles.eyebrow}>Semillero de Investigación</span>
-        <h2 className={styles.title}>Credenciales digitales</h2>
-      </div>
+       <div className={styles.header}>
+         <span className={styles.eyebrow}>Semillero de Investigación</span>
+          <h2 className={styles.title}>Narrativa web interactiva</h2>
+    </div>
 
       <div className={styles.layout}>
         <div className={styles.stageFrame}>
@@ -127,17 +127,18 @@ export default function Encuesta() {
         <div className={styles.info}>
           <h3 className={styles.infoTitle}>Sobre el proyecto</h3>
           <p className={styles.infoText}>
-            Este sitio recopila y narra los hechos de la campaña libertadora
-            en Boyacá como parte del trabajo del Semillero de Investigación.
-            El objetivo es reconstruir, con rigor histórico y recursos
-            interactivos, el recorrido de las tropas patriotas desde Gámeza
-            hasta el Pantano de Vargas.
+            Proyecto de divulgación histórica sobre la Campaña Libertadora de 1819, con especial énfasis en la Batalla del Pantano de Vargas, ocurrida en Paipa, Boyacá.
           </p>
           <p className={styles.infoText}>
-            Cada capítulo combina ilustración, animación y modelos 3D para
-            acercar el relato histórico a una experiencia digital moderna,
-            producida íntegramente por estudiantes del semillero.
+            La experiencia combina narrativa, ilustración, animación y recursos interactivos para explorar los acontecimientos, personajes y escenarios que hicieron parte de este proceso histórico.
           </p>
+
+          <p className={styles.infoText}>Estoy realizando una evaluación de la experiencia de visualización y usabilidad de un prototipo web sobre la Batalla del Pantano de Vargas. Sus respuestas me ayudarán a identificar aspectos que puedo mejorar en el proyecto.</p>
+
+ <p className={styles.infoText}>La encuesta toma solo unos minutos y pueden responderla fácilmente desde el celular escaneando el código QR o ingresando al enlace de abajo:</p>
+
+
+          <a className={styles.sheetLink} href="https://forms.gle/Cu8j5nxvmkDwvFqd6" target="_blank" rel="noopener noreferrer" > Evaluar la experiencia </a>
 
           <button type="button" className={styles.fuentesButton} onClick={irAFuentes}>
             Fuentes y Documentación

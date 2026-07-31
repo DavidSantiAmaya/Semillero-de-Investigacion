@@ -44,34 +44,26 @@ const Lucia = () => {
     })
   })
 
-  const irAHero = () => {
+  const irAHero1 = () => {
     navigateToContent(navigate, {
       to: "/lugares",
-      id: 1,
+      id: 8,
       direction: 1,
     });
   };
 
-  const irAHistoria = () => {
-    navigateToContent(navigate, {
-      to: "/historia",
-      id: "batalla-gameza",
-      direction: 1,
-    });
-  };
-
-  const irAPersonajesbolivar = () => {
+  const irAPersonaje1 = () => {
     navigateToContent(navigate, {
       to: "/personajes",
-      id: "bolivar",
+      id: "anzoategui",
       direction: 1,
     });
   };
 
-  const irAPersonajessantander = () => {
+  const irAPersonaje2 = () => {
     navigateToContent(navigate, {
       to: "/personajes",
-      id: "santander",
+      id: "rooke",
       direction: 1,
     });
   };
@@ -95,53 +87,19 @@ const Lucia = () => {
         <button
           type="button"
           className="floating-button circle-button"
-          onClick={irAPersonajesbolivar}
-          aria-label="Ver el perfil de Simón Bolívar"
-          title="Simón Bolívar"
-        >
-          <span className="floating-button-icon">
-            <img
-              src="/images/Botones/boton-personajes.webp"
-            />
-          </span>
-          <span className="floating-button-label">Simón Bolívar</span>
-        </button>
-
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAHero}
-          aria-label="Explorar el lugar de los hechos"
-          title="Explorar el lugar"
+          onClick={irAHero1}
         >
           <span className="floating-button-icon">
             <img
               src="/images/Botones/boton-lugares.webp"
-              alt=""
             />
           </span>
-          <span className="floating-button-label">Explorar el lugar</span>
-        </button>
-
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAHistoria}
-          aria-label="Leer la historia de la batalla de Gámeza"
-          title="Batalla de Gámeza"
-        >
-          <span className="floating-button-icon">
-            <img
-              src="/images/Botones/boton-historia.webp"
-              alt=""
-            />
-          </span>
-          <span className="floating-button-label">Batalla de Gámeza</span>
+          <span className="floating-button-label">Picacho y Cangrejo</span>
         </button>
       </div>
 
       <p className="story-text">
-        El campo de combate imponía sus propias reglas. Desde los cerros de El Picacho y El Cangrejo, los realistas dominaban el valle. Bolívar respondió dividiendo su infantería en dos columnas, dirigidas por Francisco de Paula Santander y Arthur Sandes, mientras mantenía en reserva la Legión Británica y la caballería. Todo estaba dispuesto para el enfrentamiento que definiría el destino de la Campaña Libertadora.
+        En la mañana del 25 de julio de 1819, los ejércitos patriota y realista se encontraron frente a frente en el Pantano de Vargas. Las tropas españolas ocupaban las alturas de El Picacho y El Cangrejo, desde donde dominaban el valle y podían observar cada movimiento enemigo. Ante esta desventaja, Simón Bolívar organizó el ataque y dispuso el avance de su ejército para intentar arrebatar a los realistas el control del terreno.
       </p>
       <div className="img-merge">
         <img
@@ -156,9 +114,24 @@ const Lucia = () => {
         />
       </div>
 
+      <div className="button-row">
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAHero1}
+        >
+          <span className="floating-button-icon">
+            <img
+              src="/images/Botones/boton-lugares.webp"
+            />
+          </span>
+          <span className="floating-button-label">Picacho y Cangrejo</span>
+        </button>
+      </div>
+
       <p className="story-text">
-        La mañana del 25 de julio de 1819 encontró a ambos ejércitos frente a frente en el Pantano de Vargas. El Ejército Realista dominaba las alturas de El Picacho y El Cangrejo, desde donde podía observar cada movimiento de los patriotas. Consciente de la desventaja que imponía el terreno, Simón Bolívar ordenó el avance de la infantería en dos columnas: una por el flanco izquierdo bajo el mando de Francisco de Paula Santander y otra por el flanco derecho dirigida por el coronel Arthur Sandes y el Batallón Rifles. Mientras tanto, la Legión Británica y la caballería permanecían en reserva, listas para intervenir cuando la situación lo exigiera.
-      </p>
+        El primer impulso ofensivo quedó a cargo de la infantería patriota. Francisco de Paula Santander condujo una de las columnas, mientras el comandante José Antonio Anzoátegui dirigía la otra junto al Batallón Rifles. El ascenso por las laderas fue lento y agotador, pues los batallones Rifles, Barcelona y Cazadores avanzaban bajo un intenso fuego enemigo. La posición elevada de los realistas les permitió rechazar una y otra vez los intentos patriotas por alcanzar la cima.
+</p>
 
       <div className="img-merge">
         <img
@@ -173,9 +146,8 @@ const Lucia = () => {
         />
       </div>
 
-      <p className="story-text">
-        El ascenso fue lento y agotador. Los batallones Rifles, Barcelona y Cazadores avanzaron por las pendientes bajo un intenso fuego realista. Cada intento por alcanzar la cima encontraba una fuerte resistencia, obligando a los patriotas a retroceder y reorganizarse una y otra vez. La ventaja de la altura permitía a los realistas mantener el control del campo de batalla, mientras el terreno fangoso y las pronunciadas laderas aumentaban el desgaste de quienes intentaban romper sus líneas.
-      </p>
+      <p className="story-text">Mientras la infantería combatía en las pendientes, Jaime Rooke, al mando de la Legión Británica, permanecía en reserva junto con la caballería, esperando la orden de intervenir. A medida que transcurrían las horas, el humo de la pólvora cubría el campo de batalla y el cansancio comenzaba a afectar a ambos bandos. Cada avance exigía un enorme sacrificio y el enfrentamiento se transformó en una dura prueba de resistencia.
+</p>
     </div>
   )
 }

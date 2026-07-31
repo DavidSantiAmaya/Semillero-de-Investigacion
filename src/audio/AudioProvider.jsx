@@ -18,10 +18,14 @@ const RAIN_TRACK = "/audio/lluvia.mp3";
 const RAIN_START_ID = "capitulo4";
 const RAIN_END_ID = "capitulo6";
 
+// Eventos que cuentan como "gesto del usuario" para desbloquear el autoplay
+// con sonido, que los navegadores bloquean hasta la primera interacción.
+const UNLOCK_EVENTS = ["pointerdown", "keydown", "touchstart", "scroll"];
+
 export function AudioProvider({ children }) {
   const audioRef = useRef(null);
   const currentTrackRef = useRef(DEFAULT_TRACK);
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(true);
 
   useEffect(() => {
     const audio = new Audio();
@@ -34,6 +38,28 @@ export function AudioProvider({ children }) {
       audio.src = "";
     };
   }, []);
+
+  // La música arranca "activada" por defecto, pero el navegador bloquea
+  // reproducir sonido sin que el usuario haya interactuado antes. Reintenta
+  // en cuanto ocurra la primera interacción (clic, tecla, scroll, toque).
+  useEffect(() => {
+    if (!enabled) return undefined;
+
+    const tryPlay = () => {
+      const audio = audioRef.current;
+      if (!audio || !audio.paused) return;
+      if (!audio.src) audio.src = currentTrackRef.current;
+      audio.play().catch(() => {});
+    };
+
+    tryPlay();
+    UNLOCK_EVENTS.forEach((eventName) =>
+      window.addEventListener(eventName, tryPlay, { once: true, passive: true })
+    );
+    return () => {
+      UNLOCK_EVENTS.forEach((eventName) => window.removeEventListener(eventName, tryPlay));
+    };
+  }, [enabled]);
 
   const setTrack = useCallback((src) => {
     if (currentTrackRef.current === src) return;
