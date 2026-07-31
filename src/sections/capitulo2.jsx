@@ -46,31 +46,15 @@ const Lucia = () => {
   const irAHero = () => {
     navigateToContent(navigate, {
       to: "/lugares",
-      id: 1,
+      id: 7,
       direction: 1,
     });
   };
 
-  const irAHistoria = () => {
-    navigateToContent(navigate, {
-      to: "/historia",
-      id: "batalla-gameza",
-      direction: 1,
-    });
-  };
-
-  const irAPersonajesbolivar = () => {
+  const irAPersonaje = () => {
     navigateToContent(navigate, {
       to: "/personajes",
-      id: "bolivar",
-      direction: 1,
-    });
-  };
-
-  const irAPersonajessantander = () => {
-    navigateToContent(navigate, {
-      to: "/personajes",
-      id: "santander",
+      id: "barreiro",
       direction: 1,
     });
   };
@@ -90,55 +74,6 @@ const Lucia = () => {
         />
       </div>
 
-      <div className="button-row">
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAPersonajesbolivar}
-          aria-label="Ver el perfil de Simón Bolívar"
-          title="Simón Bolívar"
-        >
-          <span className="floating-button-icon">
-            <img
-              src="/images/Botones/boton-personajes.webp"
-              alt=""
-            />
-          </span>
-          <span className="floating-button-label">Simón Bolívar</span>
-        </button>
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAHero}
-          aria-label="Explorar el lugar de los hechos"
-          title="Explorar el lugar"
-        >
-          <span className="floating-button-icon">
-            <img
-              src="/images/Botones/boton-lugares.webp"
-              alt=""
-            />
-          </span>
-          <span className="floating-button-label">Explorar el lugar</span>
-        </button>
-
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAHistoria}
-          aria-label="Leer la historia de la batalla de Gámeza"
-          title="Batalla de Gámeza"
-        >
-          <span className="floating-button-icon">
-            <img
-              src="/images/Botones/boton-historia.webp"
-              alt=""
-            />
-          </span>
-          <span className="floating-button-label">Batalla de Gámeza</span>
-        </button>
-      </div>
-
         <p className="story-text">
           La noche del 24 de julio de 1819 cayó sobre los campamentos con un silencio engañoso. Mientras los soldados descansaban, Simón Bolívar preparaba una maniobra decisiva: cruzar el río Chicamocha antes del amanecer utilizando las pocas balsas reunidas por los habitantes de la región. Su objetivo era sorprender al coronel José María Barreiro y obligarlo a combatir en condiciones desfavorables.
         </p>
@@ -154,6 +89,34 @@ const Lucia = () => {
             alt="Ilustracion color"
           />
         </div>
+
+        <div className="button-row">
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAPersonaje}
+        >
+          <span className="floating-button-icon">
+            <img
+            />
+          </span>
+          <span className="floating-button-label">José María Barreiro</span>
+        </button>
+
+        <button
+          type="button"
+          className="floating-button circle-button"
+          onClick={irAHero}
+        >
+          <span className="floating-button-icon">
+            <img
+              src="/images/Botones/boton-lugares.webp"
+            />
+          </span>
+          <span className="floating-button-label">Casa de las Seis Ventanas</span>
+        </button>
+
+      </div>
 
         <p className="story-text">
           Al mismo tiempo, Barreiro seguía de cerca los movimientos patriotas. La tradición oral de Paipa sostiene que durante esos días utilizó la Casa de las Seis Ventanas como alojamiento o cuartel temporal. Aunque esta versión forma parte de la memoria histórica de la región y no está confirmada por los partes militares, continúa siendo uno de los relatos más representativos del patrimonio local.

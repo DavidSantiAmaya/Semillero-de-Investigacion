@@ -22,28 +22,6 @@ const historyEvents = [
     ],
   },
   {
-    id: "combate-paya",
-    eyebrow: "27 de junio de 1819",
-    title: "Combate de Paya",
-    place: "Paya, Boyacá",
-    date: "1819",
-    image: "/AssetsHistoria/combate-paya.png",
-    thumbnail: "/AssetsHistoria/combate-paya.png",
-    palette: "emerald",
-    layout: "split",
-    lead:
-      "El primer encuentro militar de la campaña en territorio neogranadino, y la llave que abrió el paso hacia la cordillera.",
-    body:
-      "La vanguardia patriota, al mando de Francisco de Paula Santander y el coronel Antonio Arredondo, desalojó a las tropas realistas del «Trincherón», un fortín de piedra que custodiaba el único acceso practicable hacia el interior del virreinato. Sin esta victoria, el cruce del Páramo de Pisba no habría sido posible.",
-    detail:
-      "Conocido como las «Termópilas de Paya», este combate neutralizó el principal obstáculo defensivo español antes del ascenso a la cordillera.",
-    stats: [
-      { label: "Objetivo", value: "El Trincherón" },
-      { label: "Mando", value: "Santander" },
-      { label: "Efecto", value: "Ruta abierta" },
-    ],
-  },
-  {
     id: "paramo-pisba",
     eyebrow: "1 - 6 de julio de 1819",
     title: "Cruce del Páramo de Pisba",
@@ -66,7 +44,7 @@ const historyEvents = [
     ],
   },
   {
-    id: "batalla-gameza",
+    id: "batalla-gameza-topaga",
     eyebrow: "10 - 11 de julio de 1819",
     title: "Combates de Gámeza y Tópaga",
     place: "Gámeza y Tópaga, Boyacá",
@@ -88,35 +66,13 @@ const historyEvents = [
     ],
   },
   {
-    id: "pantano-de-vargas",
-    eyebrow: "25 de julio de 1819",
-    title: "Batalla del Pantano de Vargas",
-    place: "Paipa, Boyacá",
-    date: "1819",
-    image: "/AssetsHistoria/puente-vargas.png",
-    thumbnail: "/AssetsHistoria/puente-vargas.png",
-    palette: "crimson",
-    layout: "split",
-    lead:
-      "El combate más cruento de la campaña, sostenido en su momento más crítico gracias a una carga de caballería que se volvió leyenda.",
-    body:
-      "Barreiro ocupó primero los cerros El Picacho y El Cangrejo, dejando al Ejército Libertador en desventaja. Cuando la derrota parecía inminente, Bolívar ordenó al coronel Juan José Rondón cargar con solo 14 lanceros; a su lado, la Legión Británica de James Rooke tomó el Picacho a la bayoneta, con Rooke perdiendo el brazo izquierdo en la acción.",
-    detail:
-      "Aquí la historia se vuelve cinematográfica: polvo, una carga de caballería casi suicida y una victoria moral que cambió el aire de la campaña.",
-    stats: [
-      { label: "Momento", value: "Crítico" },
-      { label: "Símbolo", value: "14 lanceros" },
-      { label: "Resultado", value: "Impulso moral" },
-    ],
-  },
-  {
-    id: "batalla-boyaca",
+    id: "batalla-de-puente-de-boyaca",
     eyebrow: "7 de agosto de 1819",
-    title: "Batalla de Boyacá",
+    title: "Batalla del pueste Boyacá",
     place: "Puente de Boyacá, entre Tunja y Ventaquemada",
     date: "1819",
-    image: "/AssetsHistoria/batalla-boyaca.png",
-    thumbnail: "/AssetsHistoria/batalla-boyaca.png",
+    image: "/AssetsHistoria/batalla-del-Puente-de-boyaca.png",
+    thumbnail: "/AssetsHistoria/batalla-del-Puente-de-boyaca.png",
     palette: "crimson",
     layout: "monument",
     lead:

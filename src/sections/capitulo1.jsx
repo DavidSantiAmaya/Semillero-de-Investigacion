@@ -48,23 +48,41 @@ const Jason = () => {
     });
   }, []);
 
-  const irAHero = () => {
+
+  const irAHero1 = () => {
     navigateToContent(navigate, {
       to: "/lugares",
-      id: 1,
+      id: 2,
       direction: 1,
     });
   };
 
-  const irAHistoria = () => {
+   const irAHero2 = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 8,
+      direction: 1,
+    });
+  };
+
+  const irAHistoria1 = () => {
     navigateToContent(navigate, {
       to: "/historia",
-      id: "batalla-gameza",
+      id: "campana-libertadora",
       direction: 1,
     });
   };
 
-  const irAPersonajesbolivar = () => {
+  const irAHistoria2 = () => {
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "batalla-gameza-topaga",
+      direction: 1,
+    });
+  };
+
+
+  const irAPersonaje1 = () => {
     navigateToContent(navigate, {
       to: "/personajes",
       id: "bolivar",
@@ -72,7 +90,7 @@ const Jason = () => {
     });
   };
 
-  const irAPersonajessantander = () => {
+  const irAPersonaje2 = () => {
     navigateToContent(navigate, {
       to: "/personajes",
       id: "santander",
@@ -80,6 +98,37 @@ const Jason = () => {
     });
   };
 
+  const irAHero3 = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 3,
+      direction: 1,
+    });
+  };
+
+  const irAHero4 = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 1,
+      direction: 1,
+    });
+  };
+
+  const irAHero5 = () => {
+    navigateToContent(navigate, {
+      to: "/lugares",
+      id: 5,
+      direction: 1,
+    });
+  };
+
+const irAHistoria3 = () => {
+    navigateToContent(navigate, {
+      to: "/historia",
+      id: "paramo-pisba",
+      direction: 1,
+    });
+  };
 
   return (
     <section className="jason" ref={sectionRef}>
@@ -101,49 +150,53 @@ const Jason = () => {
           <button
             type="button"
             className="floating-button circle-button"
-            onClick={irAPersonajesbolivar}
-            aria-label="Ver el perfil de Simón Bolívar"
-            title="Simón Bolívar"
-          >
-            <span className="floating-button-icon">
-              <img
-                src="/images/Botones/boton-personajes.webp"
-                alt=""
-              />
-            </span>
-            <span className="floating-button-label">Simón Bolívar</span>
-          </button>
-
-          <button
-            type="button"
-            className="floating-button circle-button"
-            onClick={irAHero}
-            aria-label="Explorar el lugar de los hechos"
-            title="Explorar el lugar"
+            onClick={irAHero1}
           >
             <span className="floating-button-icon">
               <img
                 src="/images/Botones/boton-lugares.webp"
-                alt=""
               />
             </span>
-            <span className="floating-button-label">Explorar el lugar</span>
+            <span className="floating-button-label">Boyacá (1819)</span>
           </button>
 
           <button
             type="button"
             className="floating-button circle-button"
-            onClick={irAHistoria}
-            aria-label="Leer la historia de la batalla de Gámeza"
-            title="Batalla de Gámeza"
+            onClick={irAHero2}
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-lugares.webp"
+              />
+            </span>
+            <span className="floating-button-label">Pantano de Vargas</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHistoria1}
           >
             <span className="floating-button-icon">
               <img
                 src="/images/Botones/boton-historia.webp"
-                alt=""
               />
             </span>
-            <span className="floating-button-label">Batalla de Gámeza</span>
+            <span className="floating-button-label">campaña libertadora</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHistoria2}
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-historia.webp"
+              />
+            </span>
+            <span className="floating-button-label">Batalla de Gameza y Topaga</span>
           </button>
         </div>
 
@@ -162,6 +215,89 @@ const Jason = () => {
             src="/images/ilustraciones/Ilustracion2Color.webp"
             alt="Ilustracion color"
           />
+        </div>
+
+        <div className="button-row">
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAPersonaje1}
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-personajes.webp"
+              />
+            </span>
+            <span className="floating-button-label">Simón Bolívar</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAPersonaje2}
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-personajes.webp"
+              />
+            </span>
+            <span className="floating-button-label">Francisco de Paula Santander</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHero3}
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-lugares.webp"
+              />
+            </span>
+            <span className="floating-button-label">Paramo de Pisba</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHero4}
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-lugares.webp"
+              />
+            </span>
+            <span className="floating-button-label">Paipa</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHero5}
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-lugares.webp"
+              />
+            </span>
+            <span className="floating-button-label">Chicamocha</span>
+          </button>
+
+          <button
+            type="button"
+            className="floating-button circle-button"
+            onClick={irAHistoria3}
+            aria-label="Leer la historia de la batalla de Gámeza"
+            title="Batalla de Gámeza"
+          >
+            <span className="floating-button-icon">
+              <img
+                src="/images/Botones/boton-historia.webp"
+                alt=""
+              />
+            </span>
+            <span className="floating-button-label">Cruze del pantado de pisba</span>
+          </button>
         </div>
 
         <p className="story-text">
