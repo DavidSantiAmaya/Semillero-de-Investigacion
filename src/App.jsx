@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 
@@ -226,13 +226,13 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Loader />
       <AudioProvider>
         <Routes>
           <Route path="*" element={<AnimatedRoutes />} />
         </Routes>
       </AudioProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
