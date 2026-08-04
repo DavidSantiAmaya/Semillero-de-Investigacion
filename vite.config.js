@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  // Base path for GitHub Pages (repository name)
+  base: '/Semillero-de-Investigacion/',
   plugins: [react(), tailwindcss()],
   server: {
     // Permite acceder al servidor de desarrollo a través de túneles como
