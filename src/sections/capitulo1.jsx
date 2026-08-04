@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { getAssetPath } from '../utils/assetPath';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -136,12 +137,12 @@ const irAHistoria3 = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion1Linea.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion1Linea.webp")}
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion1Color.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion1Color.webp")}
             alt="Ilustracion color"
           />
 
@@ -154,7 +155,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-lugares.webp"
+                src={getAssetPath("/images/Botones/boton-lugares.webp")}
               />
             </span>
             <span className="floating-button-label">Boyacá (1819)</span>
@@ -167,7 +168,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-lugares.webp"
+                src={getAssetPath("/images/Botones/boton-lugares.webp")}
               />
             </span>
             <span className="floating-button-label">Pantano de Vargas</span>
@@ -180,7 +181,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-historia.webp"
+                src={getAssetPath("/images/Botones/boton-historia.webp")}
               />
             </span>
             <span className="floating-button-label">campaña libertadora</span>
@@ -193,7 +194,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-historia.webp"
+                src={getAssetPath("/images/Botones/boton-historia.webp")}
               />
             </span>
             <span className="floating-button-label">Batalla de Gameza y Topaga</span>
@@ -207,12 +208,12 @@ const irAHistoria3 = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion2Linea.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion2Linea.webp")}
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion2Color.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion2Color.webp")}
             alt="Ilustracion color"
           />
         </div>
@@ -225,7 +226,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-personajes.webp"
+                src={getAssetPath("/images/Botones/boton-personajes.webp")}
               />
             </span>
             <span className="floating-button-label">Simón Bolívar</span>
@@ -238,7 +239,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-personajes.webp"
+                src={getAssetPath("/images/Botones/boton-personajes.webp")}
               />
             </span>
             <span className="floating-button-label">Francisco de Paula Santander</span>
@@ -251,7 +252,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-lugares.webp"
+                src={getAssetPath("/images/Botones/boton-lugares.webp")}
               />
             </span>
             <span className="floating-button-label">Paramo de Pisba</span>
@@ -264,7 +265,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-lugares.webp"
+                src={getAssetPath("/images/Botones/boton-lugares.webp")}
               />
             </span>
             <span className="floating-button-label">Paipa</span>
@@ -277,7 +278,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-lugares.webp"
+                src={getAssetPath("/images/Botones/boton-lugares.webp")}
               />
             </span>
             <span className="floating-button-label">Chicamocha</span>
@@ -292,7 +293,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src="/images/Botones/boton-historia.webp"
+                src={getAssetPath("/images/Botones/boton-historia.webp")}
                 alt=""
               />
             </span>
@@ -308,3 +309,7 @@ const irAHistoria3 = () => {
   );
 };
 export default Jason;
+
+
+
+

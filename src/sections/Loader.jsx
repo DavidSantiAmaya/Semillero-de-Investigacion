@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getAssetPath } from "../utils/assetPath";
 import "./Loader.css";
 
 // Tiempo mínimo que se muestra la pantalla de carga, sin importar qué tan
@@ -62,7 +63,7 @@ export default function Loader() {
         <span className="app-loader-eyebrow">Semillero de Investigación</span>
         <img
           className="app-loader-gif"
-          src="/images/loading.gif"
+          src={getAssetPath("/images/loading.gif")}
           alt=""
           aria-hidden="true"
         />
