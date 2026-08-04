@@ -9,7 +9,7 @@ import { useBackgroundAudio } from "../audio/AudioProvider";
 
 // Tema que suena cuando el párrafo de la carga de Rondón queda centrado en
 // pantalla, con fundido de entrada/salida en vez de un corte seco.
-const RONDON_TRACK = encodeURI("/audio/Coronel Rondón.mp3");
+const RONDON_TRACK = encodeURI(getAssetPath("/audio/Coronel Rondón.mp3"));
 const RONDON_FADE_MS = 1200;
 const RONDON_VOLUME = 0.55;
 
