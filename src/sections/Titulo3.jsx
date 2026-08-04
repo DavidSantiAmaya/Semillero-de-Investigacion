@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { getAssetPath } from '../utils/assetPath';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -124,12 +125,12 @@ const Titulo2 = () => {
           <div className="img-merge">
             <img
               className="line-img"
-              src="/images/ilustraciones/Ilustracion6Linea.webp"
+              src={getAssetPath("/images/ilustraciones/Ilustracion6Linea.webp")}
               alt="línea"
             />
             <img
               className="color-img"
-              src="/images/ilustraciones/Ilustracion6Color.webp"
+              src={getAssetPath("/images/ilustraciones/Ilustracion6Color.webp")}
               alt="color"
             />
           </div>
@@ -145,3 +146,7 @@ const Titulo2 = () => {
 };
 
 export default Titulo2;
+
+
+
+

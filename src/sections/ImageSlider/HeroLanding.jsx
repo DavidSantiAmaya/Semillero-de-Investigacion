@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+import { getAssetPath } from '../../utils/assetPath';
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./HeroLanding.module.css";
@@ -182,3 +183,8 @@ export default function HeroLanding({ slides = heroLandingData }) {
     </section>
   );
 }
+
+
+
+
+

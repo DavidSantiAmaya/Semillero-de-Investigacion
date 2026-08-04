@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { getAssetPath } from '../utils/assetPath';
 import { useGSAP } from "@gsap/react";
 import { useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -125,12 +126,12 @@ const Lucia = () => {
       <div className="img-merge">
         <img
           className="line-img"
-          src="/images/ilustraciones/Ilustracion14Linea.webp"
+          src={getAssetPath("/images/ilustraciones/Ilustracion14Linea.webp")}
           alt="Ilustracion linea"
         />
         <img
           className="color-img"
-          src="/images/ilustraciones/Ilustracion14Color.webp"
+          src={getAssetPath("/images/ilustraciones/Ilustracion14Color.webp")}
           alt="Ilustracion color"
         />
       </div>
@@ -145,7 +146,7 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              src="/images/Botones/boton-personajes.webp"
+              src={getAssetPath("/images/Botones/boton-personajes.webp")}
               alt=""
             />
           </span>
@@ -159,12 +160,12 @@ const Lucia = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion15Linea.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion15Linea.webp")}
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion15Color.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion15Color.webp")}
             alt="Ilustracion color"
           />
         </div>
@@ -175,3 +176,6 @@ const Lucia = () => {
 }
 
 export default Lucia
+
+
+

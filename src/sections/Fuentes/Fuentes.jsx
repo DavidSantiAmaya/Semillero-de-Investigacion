@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { getAssetPath } from '../../utils/assetPath';
 import { useNavigate } from "react-router-dom";
 import { navigateToContent } from "../../utils/contentNavigation";
 import { CATEGORIES } from "../../data/fuentesData";
@@ -157,3 +158,8 @@ export default function Fuentes() {
     </div>
   );
 }
+
+
+
+
+

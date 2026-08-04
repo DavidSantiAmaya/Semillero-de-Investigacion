@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { getAssetPath } from '../utils/assetPath';
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -74,12 +75,12 @@ const Lucia = () => {
       <div className="img-merge">
         <img
           className="line-img"
-          src="/images/ilustraciones/Ilustracion17Linea.webp"
+          src={getAssetPath("/images/ilustraciones/Ilustracion17Linea.webp")}
           alt="Ilustracion linea"
         />
         <img
           className="color-img"
-          src="/images/ilustraciones/Ilustracion17Color.webp"
+          src={getAssetPath("/images/ilustraciones/Ilustracion17Color.webp")}
           alt="Ilustracion color"
         />
       </div>
@@ -91,12 +92,12 @@ const Lucia = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion19Linea.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion19Linea.webp")}
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion19Color.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion19Color.webp")}
             alt="Ilustracion color"
           />
         </div>
@@ -109,7 +110,7 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              src="/images/Botones/boton-personajes.webp"
+              src={getAssetPath("/images/Botones/boton-personajes.webp")}
             />
           </span>
           <span className="floating-button-label">Simona Amaya</span>
@@ -122,7 +123,7 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              src="/images/Botones/boton-lugares.webp"
+              src={getAssetPath("/images/Botones/boton-lugares.webp")}
             />
           </span>
           <span className="floating-button-label">Paya</span>
@@ -136,12 +137,12 @@ const Lucia = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion18Linea.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion18Linea.webp")}
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion18Color.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion18Color.webp")}
             alt="Ilustracion color"
           />
         </div>
@@ -154,7 +155,7 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              src="/images/Botones/boton-lugares.webp"
+              src={getAssetPath("/images/Botones/boton-lugares.webp")}
             />
           </span>
           <span className="floating-button-label">Parque Jaime Rooke</span>
@@ -169,3 +170,6 @@ const Lucia = () => {
 }
 
 export default Lucia
+
+
+

@@ -7,11 +7,12 @@ import {
   useState,
 } from "react";
 
+import { getAssetPath } from '../utils/assetPath';
 const AudioContext = createContext(null);
 
 // Colócalos en /public/audio con estos nombres exactos (o cambia las rutas aquí).
-const DEFAULT_TRACK = "/audio/ambiente.mp3";
-const RAIN_TRACK = "/audio/lluvia.mp3";
+const DEFAULT_TRACK = getAssetPath("/audio/ambiente.mp3");
+const RAIN_TRACK = getAssetPath("/audio/lluvia.mp3");
 
 // La lluvia suena mientras el usuario está entre el inicio de capitulo4 y el
 // final de capitulo6; fuera de ese rango suena la pista "ambiente" normal.
@@ -135,3 +136,5 @@ export function useBackgroundAudio() {
   }
   return ctx;
 }
+
+

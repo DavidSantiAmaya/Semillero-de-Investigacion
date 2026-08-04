@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { getAssetPath } from '../utils/assetPath';
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -48,12 +49,12 @@ const Lucia = () => {
       <div className="img-merge">
         <img
           className="line-img"
-          src="/images/ilustraciones/Ilustracion11Linea.webp"
+          src={getAssetPath("/images/ilustraciones/Ilustracion11Linea.webp")}
           alt="Ilustracion linea"
         />
         <img
           className="color-img"
-          src="/images/ilustraciones/Ilustracion11Color.webp"
+          src={getAssetPath("/images/ilustraciones/Ilustracion11Color.webp")}
           alt="Ilustracion color"
         />
       </div>
@@ -64,12 +65,12 @@ const Lucia = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion12Linea.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion12Linea.webp")}
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion12Color.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion12Color.webp")}
             alt="Ilustracion color"
           />
         </div>
@@ -82,3 +83,6 @@ const Lucia = () => {
 }
 
 export default Lucia
+
+
+

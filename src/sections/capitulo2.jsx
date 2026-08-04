@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { getAssetPath } from '../utils/assetPath';
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -64,12 +65,12 @@ const Lucia = () => {
       <div className="img-merge">
         <img
           className="line-img"
-          src="/images/ilustraciones/Ilustracion4Linea.webp"
+          src={getAssetPath("/images/ilustraciones/Ilustracion4Linea.webp")}
           alt="Ilustracion linea"
         />
         <img
           className="color-img"
-          src="/images/ilustraciones/Ilustracion4Color.webp"
+          src={getAssetPath("/images/ilustraciones/Ilustracion4Color.webp")}
           alt="Ilustracion color"
         />
       </div>
@@ -80,12 +81,12 @@ const Lucia = () => {
         <div className="img-merge">
           <img
             className="line-img"
-            src="/images/ilustraciones/Ilustracion5Linea.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion5Linea.webp")}
             alt="Ilustracion linea"
           />
           <img
             className="color-img"
-            src="/images/ilustraciones/Ilustracion5Color.webp"
+            src={getAssetPath("/images/ilustraciones/Ilustracion5Color.webp")}
             alt="Ilustracion color"
           />
         </div>
@@ -98,7 +99,7 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-            src="/images/Botones/boton-personajes.webp"
+            src={getAssetPath("/images/Botones/boton-personajes.webp")}
             />
           </span>
           <span className="floating-button-label">José María Barreiro</span>
@@ -111,7 +112,7 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              src="/images/Botones/boton-lugares.webp"
+              src={getAssetPath("/images/Botones/boton-lugares.webp")}
             />
           </span>
           <span className="floating-button-label">Casa de las Seis Ventanas</span>
@@ -127,3 +128,6 @@ const Lucia = () => {
 }
 
 export default Lucia
+
+
+

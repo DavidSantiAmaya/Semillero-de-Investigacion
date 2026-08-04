@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { getAssetPath } from '../../../utils/assetPath';
 import "./HeroHistory.css";
 
 export default function HeroHistory({ events = [], initialIndex = 0 }) {
@@ -127,3 +128,8 @@ export default function HeroHistory({ events = [], initialIndex = 0 }) {
     </section>
   );
 }
+
+
+
+
+
