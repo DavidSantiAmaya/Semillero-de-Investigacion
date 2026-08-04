@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: '/Semillero-de-Investigacion/',
   server: {
     // Permite acceder al servidor de desarrollo a través de túneles como
     // Cloudflare Quick Tunnel (trycloudflare.com), que Vite bloquearía por
