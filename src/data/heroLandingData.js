@@ -1,8 +1,10 @@
+import { getAssetPath } from '../utils/assetPath';
+
 const heroLandingData = [
   {
     id: 1,
-    image: "/AssetsLugares/paipa-background.png",
-    background: "/AssetsLugares/paipa-background.png",
+    image: getAssetPath("/AssetsLugares/paipa-background.png"),
+        background: getAssetPath("/AssetsLugares/paipa-background.png"),
     title: "Paipa",
     subtitle: "Eje estratégico de la campaña",
     description:
@@ -10,8 +12,8 @@ const heroLandingData = [
   },
   {
     id: 2,
-    image: "/AssetsLugares/boyaca-background.png",
-    background: "/AssetsLugares/boyaca-background.png",
+    image: getAssetPath("/AssetsLugares/boyaca-background.png"),
+        background: getAssetPath("/AssetsLugares/boyaca-background.png"),
     title: "Boyacá",
     subtitle: "El escenario estratégico de la libertad",
     description:
@@ -19,8 +21,8 @@ const heroLandingData = [
   },
   {
     id: 3,
-    image: "/AssetsLugares/pisba-background.png",
-    background: "/AssetsLugares/pisba-background.png",
+    image: getAssetPath("/AssetsLugares/pisba-background.png"),
+        background: getAssetPath("/AssetsLugares/pisba-background.png"),
     title: "Pisba",
     subtitle: "El paso glacial hacia la libertad",
     description:
@@ -28,8 +30,8 @@ const heroLandingData = [
   },
   {
     id: 4,
-    image: "/AssetsLugares/paya-background.png",
-    background: "/AssetsLugares/paya-background.png",
+    image: getAssetPath("/AssetsLugares/paya-background.png"),
+        background: getAssetPath("/AssetsLugares/paya-background.png"),
     title: "Paya",
     subtitle: "Las Termópilas de Paya",
     description:
@@ -37,8 +39,8 @@ const heroLandingData = [
   },
   {
     id: 5,
-    image: "/AssetsLugares/chicamocha-background.png",
-    background: "/AssetsLugares/chicamocha-background.png",
+    image: getAssetPath("/AssetsLugares/chicamocha-background.png"),
+        background: getAssetPath("/AssetsLugares/chicamocha-background.png"),
     title: "El Chicamocha",
     subtitle: "El río que definió la campaña",
     description:
@@ -46,8 +48,8 @@ const heroLandingData = [
   },
   {
     id: 6,
-    image: "/AssetsLugares/jaime-rooke-background.png",
-    background: "/AssetsLugares/jaime-rooke-background.png",
+    image: getAssetPath("/AssetsLugares/jaime-rooke-background.png"),
+        background: getAssetPath("/AssetsLugares/jaime-rooke-background.png"),
     title: "Parque Jaime Rooke",
     subtitle: "Homenaje al héroe irlandés",
     description:
@@ -55,8 +57,8 @@ const heroLandingData = [
   },
   {
     id: 7,
-    image: "/AssetsLugares/casa-seis-ventanas-background.png",
-    background: "/AssetsLugares/casa-seis-ventanas-background.png",
+    image: getAssetPath("/AssetsLugares/casa-seis-ventanas-background.png"),
+        background: getAssetPath("/AssetsLugares/casa-seis-ventanas-background.png"),
     title: "Casa de las Seis Ventanas",
     subtitle: "Cuartel de la independencia",
     description:
@@ -64,8 +66,8 @@ const heroLandingData = [
   },
   {
     id: 8,
-    image: "/AssetsLugares/pantano-de-vargas-background.png",
-    background: "/AssetsLugares/pantano-de-vargas-background.png",
+    image: getAssetPath("/AssetsLugares/pantano-de-vargas-background.png"),
+        background: getAssetPath("/AssetsLugares/pantano-de-vargas-background.png"),
     title: "Pantano de Vargas",
     subtitle: "Sangre y gloria de la libertad",
     description:
@@ -73,8 +75,8 @@ const heroLandingData = [
   },
   {
     id: 9,
-    image: "/AssetsLugares/puente-boyaca-background.png",
-    background: "/AssetsLugares/puente-boyaca-background.png",
+    image: getAssetPath("/AssetsLugares/puente-boyaca-background.png"),
+        background: getAssetPath("/AssetsLugares/puente-boyaca-background.png"),
     title: "Puente de Boyacá",
     subtitle: "Altar de la libertad americana",
     description:
@@ -83,3 +85,4 @@ const heroLandingData = [
 ];
 
 export default heroLandingData;
+

@@ -1,5 +1,5 @@
-const img = (personaje, archivo) =>
-  `/AssetsPersonajes/${personaje}/${archivo}`;
+import { getAssetPath } from '../utils/assetPath';
+const img = (personaje, archivo) => getAssetPath(`/AssetsPersonajes/${personaje}/${archivo}`);
 
 export const personajesData = [
   {
