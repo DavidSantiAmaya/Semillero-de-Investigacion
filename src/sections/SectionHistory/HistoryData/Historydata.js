@@ -1,3 +1,5 @@
+import { getAssetPath } from '../../../utils/assetPath';
+
 const historyEvents = [
   {
     id: "campana-libertadora",
@@ -5,8 +7,8 @@ const historyEvents = [
     title: "Campaña Libertadora",
     place: "Llanos, Andes y altiplano neogranadino",
     date: "1819",
-    image: "/AssetsHistoria/campana-libertadora.png",
-    thumbnail: "/AssetsHistoria/campana-libertadora.png",
+    image: getAssetPath("/AssetsHistoria/campana-libertadora.png"),
+    thumbnail: getAssetPath("/AssetsHistoria/campana-libertadora.png"),
     palette: "bronze",
     layout: "panorama",
     lead:
@@ -27,8 +29,8 @@ const historyEvents = [
     title: "Cruce del Páramo de Pisba",
     place: "Cordillera Oriental, entre Boyacá y Casanare",
     date: "1819",
-    image: "/AssetsHistoria/paramo-pisba.png",
-    thumbnail: "/AssetsHistoria/paramo-pisba.png",
+    image: getAssetPath("/AssetsHistoria/paramo-pisba.png"),
+    thumbnail: getAssetPath("/AssetsHistoria/paramo-pisba.png"),
     palette: "indigo",
     layout: "diagonal",
     lead:
@@ -49,8 +51,8 @@ const historyEvents = [
     title: "Combates de Gámeza y Tópaga",
     place: "Gámeza y Tópaga, Boyacá",
     date: "1819",
-    image: "/AssetsHistoria/batalla-gameza.png",
-    thumbnail: "/AssetsHistoria/batalla-gameza.png",
+    image: getAssetPath("/AssetsHistoria/batalla-gameza.png"),
+    thumbnail: getAssetPath("/AssetsHistoria/batalla-gameza.png"),
     palette: "emerald",
     layout: "diagonal",
     lead:
@@ -71,8 +73,8 @@ const historyEvents = [
     title: "Batalla del pueste Boyacá",
     place: "Puente de Boyacá, entre Tunja y Ventaquemada",
     date: "1819",
-    image: "/AssetsHistoria/batalla-del-Puente-de-boyaca.png",
-    thumbnail: "/AssetsHistoria/batalla-del-Puente-de-boyaca.png",
+    image: getAssetPath("/AssetsHistoria/batalla-del-Puente-de-boyaca.png"),
+    thumbnail: getAssetPath("/AssetsHistoria/batalla-del-Puente-de-boyaca.png"),
     palette: "crimson",
     layout: "monument",
     lead:
@@ -90,3 +92,4 @@ const historyEvents = [
 ];
 
 export default historyEvents;
+
