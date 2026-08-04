@@ -19,12 +19,13 @@ import {
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import { navigateToContent } from "../../utils/contentNavigation";
+import { getAssetPath } from "../../utils/assetPath";
 import styles from "./Encuesta.module.css";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
-const MONUMENTO_URL = "/cardMonumento.glb";
-const QR_URL = "/cardMonumentoQr.glb";
+const MONUMENTO_URL = getAssetPath("/cardMonumento.glb");
+const QR_URL = getAssetPath("/cardMonumentoQr.glb");
 
 useGLTF.preload(MONUMENTO_URL);
 useGLTF.preload(QR_URL);

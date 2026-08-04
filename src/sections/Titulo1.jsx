@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { getAssetPath } from '../utils/assetPath';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -105,7 +106,7 @@ const Titulo1 = () => {
     <section ref={heroRef} className="hero-section">
       <div className="mask-wrapper1">
         <img
-          src="/images/ilustraciones/Titulo1.png"
+          src={getAssetPath("/images/ilustraciones/Titulo1.png")}
           alt="background"
           className="scale-out"
         />
@@ -115,3 +116,6 @@ const Titulo1 = () => {
 };
 
 export default Titulo1;
+
+
+

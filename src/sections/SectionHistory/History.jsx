@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { getAssetPath } from '../../utils/assetPath';
 import HeroHistory from "./Componetes/HeroHistory";
 import historyEvents from "./HistoryData/Historydata";
 import { useContentIndexFromNavigation } from "../../utils/contentNavigation";
@@ -26,3 +27,8 @@ export default function History() {
     </main>
   );
 }
+
+
+
+
+

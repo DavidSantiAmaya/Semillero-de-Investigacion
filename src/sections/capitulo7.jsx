@@ -6,10 +6,11 @@ import { useGSAP } from "@gsap/react";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { navigateToContent } from "../utils/contentNavigation";
+import { getAssetPath } from "../utils/assetPath";
 import "./capitulo7.css";
 
 gsap.registerPlugin(ScrollTrigger);
-useGLTF.preload("/Monumento.glb");
+useGLTF.preload(getAssetPath("/Monumento.glb"));
 
 const posiciones = [
   {
@@ -87,7 +88,7 @@ function RenderizadorInvalidador({ invalidarRef }) {
 }
 
 function Modelo3D({ modeloRef, alCargar }) {
-  const { scene } = useGLTF("/Monumento.glb");
+  const { scene } = useGLTF(getAssetPath("/Monumento.glb"));
 
   useEffect(() => {
     alCargar();
