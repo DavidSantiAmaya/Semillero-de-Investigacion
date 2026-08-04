@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Not Found</title>
+    <script>
+      // On GitHub Pages, when a deep link 404s, fetch the built index.html and replace the page
+      (function () {
+        const base = '/Semillero-de-Investigacion';
+        const indexUrl = base + '/index.html';
+        fetch(indexUrl)
+          .then(function (res) { return res.text(); })
+          .then(function (html) {
+            document.open();
+            document.write(html);
+            document.close();
+            // preserve the original path so BrowserRouter can handle it
+            history.replaceState({}, '', location.pathname + location.search + location.hash);
+          });
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
