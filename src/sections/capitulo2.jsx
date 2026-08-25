@@ -16,31 +16,32 @@ const Lucia = () => {
       const line = section.querySelector(".line-img")
       const color = section.querySelector(".color-img")
 
+      // Movimientos reducidos y scrub aumentado para suavidad
       gsap.to(line, {
         scrollTrigger: {
           trigger: section,
           start: "top 80%",
           end: "bottom 20%",
-          scrub: 0.6,
+          scrub: 1, // Aumentado de 0.6
         },
-        y: -60,
+        y: -30, // Reducido de -60
         ease: "none",
-      })
+      });
 
       gsap.fromTo(
         color,
-        { y: 40 },
+        { y: 20 }, // Reducido de 40
         {
           scrollTrigger: {
             trigger: section,
             start: "top 80%",
             end: "bottom 20%",
-            scrub: 2,
+            scrub: 1.5, // Aumentado de 2
           },
-          y: -110,
+          y: -55, // Reducido de -110
           ease: "none",
         }
-      )
+      );
     })
   })
 
