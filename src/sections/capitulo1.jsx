@@ -26,23 +26,23 @@ const Jason = () => {
           trigger: section,
           start: "top 80%",
           end: "bottom 20%",
-          scrub: 0.6,
+          scrub: 1,
         },
-        y: -60,
+        y: -30,
         ease: "none",
       });
 
       gsap.fromTo(
         color,
-        { y: 40 },
+        { y: 20 },
         {
           scrollTrigger: {
             trigger: section,
             start: "top 80%",
             end: "bottom 20%",
-            scrub: 2,
+            scrub: 1.5,
           },
-          y: -110,
+          y: -55,
           ease: "none",
         }
       );
