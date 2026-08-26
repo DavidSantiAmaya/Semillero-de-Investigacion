@@ -60,12 +60,22 @@
 .history-timeline {
   position: absolute;
   top: 31%;
-  right: clamp(0.8rem, 2vw, 2rem);
   z-index: 10;
   display: grid;
   gap: 0.75rem;
   width: min(18rem, 24vw);
   transform: translateY(-50%);
+  transition: left 0.5s ease, right 0.5s ease;
+}
+
+.history-timeline--left {
+  left: clamp(0.8rem, 2vw, 2rem);
+  right: auto;
+}
+
+.history-timeline--right {
+  left: auto;
+  right: clamp(0.8rem, 2vw, 2rem);
 }
 
 .history-timeline__item {
@@ -82,6 +92,7 @@
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow-sm);
   text-align: left;
+  cursor: pointer;
   transition: transform 260ms ease, border-color 260ms ease, background 260ms ease, color 260ms ease;
 }
 
@@ -478,12 +489,21 @@
 
   .history-timeline {
     top: auto;
-    right: 1rem;
-    left: 1rem;
     bottom: 2rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     width: auto;
     transform: none;
+    transition: left 0.5s ease, right 0.5s ease;
+  }
+
+  .history-timeline--left {
+    left: 1rem;
+    right: auto;
+  }
+
+  .history-timeline--right {
+    left: auto;
+    right: 1rem;
   }
 
   .history-timeline__item {
