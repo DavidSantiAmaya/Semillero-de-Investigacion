@@ -48,13 +48,13 @@ export default function Personajes() {
         </button>
       </div>
 
-      <Hero personaje={personaje} />
-
       <Accordion
         personajes={personajesData}
         personajeActivo={personajeActivo}
         onSelect={setPersonajeActivo}
       />
+
+      <Hero personaje={personaje} />
 
     </main>
   );
