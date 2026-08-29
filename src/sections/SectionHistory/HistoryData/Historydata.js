@@ -7,8 +7,8 @@ const historyEvents = [
     title: "Campaña Libertadora",
     place: "Llanos, Andes y altiplano neogranadino",
     date: "1819",
-    image: getAssetPath("/AssetsHistoria/campana-libertadora.png"),
-    thumbnail: getAssetPath("/AssetsHistoria/campana-libertadora.png"),
+    image: getAssetPath("/AssetsHistoria/campana-libertadora.webp"),
+    thumbnail: getAssetPath("/AssetsHistoria/campana-libertadora.webp"),
     palette: "bronze",
     layout: "panorama",
     lead:
@@ -29,8 +29,8 @@ const historyEvents = [
     title: "Cruce del Páramo de Pisba",
     place: "Cordillera Oriental, entre Boyacá y Casanare",
     date: "1819",
-    image: getAssetPath("/AssetsHistoria/paramo-pisba.png"),
-    thumbnail: getAssetPath("/AssetsHistoria/paramo-pisba.png"),
+    image: getAssetPath("/AssetsHistoria/paramo-pisba.webp"),
+    thumbnail: getAssetPath("/AssetsHistoria/paramo-pisba.webp"),
     palette: "indigo",
     layout: "diagonal",
     lead:
@@ -51,8 +51,8 @@ const historyEvents = [
     title: "Combates de Gámeza y Tópaga",
     place: "Gámeza y Tópaga, Boyacá",
     date: "1819",
-    image: getAssetPath("/AssetsHistoria/batalla-gameza.png"),
-    thumbnail: getAssetPath("/AssetsHistoria/batalla-gameza.png"),
+    image: getAssetPath("/AssetsHistoria/batalla-gameza.webp"),
+    thumbnail: getAssetPath("/AssetsHistoria/batalla-gameza.webp"),
     palette: "emerald",
     layout: "diagonal",
     lead:
@@ -73,8 +73,8 @@ const historyEvents = [
     title: "Batalla del pueste Boyacá",
     place: "Puente de Boyacá, entre Tunja y Ventaquemada",
     date: "1819",
-    image: getAssetPath("/AssetsHistoria/batalla-del-Puente-de-boyaca.png"),
-    thumbnail: getAssetPath("/AssetsHistoria/batalla-del-Puente-de-boyaca.png"),
+    image: getAssetPath("/AssetsHistoria/batalla-del-Puente-de-boyaca.webp"),
+    thumbnail: getAssetPath("/AssetsHistoria/batalla-del-Puente-de-boyaca.webp"),
     palette: "crimson",
     layout: "monument",
     lead:

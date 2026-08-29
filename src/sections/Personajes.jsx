@@ -5,6 +5,7 @@ import "../Personajes.css";
 
 import Hero from "./SectionsPersonajes/Hero";
 import Accordion from "./SectionsPersonajes/Accordion";
+import DetailCard from "./SectionsPersonajes/DetailCard";
 
 import { personajesData } from "../data/personajesData";
 import { useContentIndexFromNavigation } from "../utils/contentNavigation";
@@ -48,14 +49,15 @@ export default function Personajes() {
         </button>
       </div>
 
-      <Hero personaje={personaje} />
-
       <Accordion
         personajes={personajesData}
         personajeActivo={personajeActivo}
         onSelect={setPersonajeActivo}
       />
 
+      <Hero personaje={personaje} />
+
+      <DetailCard accordion={personaje.accordion} />
     </main>
   );
 }

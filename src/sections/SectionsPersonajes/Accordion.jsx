@@ -1,12 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
-
-export default function Accordion({
-  personajes,
-  personajeActivo,
-  onSelect,
-}) {
-  const currentAccordion = personajes[personajeActivo].accordion;
-
+export default function Accordion({ personajes, personajeActivo, onSelect }) {
   return (
     <section className="accordion-section">
       <div className="section-head">
@@ -34,25 +26,6 @@ export default function Accordion({
           </button>
         ))}
       </div>
-
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentAccordion.title}
-          className="detail-card"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.35 }}
-        >
-          <img src={currentAccordion.image} alt={currentAccordion.title} />
-
-          <div className="detail-copy">
-            <p className="kicker">Detalle activo</p>
-            <h3>{currentAccordion.title}</h3>
-            <p>{currentAccordion.description}</p>
-          </div>
-        </motion.div>
-      </AnimatePresence>
     </section>
   );
 }

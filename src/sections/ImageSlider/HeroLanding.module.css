@@ -252,7 +252,7 @@
 
 .navButton {
   position: absolute;
-  top: 105%;
+  top: 50%;
   z-index: 20;
   width: 50px;
   height: 50px;
@@ -274,7 +274,7 @@
 }
 
 .prevButton {
-  left: -70px;
+  left: 685px;
 }
 
 .nextButton {
@@ -354,7 +354,7 @@
   }
 
   .prevButton {
-    left: -54px;
+    left: 250px;
   }
 
   .nextButton {
@@ -434,6 +434,56 @@
 
   .nextButton {
     right: calc(50% - 96px);
+  }
+}
+
+/* Pantallas grandes (4K) */
+@media (min-width: 2000px) {
+  .heroContainer {
+    padding: 3rem 2.5rem;
+  }
+
+  .mainContent {
+    gap: clamp(3rem, 14vw, 18rem);
+  }
+
+  .mainTitle {
+    font-size: clamp(4.5rem, 10vw, 8rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .rightSection {
+    width: min(60vw, 900px);
+  }
+
+  .carouselContainer {
+    height: 600px;
+  }
+
+  .carouselCard {
+    width: 360px;
+    height: 540px;
+  }
+
+  .navButton {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+
+  .prevButton {
+    left: -90px;
+  }
+
+  .nextButton {
+    right: -90px;
   }
 }
 

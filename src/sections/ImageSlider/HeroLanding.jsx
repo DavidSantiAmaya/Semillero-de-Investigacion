@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { getAssetPath } from '../../utils/assetPath';
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
@@ -42,6 +42,7 @@ export default function HeroLanding({ slides = heroLandingData }) {
   const initialSlideIndex = useContentIndexFromNavigation(slides);
   const [current, setCurrent] = useState(initialSlideIndex);
   const activeSlide = slides[current] ?? slides[0];
+  const carouselRef = useRef(null);
 
   useEffect(() => {
     setCurrent(initialSlideIndex);
@@ -119,6 +120,8 @@ export default function HeroLanding({ slides = heroLandingData }) {
                   initial={false}
                   transition={CARD_TRANSITION}
                   aria-hidden={!isActive}
+                  onClick={() => !isActive && setCurrent(index)}
+                  style={{ cursor: "pointer" }}
                 >
                   <MotionDiv
                     className={styles.cardImageWrapper}
@@ -129,10 +132,12 @@ export default function HeroLanding({ slides = heroLandingData }) {
                       src={slide.image}
                       alt={slide.title}
                       className={styles.cardImage}
-                      animate={{
-                        x: `${offset * -7}%`,
-                        scale: isActive ? 1.08 : 1.16,
-                      }}
+                      animate={
+                        {
+                          x: `${offset * -7}%`,
+                          scale: isActive ? 1.08 : 1.16,
+                        }
+                      }
                       transition={CARD_TRANSITION}
                     />
                     <div className={styles.cardOverlay} />
@@ -150,29 +155,28 @@ export default function HeroLanding({ slides = heroLandingData }) {
                 </MotionDiv>
               );
             })}
-
-            <button
-              className={`${styles.navButton} ${styles.prevButton}`}
-              onClick={() => paginate(-1)}
-              aria-label="Anterior"
-            >
-              ←
-            </button>
-            <button
-              className={`${styles.navButton} ${styles.nextButton}`}
-              onClick={() => paginate(1)}
-              aria-label="Siguiente"
-            >
-              →
-            </button>
           </div>
+
+          <button
+            className={`${styles.navButton} ${styles.prevButton}`}
+            onClick={() => paginate(-1)}
+            aria-label="Anterior"
+          >
+            ←
+          </button>
+          <button
+            className={`${styles.navButton} ${styles.nextButton}`}
+            onClick={() => paginate(1)}
+            aria-label="Siguiente"
+          >
+            →
+          </button>
 
           <div className={styles.indicators}>
             {slides.map((_, index) => (
               <button
                 key={index}
-                className={`${styles.dot} ${index === current ? styles.activeDot : ""
-                  }`}
+                className={`${styles.dot} ${index === current ? styles.activeDot : ""}`}
                 onClick={() => setCurrent(index)}
                 aria-label={`Ir a slide ${index + 1}`}
               />
@@ -183,8 +187,3 @@ export default function HeroLanding({ slides = heroLandingData }) {
     </section>
   );
 }
-
-
-
-
-

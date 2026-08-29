@@ -37,28 +37,40 @@ export default function HeroHistory({ events = [], initialIndex = 0 }) {
 
   if (!activeEvent) return null;
 
+  // Determinar si el timeline debe estar a la izquierda o derecha
+  const isTimelineLeft = activeEvent.id === "paramo-pisba" || activeEvent.id === "batalla-gameza-topaga";
+  const timelineClass = isTimelineLeft ? "history-timeline history-timeline--left" : "history-timeline history-timeline--right";
+
   return (
     <section
       className={`history-hero history-hero--${activeEvent.palette}`}
       onPointerMove={handlePointerMove}
-      style={{
-        "--tilt-x": `${mouse.y * -5}deg`,
-        "--tilt-y": `${mouse.x * 7}deg`,
-        "--parallax-x": `${mouse.x * 18}px`,
-        "--parallax-y": `${mouse.y * 18}px`,
-      }}
+      style={
+        {
+          "--tilt-x": `${mouse.y * -5}deg`,
+          "--tilt-y": `${mouse.x * 7}deg`,
+          "--parallax-x": `${mouse.x * 18}px`,
+          "--parallax-y": `${mouse.y * 18}px`,
+        }
+      }
     >
       <div className="history-hero__ambient" aria-hidden="true" />
       <div className="history-hero__grain" aria-hidden="true" />
 
-      <aside className="history-timeline" aria-label="Eventos historicos">
+      <aside className={timelineClass} aria-label="Eventos historicos">
         {events.map((event, index) => (
           <div
-            className={`history-timeline__item ${
-              index === activeIndex ? "is-active" : ""
-            }`}
+            className={`history-timeline__item ${index === activeIndex ? "is-active" : ""}`}
             key={event.id}
             aria-current={index === activeIndex ? "step" : undefined}
+            onClick={() => step(index - activeIndex)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                step(index - activeIndex);
+              }
+            }}
           >
             <span className="history-timeline__image">
               <img src={event.thumbnail} alt="" />
@@ -93,7 +105,6 @@ export default function HeroHistory({ events = [], initialIndex = 0 }) {
             <span>{activeEvent.date}</span>
             <strong>{activeEvent.place}</strong>
           </div>
-          
         </div>
 
         <div className="history-scene__detail">
@@ -128,8 +139,3 @@ export default function HeroHistory({ events = [], initialIndex = 0 }) {
     </section>
   );
 }
-
-
-
-
-

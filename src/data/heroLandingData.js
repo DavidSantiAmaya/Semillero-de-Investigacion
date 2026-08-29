@@ -3,8 +3,8 @@ import { getAssetPath } from '../utils/assetPath';
 const heroLandingData = [
   {
     id: 1,
-    image: getAssetPath("/AssetsLugares/paipa-background.png"),
-        background: getAssetPath("/AssetsLugares/paipa-background.png"),
+    image: getAssetPath("/AssetsLugares/paipa-background.webp"),
+        background: getAssetPath("/AssetsLugares/paipa-background.webp"),
     title: "Paipa",
     subtitle: "Eje estratégico de la campaña",
     description:
@@ -12,8 +12,8 @@ const heroLandingData = [
   },
   {
     id: 2,
-    image: getAssetPath("/AssetsLugares/boyaca-background.png"),
-        background: getAssetPath("/AssetsLugares/boyaca-background.png"),
+    image: getAssetPath("/AssetsLugares/boyaca-background.webp"),
+        background: getAssetPath("/AssetsLugares/boyaca-background.webp"),
     title: "Boyacá",
     subtitle: "El escenario estratégico de la libertad",
     description:
@@ -21,8 +21,8 @@ const heroLandingData = [
   },
   {
     id: 3,
-    image: getAssetPath("/AssetsLugares/pisba-background.png"),
-        background: getAssetPath("/AssetsLugares/pisba-background.png"),
+    image: getAssetPath("/AssetsLugares/pisba-background.webp"),
+        background: getAssetPath("/AssetsLugares/pisba-background.webp"),
     title: "Pisba",
     subtitle: "El paso glacial hacia la libertad",
     description:
@@ -30,8 +30,8 @@ const heroLandingData = [
   },
   {
     id: 4,
-    image: getAssetPath("/AssetsLugares/paya-background.png"),
-        background: getAssetPath("/AssetsLugares/paya-background.png"),
+    image: getAssetPath("/AssetsLugares/paya-background.webp"),
+        background: getAssetPath("/AssetsLugares/paya-background.webp"),
     title: "Paya",
     subtitle: "Las Termópilas de Paya",
     description:
@@ -39,8 +39,8 @@ const heroLandingData = [
   },
   {
     id: 5,
-    image: getAssetPath("/AssetsLugares/chicamocha-background.png"),
-        background: getAssetPath("/AssetsLugares/chicamocha-background.png"),
+    image: getAssetPath("/AssetsLugares/chicamocha-background.webp"),
+        background: getAssetPath("/AssetsLugares/chicamocha-background.webp"),
     title: "El Chicamocha",
     subtitle: "El río que definió la campaña",
     description:
@@ -48,8 +48,8 @@ const heroLandingData = [
   },
   {
     id: 6,
-    image: getAssetPath("/AssetsLugares/jaime-rooke-background.png"),
-        background: getAssetPath("/AssetsLugares/jaime-rooke-background.png"),
+    image: getAssetPath("/AssetsLugares/jaime-rooke-background.webp"),
+        background: getAssetPath("/AssetsLugares/jaime-rooke-background.webp"),
     title: "Parque Jaime Rooke",
     subtitle: "Homenaje al héroe irlandés",
     description:
@@ -57,8 +57,8 @@ const heroLandingData = [
   },
   {
     id: 7,
-    image: getAssetPath("/AssetsLugares/casa-seis-ventanas-background.png"),
-        background: getAssetPath("/AssetsLugares/casa-seis-ventanas-background.png"),
+    image: getAssetPath("/AssetsLugares/casa-seis-ventanas-background.webp"),
+        background: getAssetPath("/AssetsLugares/casa-seis-ventanas-background.webp"),
     title: "Casa de las Seis Ventanas",
     subtitle: "Cuartel de la independencia",
     description:
@@ -66,8 +66,8 @@ const heroLandingData = [
   },
   {
     id: 8,
-    image: getAssetPath("/AssetsLugares/pantano-de-vargas-background.png"),
-        background: getAssetPath("/AssetsLugares/pantano-de-vargas-background.png"),
+    image: getAssetPath("/AssetsLugares/pantano-de-vargas-background.webp"),
+        background: getAssetPath("/AssetsLugares/pantano-de-vargas-background.webp"),
     title: "Pantano de Vargas",
     subtitle: "Sangre y gloria de la libertad",
     description:
@@ -75,8 +75,8 @@ const heroLandingData = [
   },
   {
     id: 9,
-    image: getAssetPath("/AssetsLugares/puente-boyaca-background.png"),
-        background: getAssetPath("/AssetsLugares/puente-boyaca-background.png"),
+    image: getAssetPath("/AssetsLugares/puente-boyaca-background.webp"),
+        background: getAssetPath("/AssetsLugares/puente-boyaca-background.webp"),
     title: "Puente de Boyacá",
     subtitle: "Altar de la libertad americana",
     description:

@@ -311,8 +311,14 @@ body {
 /*=====================================================
   5. TARJETA DE DETALLE
 =====================================================*/
-.detail-card {
+.detail-card-wrap {
   margin-top: var(--space-4);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail-card-static {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: var(--space-4);
@@ -325,25 +331,54 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-.detail-card img {
+.detail-image {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.detail-image img {
   width: 100%;
   height: 100%;
   min-height: 240px;
   object-fit: cover;
-  border-radius: var(--radius-md);
+  display: block;
 }
 
-.detail-copy {
+.detail-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 8px 6px;
 }
 
-.detail-copy p {
+.detail-content .kicker {
+  margin: 0 0 var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-ink-soft);
+}
+
+.detail-content h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.02;
+}
+
+.detail-content .subtitle {
+  margin: 0 0 var(--space-2);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.detail-content .description {
   margin: 0;
-  line-height: 1.8;
   font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 500;
 }
 
 /*=====================================================
@@ -420,6 +455,20 @@ body {
 
   .detail-card {
     grid-template-columns: 1fr;
+  }
+
+  .detail-card-wrap {
+    margin-top: var(--space-3);
+  }
+
+  .detail-flip,
+  .detail-card-inner,
+  .detail-face {
+    transform-style: preserve-3d;
+  }
+
+  .detail-back {
+    transform: rotateY(180deg);
   }
 
   .flip-card,
