@@ -114,7 +114,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-lugares.webp")}
+                src={getAssetPath("public/AssetsLugares/boyaca-background.webp")} 
               />
             </span>
             <span className="floating-button-label">Boyacá (1819)</span>
@@ -127,7 +127,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-lugares.webp")}
+                src={getAssetPath("public/AssetsLugares/pantano-de-vargas-background.webp")}
               />
             </span>
             <span className="floating-button-label">Pantano de Vargas</span>
@@ -140,7 +140,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-historia.webp")}
+                src={getAssetPath("public/AssetsHistoria/campana-libertadora.webp")}
               />
             </span>
             <span className="floating-button-label">campaña libertadora</span>
@@ -153,7 +153,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-historia.webp")}
+                src={getAssetPath("public/AssetsHistoria/batalla-gameza.webp")}
               />
             </span>
             <span className="floating-button-label">Batalla de Gameza y Topaga</span>
@@ -185,7 +185,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-personajes.webp")}
+                src={getAssetPath("public/AssetsPersonajes/bolivar/card1.webp")}
               />
             </span>
             <span className="floating-button-label">Simón Bolívar</span>
@@ -198,7 +198,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-personajes.webp")}
+                src={getAssetPath("public/AssetsPersonajes/santander/card1.webp")}
               />
             </span>
             <span className="floating-button-label">Francisco de Paula Santander</span>
@@ -211,7 +211,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-lugares.webp")}
+                src={getAssetPath("public/AssetsLugares/pisba-background.webp")}
               />
             </span>
             <span className="floating-button-label">Paramo de Pisba</span>
@@ -224,7 +224,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-lugares.webp")}
+                src={getAssetPath("public/AssetsLugares/paipa-background.webp")}
               />
             </span>
             <span className="floating-button-label">Paipa</span>
@@ -237,7 +237,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-lugares.webp")}
+                src={getAssetPath("public/AssetsLugares/chicamocha-background.webp")}
               />
             </span>
             <span className="floating-button-label">Chicamocha</span>
@@ -252,7 +252,7 @@ const irAHistoria3 = () => {
           >
             <span className="floating-button-icon">
               <img
-                src={getAssetPath("/images/Botones/boton-historia.webp")}
+                src={getAssetPath("public/AssetsHistoria/paramo-pisba.webp")}
                 alt=""
               />
             </span>
