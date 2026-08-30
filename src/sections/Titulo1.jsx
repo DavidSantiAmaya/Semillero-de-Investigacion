@@ -1,10 +1,7 @@
 import React, { useRef } from "react";
 import { getAssetPath } from '../utils/assetPath';
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "../utils/gsap";
 import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Titulo1 = () => {
   const heroRef = useRef(null);

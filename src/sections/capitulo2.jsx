@@ -1,49 +1,14 @@
-import gsap from "gsap";
-import { getAssetPath } from '../utils/assetPath';
-import { useGSAP } from "@gsap/react";
+import { getAssetPath } from "../utils/assetPath";
+import { useIllustrationParallax } from "../hooks/useIllustrationParallax";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { navigateToContent } from "../utils/contentNavigation";
 
 const Lucia = () => {
   const navigate = useNavigate();
+  const sectionRef = useRef(null);
 
-  useGSAP(() => {
-    const sections = gsap.utils.toArray(".img-merge")
-
-    sections.forEach((section) => {
-      const line = section.querySelector(".line-img")
-      const color = section.querySelector(".color-img")
-
-      // Movimientos reducidos y scrub aumentado para suavidad
-      gsap.to(line, {
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          end: "bottom 20%",
-          scrub: 1, // Aumentado de 0.6
-        },
-        y: -30, // Reducido de -60
-        ease: "none",
-      });
-
-      gsap.fromTo(
-        color,
-        { y: 20 }, // Reducido de 40
-        {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            end: "bottom 20%",
-            scrub: 1.5, // Aumentado de 2
-          },
-          y: -55, // Reducido de -110
-          ease: "none",
-        }
-      );
-    })
-  })
+  useIllustrationParallax(sectionRef);
 
   const irAHero = () => {
     navigateToContent(navigate, {
@@ -62,37 +27,51 @@ const Lucia = () => {
   };
 
   return (
-    <div className="img-box">
+    <div className="img-box" ref={sectionRef}>
       <div className="img-merge">
         <img
           className="line-img"
-          src={getAssetPath("/images/ilustraciones/Ilustracion4Linea.webp")}
+          src={getAssetPath(
+            "/images/ilustraciones/Ilustracion4Linea.webp"
+          )}
           alt="Ilustracion linea"
         />
         <img
           className="color-img"
-          src={getAssetPath("/images/ilustraciones/Ilustracion4Color.webp")}
+          src={getAssetPath(
+            "/images/ilustraciones/Ilustracion4Color.webp"
+          )}
           alt="Ilustracion color"
         />
       </div>
 
-        <p className="story-text">
-          La noche del 24 de julio de 1819 cayó sobre los campamentos con un silencio engañoso. Mientras los soldados descansaban, Simón Bolívar preparaba una maniobra decisiva: cruzar el río Chicamocha antes del amanecer utilizando las pocas balsas reunidas por los habitantes de la región. Su objetivo era sorprender al coronel José María Barreiro y obligarlo a combatir en condiciones desfavorables.
-        </p>
-        <div className="img-merge">
-          <img
-            className="line-img"
-            src={getAssetPath("/images/ilustraciones/Ilustracion5Linea.webp")}
-            alt="Ilustracion linea"
-          />
-          <img
-            className="color-img"
-            src={getAssetPath("/images/ilustraciones/Ilustracion5Color.webp")}
-            alt="Ilustracion color"
-          />
-        </div>
+      <p className="story-text">
+        La noche del 24 de julio de 1819 cayó sobre los campamentos con un
+        silencio engañoso. Mientras los soldados descansaban, Simón Bolívar
+        preparaba una maniobra decisiva: cruzar el río Chicamocha antes del
+        amanecer utilizando las pocas balsas reunidas por los habitantes de
+        la región. Su objetivo era sorprender al coronel José María Barreiro y
+        obligarlo a combatir en condiciones desfavorables.
+      </p>
 
-        <div className="button-row">
+      <div className="img-merge">
+        <img
+          className="line-img"
+          src={getAssetPath(
+            "/images/ilustraciones/Ilustracion5Linea.webp"
+          )}
+          alt="Ilustracion linea"
+        />
+        <img
+          className="color-img"
+          src={getAssetPath(
+            "/images/ilustraciones/Ilustracion5Color.webp"
+          )}
+          alt="Ilustracion color"
+        />
+      </div>
+
+      <div className="button-row">
         <button
           type="button"
           className="floating-button circle-button"
@@ -100,10 +79,15 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-            src={getAssetPath("/images/Botones/boton-personajes.webp")}
+              src={getAssetPath(
+                "/images/Botones/boton-personajes.webp"
+              )}
+              alt=""
             />
           </span>
-          <span className="floating-button-label">José María Barreiro</span>
+          <span className="floating-button-label">
+            José María Barreiro
+          </span>
         </button>
 
         <button
@@ -113,22 +97,28 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              src={getAssetPath("/images/Botones/boton-lugares.webp")}
+              src={getAssetPath(
+                "/images/Botones/boton-lugares.webp"
+              )}
+              alt=""
             />
           </span>
-          <span className="floating-button-label">Casa de las Seis Ventanas</span>
+          <span className="floating-button-label">
+            Casa de las Seis Ventanas
+          </span>
         </button>
-
       </div>
 
-        <p className="story-text">
-          Al mismo tiempo, Barreiro seguía de cerca los movimientos patriotas. La tradición oral de Paipa sostiene que durante esos días utilizó la Casa de las Seis Ventanas como alojamiento o cuartel temporal. Aunque esta versión forma parte de la memoria histórica de la región y no está confirmada por los partes militares, continúa siendo uno de los relatos más representativos del patrimonio local.
-        </p>
-      </div>
-  )
-}
+      <p className="story-text">
+        Al mismo tiempo, Barreiro seguía de cerca los movimientos patriotas.
+        La tradición oral de Paipa sostiene que durante esos días utilizó la
+        Casa de las Seis Ventanas como alojamiento o cuartel temporal. Aunque
+        esta versión forma parte de la memoria histórica de la región y no
+        está confirmada por los partes militares, continúa siendo uno de los
+        relatos más representativos del patrimonio local.
+      </p>
+    </div>
+  );
+};
 
-export default Lucia
-
-
-
+export default Lucia;

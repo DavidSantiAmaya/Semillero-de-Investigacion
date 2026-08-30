@@ -1,17 +1,16 @@
 import React, { useRef } from "react";
 import { getAssetPath } from '../utils/assetPath';
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "../utils/gsap";
 import { useGSAP } from "@gsap/react";
 import { navigateToContent } from "../utils/contentNavigation";
 import { useNavigate } from "react-router-dom";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useIllustrationParallax } from "../hooks/useIllustrationParallax";
 
 const Titulo2 = () => {
   const navigate = useNavigate();
   const heroRef = useRef(null);
   const contentRef = useRef(null);
+  useIllustrationParallax(heroRef);
 
   // Más grande al inicio para que no se vea la máscara al principio
   const initialMaskSize = "96000%";

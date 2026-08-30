@@ -1,54 +1,13 @@
 import { useRef } from "react";
 import { getAssetPath } from '../utils/assetPath';
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { useIllustrationParallax } from "../hooks/useIllustrationParallax";
 import { navigateToContent } from "../utils/contentNavigation";
 import { useNavigate } from "react-router-dom";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Jason = () => {
   const sectionRef = useRef(null);
   const navigate = useNavigate();
-
-  useGSAP(() => {
-    const sections = gsap.utils.toArray(".img-merge");
-
-    sections.forEach((section) => {
-      const line = section.querySelector(".line-img");
-      const color = section.querySelector(".color-img");
-
-      if (!line || !color) return;
-
-      gsap.to(line, {
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          end: "bottom 20%",
-          scrub: 0.6,
-        },
-        y: -60,
-        ease: "none",
-      });
-
-      gsap.fromTo(
-        color,
-        { y: 40 },
-        {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            end: "bottom 20%",
-            scrub: 2,
-          },
-          y: -110,
-          ease: "none",
-        }
-      );
-    });
-  }, []);
-
+  useIllustrationParallax(sectionRef);
 
   const irAHero1 = () => {
     navigateToContent(navigate, {
