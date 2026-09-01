@@ -83,7 +83,6 @@ const Lucia = () => {
         />
       </div>
 
-      {/* BOTONES */}
       <div className="button-row">
         <button
           type="button"
@@ -93,7 +92,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "/images/Botones/boton-personajes.webp"
+                "public/AssetsPersonajes/amaya/card1.webp"
               )}
               alt=""
             />
@@ -112,7 +111,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "/images/Botones/boton-lugares.webp"
+                "public/AssetsLugares/paya-background.webp"
               )}
               alt=""
             />
@@ -156,7 +155,6 @@ const Lucia = () => {
         />
       </div>
 
-      {/* BOTÓN PARQUE JAIME ROOKE */}
       <div className="button-row">
         <button
           type="button"
@@ -166,7 +164,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "/images/Botones/boton-lugares.webp"
+                "public/AssetsLugares/jaime-rooke-background.webp"
               )}
               alt=""
             />

@@ -62,13 +62,13 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              src={getAssetPath("/images/Botones/boton-lugares.webp")}
+              src={getAssetPath("public/AssetsLugares/pantano-de-vargas-background.webp")}
               alt=""
             />
           </span>
 
           <span className="floating-button-label">
-            Picacho y Cangrejo
+            Pantano De Vargas
           </span>
         </button>
       </div>
@@ -99,25 +99,6 @@ const Lucia = () => {
           )}
           alt="Ilustración color"
         />
-      </div>
-
-      <div className="button-row">
-        <button
-          type="button"
-          className="floating-button circle-button"
-          onClick={irAHero1}
-        >
-          <span className="floating-button-icon">
-            <img
-              src={getAssetPath("/images/Botones/boton-lugares.webp")}
-              alt=""
-            />
-          </span>
-
-          <span className="floating-button-label">
-            Picacho y Cangrejo
-          </span>
-        </button>
       </div>
 
       <p className="story-text">

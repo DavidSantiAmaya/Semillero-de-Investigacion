@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../Personajes.css";
@@ -12,6 +12,7 @@ import { useContentIndexFromNavigation } from "../utils/contentNavigation";
 
 export default function Personajes() {
   const navigate = useNavigate();
+  const pageRef = useRef(null);
   const initialPersonajeIndex = useContentIndexFromNavigation(personajesData);
   const [personajeActivo, setPersonajeActivo] = useState(initialPersonajeIndex);
 
@@ -22,20 +23,34 @@ export default function Personajes() {
   }, [initialPersonajeIndex]);
 
   useEffect(() => {
-    const previousOverflow = document.body.style.overflow;
-    const previousTouchAction = document.body.style.touchAction;
+    const page = pageRef.current;
+    const scrollContainer = page?.closest("[data-route-scroll-container]");
 
-    document.body.style.overflow = "hidden";
-    document.body.style.touchAction = "none";
+    if (!page || !scrollContainer) return undefined;
 
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      document.body.style.touchAction = previousTouchAction;
+    const handleWheel = (event) => {
+      const lineHeight = 16;
+      const pageHeight = scrollContainer.clientHeight;
+      const deltaY =
+        event.deltaY *
+        (event.deltaMode === 1
+          ? lineHeight
+          : event.deltaMode === 2
+            ? pageHeight
+            : 1);
+
+      if (!deltaY) return;
+
+      event.preventDefault();
+      scrollContainer.scrollBy({ top: deltaY, behavior: "auto" });
     };
+
+    page.addEventListener("wheel", handleWheel, { passive: false });
+    return () => page.removeEventListener("wheel", handleWheel);
   }, []);
 
   return (
-    <main className="bolivar-page">
+    <main ref={pageRef} className="bolivar-page">
       <div className="back-button-container">
         <button
           className="back-button"

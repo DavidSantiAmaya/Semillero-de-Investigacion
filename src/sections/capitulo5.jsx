@@ -156,7 +156,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "/images/Botones/boton-personajes.webp"
+                "public/AssetsPersonajes/rondon/card1.webp"
               )}
               alt=""
             />

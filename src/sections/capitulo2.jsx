@@ -80,7 +80,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "/images/Botones/boton-personajes.webp"
+                "public/AssetsPersonajes/barreiro/card1.webp"
               )}
               alt=""
             />
@@ -98,7 +98,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "/images/Botones/boton-lugares.webp"
+                "public/AssetsLugares/casa-seis-ventanas-background.webp"
               )}
               alt=""
             />
@@ -120,5 +120,4 @@ const Lucia = () => {
     </div>
   );
 };
-
 export default Lucia;

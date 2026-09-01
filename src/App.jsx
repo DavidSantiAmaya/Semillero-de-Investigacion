@@ -206,6 +206,7 @@ function AnimatedRoutes() {
         {CurrentPage && (
           <MotionDiv
             key={location.pathname}
+            data-route-scroll-container
             custom={direction}
             variants={variants}
             initial="initial"
@@ -219,7 +220,7 @@ function AnimatedRoutes() {
         )}
       </AnimatePresence>
 
-      <FloatingControls />
+      {location.pathname !== "/personajes" && <FloatingControls />}
     </div>
   );
 }

@@ -129,7 +129,7 @@ const Titulo2 = () => {
             >
               <span className="floating-button-icon">
                 <img
-                  src={getAssetPath("/images/Botones/boton-lugares.webp")}
+                  src={getAssetPath("public/AssetsLugares/puente-boyaca-background.webp")}
                   alt=""
                 />
               </span>
@@ -145,7 +145,7 @@ const Titulo2 = () => {
             >
               <span className="floating-button-icon">
                 <img
-                  src={getAssetPath("/images/Botones/boton-historia.webp")}
+                  src={getAssetPath("public/AssetsHistoria/batalla-del-Puente-de-boyaca.webp")}
                   alt=""
                 />
               </span>
@@ -164,7 +164,3 @@ const Titulo2 = () => {
 };
 
 export default Titulo2;
-
-
-
-
