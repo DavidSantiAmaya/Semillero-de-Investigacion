@@ -1,59 +1,127 @@
 .floating-controls {
   position: fixed;
+
   right: 20px;
   bottom: 24px;
-  z-index: 80;
+
+  z-index: 999999;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+
+  pointer-events: none;
+
+
+  isolation: isolate;
 }
 
+
 .fc-button {
+  position: relative;
+
   width: 46px;
   height: 46px;
+
+  flex: 0 0 46px;
+
+  padding: 0;
+  margin: 0;
+
   border-radius: 50%;
   border: 1px solid var(--color-border);
+
   background: rgba(255, 255, 255, 0.75);
+
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
   box-shadow: var(--shadow-sm);
+
   color: var(--color-ink);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   cursor: pointer;
-  transition: transform var(--transition-fast), background var(--transition-fast),
-    color var(--transition-fast), box-shadow var(--transition-fast);
+
+  pointer-events: auto;
+
+  touch-action: manipulation;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
 }
+
+
+
+.fc-button svg {
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  pointer-events: none;
+}
+
 
 .fc-button:hover {
   transform: translateY(-2px) scale(1.05);
+
   box-shadow: var(--shadow-md);
 }
+
 
 .fc-button:focus-visible {
   outline: 2px solid var(--color-ink);
   outline-offset: 2px;
 }
 
+
+
 .fc-button:active {
   transform: translateY(0) scale(0.96);
 }
 
+
+
 .fc-button.fc-active {
   background: var(--color-ink);
+
   color: var(--color-paper);
+
   border-color: var(--color-ink);
 }
+
+
+
 
 @media (max-width: 520px) {
   .floating-controls {
     right: 12px;
     bottom: 16px;
+
     gap: 8px;
   }
 
   .fc-button {
     width: 40px;
     height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .fc-button svg {
+    width: 18px;
+    height: 18px;
   }
 }
