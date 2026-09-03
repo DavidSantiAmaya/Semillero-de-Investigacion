@@ -70,7 +70,7 @@ const historyEvents = [
   {
     id: "batalla-de-puente-de-boyaca",
     eyebrow: "7 de agosto de 1819",
-    title: "Batalla del pueste Boyacá",
+    title: "Batalla del Puente Boyacá",
     place: "Puente de Boyacá, entre Tunja y Ventaquemada",
     date: "1819",
     image: getAssetPath("/AssetsHistoria/batalla-del-Puente-de-boyaca.webp"),

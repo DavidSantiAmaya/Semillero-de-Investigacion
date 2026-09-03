@@ -36,6 +36,7 @@ import Historia from "./sections/SectionHistory/History";
 
 import Encuesta from "./sections/Encuestas/Encuesta";
 import Fuentes from "./sections/Fuentes/Fuentes";
+import Biblioteca from "./sections/biblioteca";
 
 
 
@@ -157,6 +158,10 @@ function Home({ showFooter }) {
 
        <section id="encuesta">
         <Encuesta/>
+      </section>
+
+      <section id="Biblioteca">
+        <Biblioteca/>
       </section>
 
       {showFooter && <Footer />}
