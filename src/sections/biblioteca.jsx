@@ -41,7 +41,7 @@ const Jason = () => {
                     >
                         <span className="floating-button-icon">
                             <img
-                                src={getAssetPath("public/images/Botones/boton-lugares.webp")}
+                                src={getAssetPath("/images/Botones/boton-lugares.webp")}
                             />
                         </span>
                         <span className="floating-button-label">Biblioteca De Lugares</span>
@@ -54,7 +54,7 @@ const Jason = () => {
                     >
                         <span className="floating-button-icon">
                             <img
-                                src={getAssetPath("public/images/Botones/boton-historia.webp")}
+                                src={getAssetPath("/images/Botones/boton-historia.webp")}
                             />
                         </span>
                         <span className="floating-button-label">Biblioteca De Historia</span>
@@ -67,7 +67,7 @@ const Jason = () => {
                     >
                         <span className="floating-button-icon">
                             <img
-                                src={getAssetPath("public/images/Botones/boton-personajes.webp")}
+                                src={getAssetPath("/images/Botones/boton-personajes.webp")}
                             />
                         </span>
                         <span className="floating-button-label">Biblioteca De Personajes</span>
