@@ -72,7 +72,7 @@ export default function Personajes() {
 
       <Hero personaje={personaje} />
 
-      <DetailCard accordion={personaje.accordion} />
+      {/* <DetailCard accordion={personaje.accordion} /> */}
     </main>
   );
 }

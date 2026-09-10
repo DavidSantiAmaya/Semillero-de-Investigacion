@@ -86,8 +86,9 @@ nav {
 .hero-section {
   position: relative;
   width: 100dvw;
-  height: 100dvh;
+  height: 1105px;
   overflow: hidden;
+  max-height: none !important;
 }
 
 .mask-wrapper1,

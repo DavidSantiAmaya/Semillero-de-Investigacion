@@ -113,6 +113,3 @@ const Titulo1 = () => {
 };
 
 export default Titulo1;
-
-
-
