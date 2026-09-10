@@ -92,7 +92,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "public/AssetsPersonajes/amaya/card1.webp"
+                "AssetsPersonajes/amaya/card1.webp"
               )}
               alt=""
             />
@@ -111,7 +111,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "public/AssetsLugares/paya-background.webp"
+                "AssetsLugares/paya-background.webp"
               )}
               alt=""
             />
@@ -164,7 +164,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "public/AssetsLugares/jaime-rooke-background.webp"
+                "AssetsLugares/jaime-rooke-background.webp"
               )}
               alt=""
             />

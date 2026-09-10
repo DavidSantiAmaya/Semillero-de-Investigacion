@@ -80,7 +80,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "public/AssetsPersonajes/barreiro/card1.webp"
+                "AssetsPersonajes/barreiro/card1.webp"
               )}
               alt=""
             />
@@ -98,7 +98,7 @@ const Lucia = () => {
           <span className="floating-button-icon">
             <img
               src={getAssetPath(
-                "public/AssetsLugares/casa-seis-ventanas-background.webp"
+                "AssetsLugares/casa-seis-ventanas-background.webp"
               )}
               alt=""
             />

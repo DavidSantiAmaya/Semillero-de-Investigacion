@@ -62,7 +62,7 @@ const Lucia = () => {
         >
           <span className="floating-button-icon">
             <img
-              src={getAssetPath("public/AssetsLugares/pantano-de-vargas-background.webp")}
+              src={getAssetPath("AssetsLugares/pantano-de-vargas-background.webp")}
               alt=""
             />
           </span>
