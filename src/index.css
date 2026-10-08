@@ -86,7 +86,7 @@ nav {
 .hero-section {
   position: relative;
   width: 100dvw;
-  height: 1105px;
+  height: 100dvh;
   overflow: hidden;
   max-height: none !important;
 }
