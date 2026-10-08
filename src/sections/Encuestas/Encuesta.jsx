@@ -55,6 +55,7 @@ export default function Encuesta() {
         <div className={styles.stageFrame}>
           <div className={styles.stage}>
             <Canvas shadows camera={{ position: [0, 1.35, 5.75], fov: 36 }}>
+              <ResponsiveCamera />
               <ambientLight intensity={2} />
               <directionalLight
                 position={[4, 8, 6]}
@@ -148,6 +149,21 @@ export default function Encuesta() {
       </div>
     </div>
   );
+}
+
+function ResponsiveCamera() {
+  const { camera, size, invalidate } = useThree();
+
+  useEffect(() => {
+    const isPortraitPhone = size.width <= 520 && size.height > size.width;
+
+    camera.position.set(0, 1.35, isPortraitPhone ? 7.75 : 5.75);
+    camera.fov = isPortraitPhone ? 55 : 36;
+    camera.updateProjectionMatrix();
+    invalidate();
+  }, [camera, invalidate, size.height, size.width]);
+
+  return null;
 }
 
 function Badge({ url, anchorPosition, maxSpeed = 50, minSpeed = 10 }) {
