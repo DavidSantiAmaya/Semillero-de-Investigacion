@@ -115,6 +115,9 @@ const Titulo2 = () => {
           <p className="story-text">
             En medio de aquel escenario, la superioridad que hasta entonces ofrecían las alturas comenzó a disminuir. El enfrentamiento entró en un momento decisivo: la batalla ya no dependía únicamente de la posición defensiva de los realistas, sino de la capacidad de ambos ejércitos para aprovechar cualquier oportunidad que cambiará el curso del combate.
           </p>
+          <p className="story-text"></p>
+          <p className="story-text"></p>
+          <p className="story-text"></p>
         </div>
       </div>
     </section>
