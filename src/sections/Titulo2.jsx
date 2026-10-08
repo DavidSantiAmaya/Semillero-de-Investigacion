@@ -13,7 +13,7 @@ const Titulo2 = () => {
   useIllustrationParallax(heroRef);
 
   // Más grande al inicio para que no se vea la máscara al principio
-  const initialMaskSize = "96000%";
+  const initialMaskSize = "100000%";
   const finalMaskSize = "80%";
 
   useGSAP(() => {
