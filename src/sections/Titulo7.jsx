@@ -9,11 +9,12 @@ import { useNavigate } from "react-router-dom";
 const Titulo2 = () => {
   const navigate = useNavigate();
   const heroRef = useRef(null);
-  const contentRef = useRef(null);
   useIllustrationParallax(heroRef);
 
   // Más grande al inicio para que no se vea la máscara al principio
-  const initialMaskSize = "96000%";
+  const initialMaskPosition = "50% 50%";
+  const initialMaskSize = "50000%";
+  const finalMaskPosition = "50% 50%";
   const finalMaskSize = "80%";
 
   useGSAP(() => {
@@ -21,15 +22,23 @@ const Titulo2 = () => {
       // Configuración inicial
       gsap.set(".mask-wrapper7", {
         WebkitMaskRepeat: "no-repeat",
-        WebkitMaskPosition: "50% 50%",
-        maskPosition: "50% 50%",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: initialMaskPosition,
+        maskPosition: initialMaskPosition,
         WebkitMaskSize: initialMaskSize,
         maskSize: initialMaskSize,
         backgroundColor: "#ffffff",
+        width: "100vw",
+        height: "100dvh",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        overflow: "hidden",
       });
 
       gsap.set(".content-inside", {
         opacity: 1,
+        willChange: "transform, opacity",
       });
 
       const tl = gsap.timeline({
@@ -39,6 +48,7 @@ const Titulo2 = () => {
           end: "+=180%",
           scrub: 0.6,
           pin: true,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -51,6 +61,8 @@ const Titulo2 = () => {
           backgroundColor: "#000000",
           WebkitMaskSize: finalMaskSize,
           maskSize: finalMaskSize,
+          WebkitMaskPosition: finalMaskPosition,
+          maskPosition: finalMaskPosition,
           duration: 1.2,
           ease: "power2.inOut",
         })
