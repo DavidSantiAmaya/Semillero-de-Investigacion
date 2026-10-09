@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./HeroHistory.css";
 
 export default function HeroHistory({
@@ -17,11 +17,6 @@ export default function HeroHistory({
       return initialIndex;
     });
   }, [initialIndex]);
-
-  const nextIndex = useMemo(
-    () => (activeIndex + 1) % Math.max(events.length, 1),
-    [activeIndex, events.length]
-  );
 
   const step = useCallback(
     (amount) => {
@@ -187,6 +182,12 @@ export default function HeroHistory({
               ================================================= */}
 
           <div className="history-scene__detail">
+            {activeEvent.detail && (
+              <p className="history-scene__context">
+                {activeEvent.detail}
+              </p>
+            )}
+
             <div
               className="history-stats"
               aria-label="Datos clave"

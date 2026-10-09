@@ -437,6 +437,244 @@
   }
 }
 
+/* Portada y riel táctil: estos ajustes solo sustituyen el carrusel 3D
+   en teléfonos; las reglas de escritorio se conservan sin cambios. */
+@media (max-width: 767px) {
+  .heroContainer {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: clip;
+    overflow-y: visible;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding:
+      max(1rem, calc(env(safe-area-inset-top, 0px) + 0.75rem))
+      1rem
+      max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 1rem));
+  }
+
+  .backgroundOverlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.38) 0%,
+      rgba(0, 0, 0, 0.1) 30%,
+      rgba(0, 0, 0, 0.78) 72%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+
+  .topBar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    justify-content: flex-start;
+  }
+
+  .backButton {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.36);
+    color: var(--color-paper);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(8px);
+  }
+
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }
+
+  .leftSection {
+    width: 100%;
+    min-width: 0;
+    gap: 0;
+    padding: clamp(1.15rem, 5vw, 1.5rem);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 1.25rem;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(10px);
+  }
+
+  .mainTitle {
+    font-size: clamp(2.15rem, 11vw, 3rem);
+    line-height: 0.96;
+  }
+
+  .subtitle {
+    margin-top: 0.7rem;
+    max-width: none;
+    font-size: clamp(1rem, 4.5vw, 1.15rem);
+    line-height: 1.35;
+  }
+
+  .description {
+    margin-top: 0.85rem;
+    max-width: none;
+    font-size: 0.94rem;
+    line-height: 1.58;
+    overflow-wrap: break-word;
+  }
+
+  .exploreButton {
+    min-height: 48px;
+    margin-top: 1.1rem;
+    padding: 0.75rem 1.3rem;
+  }
+
+  .rightSection {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    column-gap: 0.75rem;
+    row-gap: 0.85rem;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .carouselContainer {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: calc(100% + 1rem);
+    height: auto;
+    margin-right: -1rem;
+    padding: 0 1rem 0.25rem 0;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    perspective: none;
+    transform-style: flat;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x pan-y;
+    overscroll-behavior-x: contain;
+  }
+
+  .carouselContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carouselCard {
+    position: relative;
+    flex: 0 0 min(78vw, 290px);
+    width: min(78vw, 290px);
+    height: auto;
+    gap: 0.5rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    transform-style: flat;
+  }
+
+  .carouselCard:focus-visible {
+    outline: 3px solid var(--color-paper);
+    outline-offset: 3px;
+  }
+
+  .cardImageWrapper {
+    height: clamp(12.5rem, 54vw, 16rem);
+    border-width: 2px;
+    border-radius: 1.15rem;
+    transform-style: flat;
+  }
+
+  .cardImage {
+    filter: grayscale(1) contrast(1.04);
+  }
+
+  .cardTitle {
+    padding: 0.1rem 0 0;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .cardBadge {
+    top: 10px;
+    left: 10px;
+  }
+
+  .navButton {
+    position: static;
+    grid-row: 2;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.44);
+    background: rgba(255, 255, 255, 0.88);
+    transform: none;
+  }
+
+  .navButton:hover {
+    transform: scale(1.04);
+  }
+
+  .prevButton {
+    grid-column: 1;
+  }
+
+  .nextButton {
+    grid-column: 3;
+  }
+
+  .indicators {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 0.35rem 0.5rem;
+    min-width: 0;
+  }
+
+  .position {
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--color-paper-soft);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.48);
+  }
+
+  .activeDot {
+    width: 22px;
+    background: var(--color-paper);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .dot:focus-visible,
+  .navButton:focus-visible,
+  .backButton:focus-visible,
+  .exploreButton:focus-visible {
+    outline: 3px solid var(--color-paper);
+    outline-offset: 3px;
+  }
+}
+
 /* Pantallas grandes (4K) */
 @media (min-width: 2000px) {
   .heroContainer {
@@ -490,5 +728,9 @@
 @media (prefers-reduced-motion: reduce) {
   .cardGlow {
     animation: none;
+  }
+
+  .carouselContainer {
+    scroll-behavior: auto;
   }
 }

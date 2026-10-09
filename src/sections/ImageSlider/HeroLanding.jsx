@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { getAssetPath } from '../../utils/assetPath';
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./HeroLanding.module.css";
@@ -41,20 +40,135 @@ export default function HeroLanding({ slides = heroLandingData }) {
   const navigate = useNavigate();
   const initialSlideIndex = useContentIndexFromNavigation(slides);
   const [current, setCurrent] = useState(initialSlideIndex);
+  const [isMobile, setIsMobile] = useState(false);
   const activeSlide = slides[current] ?? slides[0];
   const carouselRef = useRef(null);
+  const cardRefs = useRef([]);
+  const scrollFrameRef = useRef(null);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 767px)");
+    const updateViewport = () => setIsMobile(query.matches);
+
+    updateViewport();
+    query.addEventListener("change", updateViewport);
+    return () => query.removeEventListener("change", updateViewport);
+  }, []);
 
   useEffect(() => {
     setCurrent(initialSlideIndex);
   }, [initialSlideIndex]);
 
+  useEffect(() => {
+    return () => {
+      if (scrollFrameRef.current !== null) {
+        cancelAnimationFrame(scrollFrameRef.current);
+      }
+    };
+  }, []);
+
+  const scrollToSlide = useCallback((index, behavior = "smooth") => {
+    const carousel = carouselRef.current;
+    const card = cardRefs.current[index];
+
+    if (!carousel || !card) return;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    carousel.scrollTo({
+      left: card.offsetLeft,
+      behavior: reducedMotion ? "auto" : behavior,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return undefined;
+
+    const frame = requestAnimationFrame(() => {
+      scrollToSlide(initialSlideIndex, "auto");
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [initialSlideIndex, isMobile, scrollToSlide]);
+
+  const goToSlide = useCallback((index) => {
+    if (!slides.length) return;
+
+    const nextIndex = (index + slides.length) % slides.length;
+    setCurrent(nextIndex);
+    if (isMobile) scrollToSlide(nextIndex);
+  }, [isMobile, scrollToSlide, slides.length]);
+
   const paginate = useCallback(
     (direction) => {
       if (!slides.length) return;
-      setCurrent((prev) => (prev + direction + slides.length) % slides.length);
+      goToSlide(current + direction);
     },
-    [slides.length]
+    [current, goToSlide, slides.length]
   );
+
+  const handleCarouselScroll = () => {
+    if (!isMobile || scrollFrameRef.current !== null) return;
+
+    scrollFrameRef.current = requestAnimationFrame(() => {
+      const carousel = carouselRef.current;
+      if (!carousel) {
+        scrollFrameRef.current = null;
+        return;
+      }
+
+      const nearestIndex = cardRefs.current.reduce(
+        (selectedIndex, card, index) => {
+          const selectedCard = cardRefs.current[selectedIndex];
+          const cardDistance = Math.abs(card.offsetLeft - carousel.scrollLeft);
+          const selectedDistance = Math.abs(
+            selectedCard.offsetLeft - carousel.scrollLeft,
+          );
+
+          return cardDistance < selectedDistance ? index : selectedIndex;
+        },
+        0,
+      );
+
+      setCurrent(nearestIndex);
+      scrollFrameRef.current = null;
+    });
+  };
+
+  const handleCardKeyDown = (event, index) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      goToSlide(index);
+      return;
+    }
+
+    if (!isMobile || (event.key !== "ArrowLeft" && event.key !== "ArrowRight")) {
+      return;
+    }
+
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextIndex = Math.min(
+      Math.max(index + direction, 0),
+      slides.length - 1,
+    );
+
+    goToSlide(nextIndex);
+    cardRefs.current[nextIndex]?.focus({ preventScroll: true });
+  };
+
+  const handleExplore = () => {
+    if (!isMobile) return;
+
+    carouselRef.current?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "center",
+    });
+  };
 
   if (!slides.length || !activeSlide) return null;
 
@@ -99,45 +213,68 @@ export default function HeroLanding({ slides = heroLandingData }) {
               <h1 className={styles.mainTitle}>{activeSlide.title}</h1>
               <p className={styles.subtitle}>{activeSlide.subtitle}</p>
               <p className={styles.description}>{activeSlide.description}</p>
-              <button className={styles.exploreButton}>Explorar</button>
             </MotionDiv>
           </AnimatePresence>
         </div>
 
         <div className={styles.rightSection}>
-          <div className={styles.carouselContainer}>
+          <div
+            ref={carouselRef}
+            className={styles.carouselContainer}
+            onScroll={handleCarouselScroll}
+          >
             {slides.map((slide, index) => {
               const offset = getCircularOffset(index, current, slides.length);
               const isActive = index === current;
 
-              if (Math.abs(offset) > 2) return null;
+              if (!isMobile && Math.abs(offset) > 2) return null;
 
               return (
                 <MotionDiv
                   key={slide.id}
+                  ref={(element) => {
+                    cardRefs.current[index] = element;
+                  }}
                   className={styles.carouselCard}
-                  animate={getCardState(offset)}
+                  animate={
+                    isMobile
+                      ? {
+                          x: 0,
+                          z: 0,
+                          rotateY: 0,
+                          rotateZ: 0,
+                          scale: 1,
+                          opacity: 1,
+                          filter: "blur(0px)",
+                        }
+                      : getCardState(offset)
+                  }
                   initial={false}
                   transition={CARD_TRANSITION}
-                  aria-hidden={!isActive}
-                  onClick={() => !isActive && setCurrent(index)}
+                  role="button"
+                  tabIndex={isMobile || isActive ? 0 : -1}
+                  aria-current={isActive ? "true" : undefined}
+                  aria-hidden={!isMobile && !isActive}
+                  aria-label={`Ver ${slide.title}`}
+                  onClick={() => !isActive && goToSlide(index)}
+                  onKeyDown={(event) => handleCardKeyDown(event, index)}
                   style={{ cursor: "pointer" }}
                 >
                   <MotionDiv
                     className={styles.cardImageWrapper}
-                    animate={{ rotateY: isActive ? 0 : Math.sign(offset) * -6 }}
+                    animate={{
+                      rotateY: isMobile ? 0 : isActive ? 0 : Math.sign(offset) * -6,
+                    }}
                     transition={CARD_TRANSITION}
                   >
                     <MotionImg
                       src={slide.image}
                       alt={slide.title}
                       className={styles.cardImage}
-                      animate={
-                        {
-                          x: `${offset * -7}%`,
-                          scale: isActive ? 1.08 : 1.16,
-                        }
-                      }
+                      animate={{
+                        x: isMobile ? "0%" : `${offset * -7}%`,
+                        scale: isMobile ? 1 : isActive ? 1.08 : 1.16,
+                      }}
                       transition={CARD_TRANSITION}
                     />
                     <div className={styles.cardOverlay} />
@@ -147,7 +284,10 @@ export default function HeroLanding({ slides = heroLandingData }) {
 
                   <MotionDiv
                     className={styles.cardTitle}
-                    animate={{ opacity: isActive ? 1 : 0.72, y: isActive ? 0 : -4 }}
+                    animate={{
+                      opacity: isMobile || isActive ? 1 : 0.72,
+                      y: isMobile || isActive ? 0 : -4,
+                    }}
                     transition={CARD_TRANSITION}
                   >
                     {slide.title}
@@ -173,12 +313,16 @@ export default function HeroLanding({ slides = heroLandingData }) {
           </button>
 
           <div className={styles.indicators}>
-            {slides.map((_, index) => (
+            <p className={styles.position} aria-live="polite">
+              {current + 1} de {slides.length}
+            </p>
+            {slides.map((slide, index) => (
               <button
-                key={index}
+                key={slide.id}
                 className={`${styles.dot} ${index === current ? styles.activeDot : ""}`}
-                onClick={() => setCurrent(index)}
-                aria-label={`Ir a slide ${index + 1}`}
+                onClick={() => goToSlide(index)}
+                aria-label={`Ir a ${slide.title} (${index + 1} de ${slides.length})`}
+                aria-pressed={index === current}
               />
             ))}
           </div>

@@ -53,13 +53,7 @@ export default function Hero({ personaje }) {
       </div>
 
       <div className="flip-stage" style={{ perspective: "1600px" }}>
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "680px",
-          }}
-        >
+        <div className="flip-stack">
           <motion.div
             className="flip-card"
             animate={{

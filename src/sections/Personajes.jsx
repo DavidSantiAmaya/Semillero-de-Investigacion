@@ -54,6 +54,7 @@ export default function Personajes() {
       <div className="back-button-container">
         <button
           className="back-button"
+          aria-label="Volver a la página principal"
           onClick={() =>
             navigate("/", {
               state: { direction: -1 },

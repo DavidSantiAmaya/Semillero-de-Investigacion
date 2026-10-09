@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { getAssetPath } from '../../utils/assetPath';
 import HeroHistory from "./Componetes/HeroHistory";
 import historyEvents from "./HistoryData/Historydata";
 import { useContentIndexFromNavigation } from "../../utils/contentNavigation";
@@ -13,7 +12,9 @@ export default function History() {
     <main className="history-page" aria-label="Historia de la Campaña Libertadora">
       <div className="back-button-container">
         <button
+          type="button"
           className="back-button"
+          aria-label="Volver al inicio"
           onClick={() =>
             navigate("/", {
               state: { direction: -1 },

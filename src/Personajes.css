@@ -123,6 +123,12 @@ body {
   justify-self: end;
 }
 
+.flip-stack {
+  position: relative;
+  width: 100%;
+  height: 680px;
+}
+
 .flip-card {
   position: relative;
   width: 100%;
@@ -310,6 +316,10 @@ body {
   opacity: 0.92;
 }
 
+.accordion-navigation {
+  display: none;
+}
+
 /*=====================================================
   5. TARJETA DE DETALLE
 =====================================================*/
@@ -441,20 +451,6 @@ body {
     height: 560px;
   }
 
-  .accordion {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .accordion-item {
-    min-height: 180px;
-  }
-
-  .accordion-item.is-active {
-    flex: 1.2;
-    min-height: 240px;
-  }
-
   .detail-card {
     grid-template-columns: 1fr;
   }
@@ -486,5 +482,246 @@ body {
 
   .back {
     transform: rotateY(180deg);
+  }
+}
+
+/* En teléfonos, el acordeón se convierte en una galería táctil compacta.
+   El desplazamiento es nativo para no interferir con el scroll vertical. */
+@media (max-width: 767px) {
+  .bolivar-page {
+    padding:
+      max(var(--space-3), calc(env(safe-area-inset-top, 0px) + var(--space-2)))
+      var(--space-2)
+      max(var(--space-4), calc(env(safe-area-inset-bottom, 0px) + var(--space-3)));
+  }
+
+  .back-button-container {
+    position: static;
+    width: min(100%, 1400px);
+    margin: 0 auto var(--space-2);
+  }
+
+  .back-button {
+    position: static;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: var(--shadow-sm);
+    font-size: 1.45rem;
+  }
+
+  .back-button:hover {
+    transform: translateX(-2px);
+  }
+
+  .bolivar-hero {
+    max-height: none;
+    margin: 0 auto;
+    gap: var(--space-2);
+    padding: var(--space-2) 0 var(--space-4);
+  }
+
+  .hero-copy {
+    max-height: none;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+    line-height: 0.95;
+  }
+
+  .hero-copy h2 {
+    margin: var(--space-2) 0;
+    font-size: clamp(1.35rem, 6.5vw, 1.8rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  .hero-note {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .accordion-section {
+    margin: 12px auto 16px;
+  }
+
+  .section-head {
+    margin-bottom: var(--space-2);
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.65rem, 8vw, 2.15rem);
+  }
+
+  .accordion-container {
+    margin-right: calc(var(--space-2) * -1);
+  }
+
+  .accordion {
+    height: clamp(18.75rem, 90vw, 23rem);
+    gap: var(--space-2);
+    padding: 0 var(--space-2) 2px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x pan-y;
+    overscroll-behavior-x: contain;
+  }
+
+  .accordion::-webkit-scrollbar {
+    display: none;
+  }
+
+  .accordion-item,
+  .accordion-item.is-active {
+    flex: 0 0 85%;
+    min-width: 0;
+    height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .accordion-item:hover {
+    transform: none;
+  }
+
+  .accordion-item:focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+
+  .accordion-item.is-active {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .accordion-content {
+    left: var(--space-3);
+    right: var(--space-3);
+    bottom: var(--space-3);
+  }
+
+  .accordion-content h3 {
+    margin-bottom: 4px;
+    font-size: clamp(1.3rem, 6vw, 1.65rem);
+    line-height: 1.05;
+  }
+
+  .accordion-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .accordion-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-2) 0 0;
+  }
+
+  .accordion-position {
+    margin: 0;
+    color: var(--color-ink-soft);
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .accordion-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .accordion-dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 1px solid var(--color-ink-soft);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    cursor: pointer;
+    transition: width var(--transition-fast), background var(--transition-fast);
+  }
+
+  .accordion-dots button.is-active {
+    width: 20px;
+    background: var(--color-ink);
+  }
+
+  .accordion-dots button:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+
+  .flip-stage {
+    width: 100%;
+    margin-top: var(--space-1);
+  }
+
+  .flip-stack {
+    height: clamp(25rem, 112vw, 28.5rem);
+  }
+
+  .flip-card {
+    height: calc(100% - 18px);
+    touch-action: pan-y;
+  }
+
+  .front-overlay {
+    padding: var(--space-3) var(--space-3) 18px;
+  }
+
+  .front-overlay h3,
+  .back-panel h3 {
+    margin-bottom: 6px;
+    font-size: clamp(1.45rem, 7vw, 1.9rem);
+  }
+
+  .front-label {
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+  }
+
+  .front-overlay p:last-child,
+  .back-panel p {
+    max-width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .back {
+    padding: var(--space-3);
+  }
+
+  .back-panel {
+    padding: var(--space-3);
+  }
+
+  .back-kicker {
+    margin-bottom: 6px;
+  }
+
+  .back-tip {
+    margin-top: var(--space-2) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion,
+  .accordion-item,
+  .accordion-dots button {
+    scroll-behavior: auto;
+    transition: none;
   }
 }
